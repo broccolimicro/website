@@ -1,0 +1,14 @@
+
+body {
+	text-align: center;
+}
+
+#logo {
+	margin-top: 10%;
+}
+
+h1 {
+	font-family: Calibri, Roboto, sans-serif;
+	font-variant-ligatures: none;
+	font-size: 5rem;
+}
