@@ -12,12 +12,19 @@ if __name__ == "__main__":
 		Html() << [
 			Head() << [
 				Link(Rel="stylesheet", Type="text/css", Href="index.css"),
+				Script(Src="js/imports.js"),
+				Script(Src="js/pubcss.js"),
+				Script(Src="js/code.js"),
 			],
 			Body() << [
 				Navigate(),
 				Div(Class="main") << [
-					Post("blog/2017-04-29-computing_trends.html")
-				]
+					Post("blog/2022-04-10-technology-trends.html")
+				],
+				Script() << """includeHTML(document)
+.then(waitFor(loadCode))
+.then(waitFor(formatAnchors))
+.then(waitFor(formatLinks));"""
 			]
 		]
 	])

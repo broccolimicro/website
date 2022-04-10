@@ -137,3 +137,33 @@ h1 {
 .banner * {
 	font-size: 1.3rem;
 }
+
+cite {
+	display: block;
+	position: relative;
+	line-height: 1;
+	font-style: normal;
+	text-align: justify;
+	break-inside: avoid;
+	margin: 1rem 0 0.3rem 0;
+}
+
+.cite-txt {
+	display: table-cell;
+	text-indent: 0;
+	width: calc(100% - 3rem);
+	font-style: normal;
+}
+
+.cite-ref {
+	display: table-cell;
+	text-indent: 0;
+	width: 4rem;
+	font-style: normal;
+	text-align: center;
+}
+
+figure * {
+	text-align: center;
+	font-size: 1.1rem;
+}
