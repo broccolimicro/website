@@ -94,14 +94,12 @@ h1 {
 .dark-banner {
 	background-color: #000000;
 	background-position: 80% 45%;
-	text-align: left;
 	color: #FFFFFF;
 }
 
 .light-banner {
 	background-color: #FFFFFF;
 	background-position: 20% 45%;
-	text-align: right;
 	color: #000000;
 }
 
@@ -123,10 +121,19 @@ h1 {
 	color: inherit;
 }
 
+.center-banner-text {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+	color: inherit;
+}
+
+
 .banner h1 {
 	font-size: 3rem;
 }
 
-.banner p {
+.banner * {
 	font-size: 1.3rem;
 }

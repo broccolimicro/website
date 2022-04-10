@@ -12,7 +12,13 @@ if __name__ == "__main__":
 			Body() << [
 				Navigate(),
 				Div(Class="main") << [
-					Div(Class="box") << [ "Hello World" ]
+					Div(Class="banner light-banner") << [
+						Div(Class="center-banner-text") << [
+							H1() << "Contact",
+							P() << "Edward Bingham",
+							Address() << "edward.bingham@broccolimicro.io",
+						]
+					]
 				]
 			]
 		]
