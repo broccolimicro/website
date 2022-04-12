@@ -2,12 +2,11 @@
 <meta name="keywords" content="computing, trends, Moore's Law, Power Wall, Memory Wall, ILP, history">
 <meta name="author" content="Ned Bingham">
 <div class="article-header">
-<h1>Technology Trends</h1>
+<h1>Optimize for Energy</h1>
 <address>Ned Bingham</address>
 <time>April 10, 2022</time>
 </div>
 
-<!-- Technology, Architecture Context -->
 <p>The concepts introduced by Von Neumann in 1945 <a href="#neumann1945"></a>,
 remain the centerpiece of computer architectures to this day. His programmable
 model for general purpose compute combined with a relentless march toward
@@ -21,20 +20,20 @@ quite a bit over the last 15 years.</p>
 <p>Around 2007, three things happened. First, Apple released the iPhone opening
 a new industry for mobile devices with limited access to power. Second, chips
 produced with technology nodes following Intel's 90nm process ceased scaling
-frequency (<a href="#ch1-intel-frequency"></a>) as the power density collided
-with the limitations of air-cooling (<a href="#ch1-intel-power"></a>). For the
+frequency (<a href="#2022-04-10-intel-frequency"></a>) as the power density collided
+with the limitations of air-cooling (<a href="#2022-04-10-intel-power"></a>). For the
 first time in the industry, a chip could not possibly run all transistors at
 full throughput without exceeding the thermal limits imposed by standard
 cooling technology. By 2011, up to 80% of transistors had to remain off at any
 given time <a href="#esmaeilzadeh2011"></a>.</p>
 
-<figure id="ch1-intel-frequency" style="width:100%"
-><img src="blog/2022-04-10-computing-trends/intel_frequency.png" style="width:100%"
+<figure id="2022-04-10-intel-frequency" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_frequency.png" style="width:100%"
 ><figcaption>History of the clock frequency of Intel's processors.</figcaption
 ></figure>
 
-<figure id="ch1-intel-power" style="width:100%"
-><img src="blog/2022-04-10-computing-trends/intel_tdp.png" style="width:100%"
+<figure id="2022-04-10-intel-power" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_tdp.png" style="width:100%"
 ><figcaption>History of the power density in Intel's processors. Frequency, Thermal
 Design Point (<abbr title="Thermal Design Point">TDP</abbr>), and Die Area were
 scraped for all Intel processors. Frequency and <abbr title="Thermal Design
@@ -48,17 +47,17 @@ and Die Area to compute Power Density.</figcaption
 difficulties in clock distribution. Specifically, around the introduction of
 the 90nm process, global wire delay was just long enough relative to the clock
 period to prevent reliable distribution across the whole chip (<a
-href="#ch1-wire-delay"></a>).</p>
+href="#2022-04-10-wire-delay"></a>).</p>
 
-<figure id="ch1-wire-delay" style="width:100%"
-><img src="blog/2022-04-10-computing-trends/wire_delay.png" style="width:100%"
+<figure id="2022-04-10-wire-delay" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/wire_delay.png" style="width:100%"
 ><figcaption>Wire and Gate Delay across process technology nodes. These were
 roughly estimated from <a href="#bohr2012"></a> and <a
 href="#rusu2002"></a></figcaption
 ></figure>
 
 <p>As a result of these factors, the throughput of <i>sequential</i> programs
-stopped scaling after 2005 (<a href="#ch1-specint"></a>). The industry adapted,
+stopped scaling after 2005 (<a href="#2022-04-10-specint"></a>). The industry adapted,
 turning its focus toward <i>parallelism</i>. In 2006, Intel's Spec Benchmark
 scores jump by a 135% with the transtion from NetBurst to the Core
 microarchitecture, dropping the base clock speed to optimize energy and
@@ -70,8 +69,8 @@ architectures continue to optimize for <abbr title="Instruction Level Parallelis
 sequential tasks, Spec2006 introduced more parallel tasks <a
 href="#packirisamy2009"></a>.</p>
 
-<figure id="ch1-specint" style="width:100%"
-><img src="blog/2022-04-10-computing-trends/specint.png" style="width:100%"
+<figure id="2022-04-10-specint" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/specint.png" style="width:100%"
 ><figcaption>History of SpecINT base mean, with benchmarks scaled appropriately <a href="#specBench"></a>.</figcaption
 ></figure>
 
@@ -79,19 +78,19 @@ href="#packirisamy2009"></a>.</p>
 title="Central Processing Unit">CPU</abbr> market, and chips following Intel's
 32nm process ceased scaling total transistor counts. While smaller feature
 sizes supported higher transistor density, it also brought higher defect
-density (<a href="#ch1-intel-defect"></a>) causing yield losses that make
+density (<a href="#2022-04-10-intel-defect"></a>) causing yield losses that make
 larger chips significantly more expensive (<a
-href="#ch1-intel-transistor"></a>).</p>
+href="#2022-04-10-intel-transistor"></a>).</p>
 
-<figure id="ch1-intel-defect" style="width:100%"
-><img src="blog/2022-04-10-computing-trends/intel_defect_density.png" style="width:100%"
+<figure id="2022-04-10-intel-defect" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_defect_density.png" style="width:100%"
 ><figcaption>History of Intel process technology defect density. Intel's defect
 density trends were very roughly estimated from <a href="#natarajan2002"></a><a
 href="#kuhn2010"></a><a href="#bohr2012"></a><a href="#holt2015"></a><a
 href="#meieran1998"></a> and <a href="#gwennap1993"></a>.</figcaption></figure>
 
-<figure id="ch1-intel-transistor" style="width:100%"
-><img src="blog/2022-04-10-computing-trends/intel_max_transistor.png" style="width:100%"
+<figure id="2022-04-10-intel-transistor" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_max_transistor.png" style="width:100%"
 ><figcaption>History of transistor count in Intel chips. Transistor density
 was averaged over all Intel processors developed in each
 technology.</figcaption></figure>
@@ -99,12 +98,16 @@ technology.</figcaption></figure>
 <p>Today, energy has superceded area as the limiting factor and architects must
 balance throughput against energy per operation. Furthermore, improvements in
 parallel programs have slowed due to a combination of factors (<a
-href="#ch1-specint"></a>). First, all available parallelism has already been
+href="#2022-04-10-specint"></a>). First, all available parallelism has already been
 exploited for many applications. Second, limitations in power density and
 device counts have put an upper bound on the amount of computations that can be
 performed at any given time. And third, memory bandwidth has lagged behind
 compute throughput, introducing a bottleneck that limits the amount of data
-that can be communicated at any given time <a href="#mccalpin1991"></a>.</p>
+that can be communicated at any given time (<a href="#2022-04-10-memory"></a>) <a href="#mccalpin1991"></a>.</p>
+
+<figure id="2022-04-10-memory" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/memory_wall.png" style="width:100%"
+><figcaption>History of memory and compute peak bandwidth.</figcaption></figure>
 
 <cite id="neumann1945">John Von Neumann. <q><a href="https://doi.org/10.1109/85.238389">First Draft of a Report on the EDVAC</a>.</q> Annals of the History of Computing, Volume 15 Number 4 Pages 27-75. IEEE, 1993.</cite>
 <cite id="esmaeilzadeh2011">Hadi Esmaeilzadeh, et al. <q><a href="https://ieeexplore.ieee.org/abstract/document/6307773">Dark silicon and the end of multicore scaling</a>.</q> 38th Annual international symposium on computer architecture (ISCA). IEEE, 2011.</cite>
@@ -113,7 +116,7 @@ that can be communicated at any given time <a href="#mccalpin1991"></a>.</p>
 <cite id="natarajan2002">Sanjay Natarajan, et al. <q><a href="https://www.intel.com/content/dam/www/public/us/en/documents/research/2002-vol06-iss-2-intel-technology-journal.pdf">Process Development and Manufacturing of High-Performance Microprocessors on 300mm Wafers</a>.</q> Intel Technology Journal, Volume 6 Number 2. May 2002. (<a href="mirror/inteltech2002.pdf">mirror</a>)</cite>
 <cite id="kuhn2010">Kelin J Kuhn. <q><a href="http://download.intel.com/pressroom/pdf/kkuhn/Kuhn_Advanced_Semiconductor_Manufacturing_Conference_July_13_2010_slides.pdf">CMOS Transistor Scaling Past 32nm and Implications on Variation</a>.</q> Advanced Semiconductor Manufacturing Conference, 2010. (<a href="mirror/kuhn2010.pdf">mirror</a>)</cite>
 <cite id="holt2015">Bill Holt. <q><a href="http://intelstudios.edgesuite.net/im/2015/pdf/2015_InvestorMeeting_Bill_Holt_WEB2.pdf">Advancing Moore's Law</a>.</q> Investor Meeting Santa Clara, 2015. (<a href="mirror/holt2015.pdf">mirror</a>)</cite>
-<cite id="meieran1998">Eugene S. Meieran. <q><a href="https://www.intel.com/content/dam/www/public/us/en/documents/research/1998-vol02-iss-4-intel-technology-journal.pdf">21st Century Semiconductor Manufacturing Capabilities</a>.</q> Intel Technology Journal. 4th Quarter 1998. (<a href="mirror/inteltech1998.pdf">mirror</a>)</cite>
+<cite id="meieran1998">Eugene S. Meieran. <q><a href="https://www.intel.com/content/dam/www/public/us/en/documents/research/1998-vol02-iss-4-intel-technology-journal.pdf">21st Century Semiconductor Manufacturing Capabilities</a>.</q> Intel Technology Journal. 4th Quarter 1998. (<a href="mirror/intelte2022-04-10998.pdf">mirror</a>)</cite>
 <cite id="gwennap1993">Linley Gwennap, <q>Estimating IC Manufacturing Costs: Die size, process type are key factors in microprocessor cost.</q> Microprocessor report, Volume 7. August 1993. (<a href="http://bnrg.eecs.berkeley.edu/~randy/Courses/CS252.S96/Lecture05.pdf">data mirror</a>)</cite>
 <cite id="mccalpin1991">John D. McCalpin. <q><a href="https://www.cs.virginia.edu/stream/">STREAM: Sustainable Memory Bandwidth in High Performance Computers</a>.</q> Department of Computer Science School of Engineering and Applied Science University of Virginia, 1991. Accessed: August 8, 2019. Available: <a href="https://www.cs.virginia.edu/stream/">https://www.cs.virginia.edu/stream/</a>.</cite>
 <cite id="intelpress2006">Intel. <q><a href="https://www.intel.com/pressroom/archive/releases/2006/20060307corp.htm">Energy-Efficient, High Performing and Stylish Intel–Based Computers to Come with Intel® Core™ Microarchitecture</a>.</q> Intel Developer Forum, San Francisco CA, March 2006. (<a href="mirror/intelpress2006.pdf">mirror</a>)</cite>
