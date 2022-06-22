@@ -9,6 +9,7 @@ def Navigate():
 		Nav(Id="menu") << [
 			#A(Class="nav_button", Href="/products") << "Products",
 			A(Class="nav_button", Href="/")    << "Blog",
+			A(Class="nav_button", Href="/BroccoliCapabilities.pdf") << "Government",
 			A(Class="nav_button", Href="/contact.py")  << "Contact",
 		]
 	]
