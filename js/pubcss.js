@@ -8,9 +8,14 @@ formatSection = function(section, id, type) {
 
 formatAnchors = function() {
 	var elems = document.getElementsByTagName("cite");
+	var idx = 1;
 	for (var i = 0; i < elems.length; i++) {
-		elems[i].innerHTML = "<div class=\"cite-ref\">[" + (i+1) + "]</div><div class=\"cite-txt\">" + elems[i].innerHTML + "</div>";
-		elems[i].setAttribute("ref-num", i+1);
+		if (elems[i].hasAttribute("ref-num")) {
+			idx = parseInt(elems[i].getAttribute("ref-num"))
+		}
+		elems[i].innerHTML = "<div class=\"cite-ref\">[" + idx + "]</div><div class=\"cite-txt\">" + elems[i].innerHTML + "</div>";
+		elems[i].setAttribute("ref-num", idx);
+		idx += 1;
 	}
 
 	elems = document.getElementsByClassName("equation");

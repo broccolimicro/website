@@ -1,0 +1,85 @@
+<article>
+<meta name="keywords" content="architecture, trends, history, dsp, signal processing">
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1>Signal Processing Architecture Trends</h1>
+<address>Ned Bingham</address>
+<time>June 21, 2022</time>
+</div>
+
+<p>Since the 1960s, three distinct architectures have been used to accelerate
+computational tasks for DSP systems: Microprocessors, Field Programmable Gate
+Arrays (FPGA), and Coarse Grained Reconfigurable Arrays (CGRA), all with
+variations optimizing the problem domain with specialization <a
+href="#lee1988-#lee1989"></a>, parallelism <a href="#tan2003"></a>, and
+configurability <a href="#cardellini2022"></a>.</p>
+
+<p>Early DSP history was myopically focused on specialization in Microprocessor
+architectures primarily due to limited area on die <a
+href="#lee1988-#lee1989"></a>. The first single-chip DSP, the TMC 0280, was
+developed in 1978 with a dedicated multiply accumulate (MAC) unit <a
+href="#wiggins1978"></a>, and dedicated complex operators are a mainstay of DSP
+architectures to this day. The TMS 32010 adopted the Harvard Architecture in
+1982 to satisfy intensive IO bandwidth requirements <a href="#so1983"></a>, and
+numerous variations appeared shortly thereafter <a href="#lee1988"></a>. The
+DSP 32 added floating point arithmetic to deal with data scaling issues in 1984
+<a href="#kershaw1985"></a>, and the DSP 56001 found a better solution in 1987
+with saturating fixed-point arithmetic on a wide datapath <a
+href="#kloker1986"></a>. The DSP 32 also added register indirect addressing
+modes to compress memory addresses in the instruction words, and the DSP 56001
+implemented circular buffers in memory to optimize delay computations.</p>
+
+<p>With shrinking process technology nodes yielding more transistors on die,
+DSP architectures shifted focus toward parallelism <a href="#tan2003"></a>. The
+TMS320C20 had a pipelined datapath to target data parallelism in 1993 <a
+href="#ti1993"></a>. In 1996, the TMS320C8x added multiple cores to optimize
+task parallelism <a href="#guttag1996"></a>. Then in 1997, the DSP16xxx
+introduced a two lane pipelined Very Long Instruction Word (VLIW) architecture
+<a href="#bier1997"></a>.</p>
+
+<p>In the 2000s, the DSP market saw a fundamental shift. First, Intel
+introduced DSP extensions for their general purpose processors targeting
+non-embedded applications in 1999 <a href="#gwennap1999"></a>. Second, Xilinx
+introduced FPGAs to the DSP market with the development of the Xilinx Virtex-II
+targeting embedded high-performance applications in 2001 <a
+href="#xilinx2001"></a>. While difficult to program, FPGAs are much more
+flexible, have orders of magnitude better performance and energy consumption,
+and may be reconfigured in the field. As a result, specialized microprocessor
+DSP architectures were relegated to embedded low-performance problem domains.
+Since then, FPGA innovations have focused on application specific operator
+integration and network optimization <a href="#podobas2020"></a>, ease of use
+<a href="#quraishi2021"></a>, embedded and non-embedded system integration <a
+href="#wu2019"></a>, and run-time and partial reconfigurability <a
+href="#cardellini2022"></a>.</p>
+
+<p>While the dominance of FPGAs has demonstrated that array architectures are
+the right solution for the problem domain, CGRAs show the potential for
+significant improvements across the board <a href="#podobas2020"></a>.
+Historically, bit-parallel CGRAs have extremely limited capacity due to routing
+resource requirements. Digit-serial CGRAs solve the capacity issues by
+reducing the width of the datapath. However, they also sacrifice
+configurability in the face of complex timing and control requirements. This
+has led to a variety of systolic array architectures that accelerate extremely
+specific computational tasks. However, solving these configurability issues
+could open the door to a diverse set of new capabilities on mobile
+platforms.</p>
+
+<cite ref-num=1 id="lee1988">Edward A Lee. <q>Programmable dsp architectures i.</q> ASSP, 5.4. IEEE, 1988.</cite> 
+<cite id="lee1989">Edward A Lee. <q>Programmable dsp architectures ii.</q> ASSP, 6.1. IEEE, 1989.</cite> 
+<cite id="tan2003">Edwin J. Tan, and Wendi B. Heinzelman. <q>DSP architectures: past, present and futures.</q> Computer Architecture News (SIGARCH), Volume 31 Issue 3, Pages 6-19. ACM, 2003.</cite>
+<cite id="wiggins1978">Richard Wiggins and Larry Brantingham. <q>Three-Chip System Synthesizes Human Speech.</q> Electronics, Pages 109-116. 1978.</cite>
+<cite id="so1983">John So. <q>TMS 320-a step forward in digital signal processing.</q> Microprocessors and Microsystems 7.10, Pages 451-460. 1983.</cite>
+<cite id="kershaw1985">R. Kershaw, et al. <q>A programmable digital signal processor with 32b floating point arithmetic.</q> International Solid-State Circuits Conference, Volume 28. IEEE, 1985.</cite>
+<cite id="kloker1986">Kevin Kloker. <q>The Motorola DSP56000 digital signal processor.</q> Micro, Volume 6, Issue 06, Pages 29-48. IEEE, 1986.</cite>
+<cite id="bier1997">Jeff Bier. <q>DSP16xxx Targets Communications Apps.</q> Memory, Volume 60, Page 16. 1997.</cite>
+<cite id="guttag1996">Karl Guttag. <q>TMS320C8x family architecture and future roadmap.</q> Digital Signal Processing Technology, Volume 2750. SPIE, 1996.</cite>
+<cite id="ti1993">Texas Instruments, Inc. <q>TMS3ZOC2x User's Guide.</q> 1993.</cite>
+<cite id="gwennap1999">Linley Gwennap. <q>Merced Shows Innovative Design.</q> Microprocessor Report, 13.13. 1999.</cite>
+<cite id="xilinx2001">Xilinx. <q>Fiscal Year 2001 Form 10-K Annual Report.</q> US Securities and Exchange Commission, 2001.</cite>
+<cite id="podobas2020">Artur Podobas, et al. <q>A survey on coarse-grained reconfigurable architectures from a performance perspective.</q> Access, 8. IEEE, 2020.</cite>
+<cite id="quraishi2021">Masudul Hassan Quraishi, et al. <q>A survey of system architectures and techniques for FPGA virtualization.</q> Transactions on Parallel and Distributed Systems, 32.9. IEEE, 2021.</cite>
+<cite id="wu2019">Song Wu, et al. <q>When FPGA-accelerator meets stream data processing in the edge.</q> 39th International Conference on Distributed Computing Systems (ICDCS). IEEE, 2019.</cite> 
+<cite id="cardellini2022">Valeria Cardellini, et al. <q>Run-time Adaptation of Data Stream Processing Systems: The State of the Art.</q> Computing Surveys. ACM, 2022.</cite>
+
+</article>
+
