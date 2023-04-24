@@ -167,3 +167,9 @@ figure * {
 	text-align: center;
 	font-size: 1.1rem;
 }
+
+code {
+	font-size: 1rem;
+	background-color: #EEEEEE;
+	padding: 5px 5px 5px 5px;
+}
