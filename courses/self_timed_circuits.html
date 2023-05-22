@@ -11,12 +11,32 @@
 
 <p>There will be 24 sessions over 12 weeks, each session involves roughly 30 minutes of lecture and 30 minutes of exercises. A full toolset will be provided in the form of a docker container for Linux, facilitating both digital and analog simulation. Each session will be recorded and made available within 24 hours.</p>
 
-<h2>Resources</h2>
-<ul>
-<li><a href="https://github.com/nbingham1/async-course">Lectures and Exercises</a></li>
-<li><a href="https://git.broccolimicro.io/Broccoli/broccoli-cli.git">Toolset for Self Timed Circuits</a></li>
-<li><a href="https://www.broccolimicro.io/courses/sky130.tar.gz">Skywater 130nm PDK and Configuration Files</a></li>
-</ul>
+<h2>Set up the toolset</h2>
+<ol>
+<li>On Ubuntu, install the <code>docker.io</code> package from apt: <code> sudo apt install docker.io</code>, the <code>docker-ce</code> package doesn't let you write files from within the container.</li>
+<li>Pull the development environment image: <code>docker pull public.ecr.aws/l5h5o6z4/broccoli-cli:latest</code></li>
+<li>Clone the <a href="https://git.broccolimicro.io/Broccoli/broccoli-cli.git">Toolset for Self Timed Circuits</a>: <code>git clone https://git.broccolimicro.io/Broccoli/broccoli-cli.git</code></li>
+<li>Clone the <a href="https://github.com/nbingham1/async-course">Lectures and Exercises</a>: <code>git clone https://github.com/nbingham1/async-course.git</code></li>
+<li>Set up the toolset: <code>source broccoli-cli/bcli-develop.sh</code></li>
+<li>Download the <a href="https://broccoli-hosting.s3.us-east-2.amazonaws.com/sky130.tar.gz">Skywater 130nm PDK and Configuration Files</a></li>
+<li>Extract to your home directory: <code>mkdir ~/tech; tar -xzvf sky130.tar.gz -C ~/tech</code></li>
+<li>Start the docker container for the toolset: <code>bcli up</code></li>
+</ol>
+
+<h2>Digital and analog simulation</h2>
+<ol>
+<li>Connect to the docker container for the toolset: <code>bcli</code></li>
+<li><code>cd /host/async-course/lecture_1</code></li>
+<li>fill in <code>e1.act</code></li>
+<li>compile: <code>make e1</code></li>
+<li>run the digital simulation: <code>prsim e1.prs</code></li>
+<li><code>source e1.rc</code></li>
+<li><code>exit</code></li>
+<li>run the analog simulation: <code>cd e1</code></li>
+<li><code>prsim env.prs</code></li>
+<li><code>source prsim.rc</code></li>
+<li><code>exit</code></li>
+</ol>
 
 <hr>
 <h2>Fundamentals</h2>
@@ -24,8 +44,8 @@
 <li>Alain Martin. <q><a href="https://apps.dtic.mil/sti/pdfs/ADA447737.pdf">The limitations to delay-insensitivity in asynchronous circuits</a>.</q> Springer New York, 1990.</li>
 </ul>
 <ol>
-<li>Digital Logic and Production Rules (<a href="https://docs.google.com/presentation/d/1FRVrQa0nEyhvQGNShdhy51kqQUQ7c5ABfCozDBB6NFI/edit?usp=sharing">slides</a>, video)</li>
-<li>Introduction to Self Timed Circuits (<a href="https://docs.google.com/presentation/d/11w59jPf3YmbpAyRkBiP9-37KjHjU1f4FMW0M1xEFANQ/edit?usp=sharing">slides</a>, video)</li>
+<li>Digital Logic and Production Rules (<a href="https://docs.google.com/presentation/d/1FRVrQa0nEyhvQGNShdhy51kqQUQ7c5ABfCozDBB6NFI/edit?usp=sharing">slides</a>, <a href="https://youtu.be/_dsd3ecJ-8Y">video</a>)</li>
+<li>Introduction to Self Timed Circuits (<a href="https://docs.google.com/presentation/d/11w59jPf3YmbpAyRkBiP9-37KjHjU1f4FMW0M1xEFANQ/edit?usp=sharing">slides</a>, <a href="https://youtu.be/nOvawxM2c1I">video</a>)</li>
 <li>Weak Condition Half Buffers (<a href="https://docs.google.com/presentation/d/1rhX8NpYjSPOusMYqh9mkT4VHOUP-ZH7LzGWJoKh6vrs/edit?usp=sharing">slides</a>, video)</li>
 <li>Fundamental Concepts (<a href="https://docs.google.com/presentation/d/1HT5QB9E-94wxLR09xclKv-eHCCeo5yGKxiMjLOxaWq4/edit?usp=sharing">slides</a>, video)</li>
 <li>Pre-Charge Half Buffers (<a href="https://docs.google.com/presentation/d/1IfZwFHvdMxfG4m6_01otx2CuJLPcFdncUEoJ1n5sNUk/edit?usp=sharing">slides</a>, video)</li>
@@ -53,9 +73,9 @@
 <li>Rajit Manohar. <q><a href="https://csl.yale.edu/~rajit/ps/2phase.pdf">An analysis of reshuffled handshaking expansions</a>.</q> Proceedings Seventh International Symposium on Asynchronous Circuits and Systems (ASYNC), IEEE, 2001.</li>
 </ul>
 <ol>
-<li>Handshake Expansion and Reshuffling (slides, video)</li>
-<li>Projection and Process Decomposition (slides, video)</li>
-<li>Simulation and State Elaboration (slides, video)</li>
+<li>Handshake Expansion and Reshuffling (<a href="https://docs.google.com/presentation/d/1blmj0OBZUJvpxFjKeKmNuEUXaSdWKUTZn05lUXbB5P8/edit?usp=sharing">slides</a>, video)</li>
+<li>Projection and Process Decomposition (<a href="https://docs.google.com/presentation/d/1-uvrOhVYTW4cK9nCpoyAb5Pro2PCQ14De_tQLkfKiYE/edit?usp=sharing">slides</a>, video)</li>
+<li>Simulation and State Elaboration (<a href="https://docs.google.com/presentation/d/1Ut5HU87ZwM1Id4V2DR_bboL6KWylS7WK623EHxvU43A/edit?usp=sharing">slides</a>, video)</li>
 <li>State Conflicts and State Variable Insertion (slides, video)</li>
 <li>Guard Strengthening (slides, video)</li>
 <li>Bubble Reshuffling (slides, video)</li>
