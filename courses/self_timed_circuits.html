@@ -20,6 +20,7 @@
 <li>Set up the toolset: <code>source broccoli-cli/bcli-develop.sh</code></li>
 <li>Download the <a href="https://broccoli-hosting.s3.us-east-2.amazonaws.com/sky130.tar.gz">Skywater 130nm PDK and Configuration Files</a></li>
 <li>Extract to your home directory: <code>mkdir ~/tech; tar -xzvf sky130.tar.gz -C ~/tech</code></li>
+<li>Configure the technology directory location: <code>export BCLI_TECH="$HOME/tech"</code></li>
 <li>Start the docker container for the toolset: <code>bcli up</code></li>
 </ol>
 
