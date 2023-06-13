@@ -10,7 +10,7 @@ def Post(path):
 def Navigate():
 	return Header(Id="navigate") << [
 		A(Id="title", Href="/") << [
-			Div(Id="logo") << Img(Src="logo.svg", height="50px"),
+			Div(Id="logo") << Img(Id="logo_img", Src="logo.svg"),
 			Div(Id="name", Class="nav_button") << "Broccoli"
 		],
 		Nav(Id="menu") << [
