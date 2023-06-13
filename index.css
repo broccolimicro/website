@@ -175,7 +175,7 @@ code {
 }
 
 #logo_img {
-	height: 5rem;
+	height: 3.5rem;
 }
 
 @media (max-width: 1000px) {
@@ -210,6 +210,10 @@ li {
 #logo {
 	height: 8rem;
 	padding: 3rem 0px 3rem 1.5rem;
+}
+
+#logo_img {
+	height: 5rem;
 }
 
 }
