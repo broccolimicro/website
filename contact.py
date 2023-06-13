@@ -15,8 +15,8 @@ if __name__ == "__main__":
 					Div(Class="banner light-banner") << [
 						Div(Class="center-banner-text") << [
 							H1() << "Contact",
-							P() << "Edward Bingham",
-							Address() << "edward.bingham@broccolimicro.io",
+							P() << ["Ned Bingham", Address() << "edward.bingham@broccolimicro.io"],
+							P() << ["Jimmy Torre", Address() << "jtorre@broccolimicro.io"],
 						]
 					]
 				]
