@@ -15,6 +15,7 @@ if __name__ == "__main__":
 			Body() << [
 				Navigate(),
 				Div(Class="main") << [
+                    Post("blog/2023-07-31-module-three.html"),
 					Post("blog/2023-06-29-module-two.html"),
 					Post("blog/2023-06-08-module-one.html"),
 					Post("blog/2022-06-21-dsp.html"),
