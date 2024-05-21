@@ -1,0 +1,101 @@
+<article>
+<meta name="keywords" content="self-timed, asynchronous, clockless">
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1 id="selftimed2024">Introduction to Self Timed Circuits (Summer, 2024)</h1>
+<address>Lecturer: <a href="https://www.nedbingham.com/index.py">Ned Bingham</a></address>
+<time>June 3, 2024 to August 21, 2024</time>
+</div>
+
+<p>This course will cover the fundamentals of self-timed circuits including timing assumptions and guarantees, failure modes, pipeline structures, data encodings, conditional logic, internal memory, and non-deterministic behavior, hardware description languages for different layers of abstraction, and two design methodologies. It is designed with a bottom up approach, starting with circuitry and working its way up through more abstract representations. Background experience with programming is required, and circuit design is helpful but optional. The course is offered for free with the goal of building local expertise and community in VLSI, Computer Architecture, and Self-Timed Circuits.</p>
+
+<p>There will be 24 sessions over 12 weeks, each session involves roughly 30 minutes of lecture and 30 minutes of exercises. A full toolset will be provided in the form of a docker container for Linux, facilitating both digital and analog simulation. Each session will be recorded and made available within 24 hours.</p>
+
+<h2>Set up the toolset</h2>
+<ol>
+<li>On Ubuntu, install the <code>docker.io</code> package from apt: <code> sudo apt install docker.io</code>, the <code>docker-ce</code> package doesn't let you write files from within the container.</li>
+<li>Pull the development environment image: <code>docker pull public.ecr.aws/l5h5o6z4/broccoli-cli:latest</code></li>
+<li>Clone the <a href="https://git.broccolimicro.io/Broccoli/broccoli-cli.git">Toolset for Self Timed Circuits</a>: <code>git clone https://git.broccolimicro.io/Broccoli/broccoli-cli.git</code></li>
+<li>Clone the <a href="https://github.com/nbingham1/async-course">Lectures and Exercises</a>: <code>git clone https://github.com/nbingham1/async-course.git</code></li>
+<li>Set up the toolset: <code>source broccoli-cli/bcli-develop.sh</code></li>
+<li>Download the <a href="https://broccoli-hosting.s3.us-east-2.amazonaws.com/sky130.tar.gz">Skywater 130nm PDK and Configuration Files</a></li>
+<li>Extract to your home directory: <code>mkdir ~/tech; tar -xzvf sky130.tar.gz -C ~/tech</code></li>
+<li>Configure the technology directory location: <code>export BCLI_TECH="$HOME/tech"</code></li>
+<li>Start the docker container for the toolset: <code>bcli up</code></li>
+</ol>
+
+<h2>Digital and analog simulation</h2>
+<ol>
+<li>Connect to the docker container for the toolset: <code>bcli</code></li>
+<li><code>cd /host/async-course/lecture_1</code></li>
+<li>fill in <code>e1.act</code></li>
+<li>compile: <code>make e1</code></li>
+<li>run the digital simulation: <code>prsim e1.prs</code></li>
+<li><code>source e1.rc</code></li>
+<li><code>exit</code></li>
+<li>run the analog simulation: <code>cd e1</code></li>
+<li><code>prsim env.prs</code></li>
+<li><code>source prsim.rc</code></li>
+<li><code>exit</code></li>
+</ol>
+
+<h2>Fundamentals</h2>
+<ul>
+<li>Alain Martin. <q><a href="https://apps.dtic.mil/sti/pdfs/ADA447737.pdf">The limitations to delay-insensitivity in asynchronous circuits</a>.</q> Springer New York, 1990.</li>
+</ul>
+<ol>
+<li>Digital Logic and Production Rules (slides, video)</li>
+<li>Introduction to Self Timed Circuits (slides, video)</li>
+<li>Weak Condition Half Buffers (slides, video)</li>
+<li>Fundamental Concepts (slides, video)</li>
+<li>Pre-Charge Half Buffers (slides, video)</li>
+<li>Encoding Data (slides, video)</li>
+</ol>
+
+<h2>Templated Synthesis</h2>
+<ul>
+<li>Andrew Lines. <q><a href="https://authors.library.caltech.edu/26834/5/CSTR1998.pdf">Pipelined asynchronous circuits</a>.</q> California Institute of Technology, 1998.</li>
+</ul>
+<ol>
+<li>Multiple Requests (slides, video)</li>
+<li>Early Out and Stack Length (slides, video)</li>
+<li>Conditional Inputs and Outputs (slides, video)</li>
+<li>Internal Memory (slides, video)</li>
+<li>Protected Forward Drivers (slides, video)</li>
+<li>ACT Language (slides, video)</li>
+</ol>
+
+<h2>Formal Synthesis</h2>
+<ul>
+<li>Alain Martin. <q><a href="https://authors.library.caltech.edu/26746/2/postscript.pdf">Synthesis of asynchronous VLSI circuits</a>.</q> California Institute of Technology, 1991.</li>
+<li>Rajit Manohar. <q><a href="https://csl.yale.edu/~rajit/ps/2phase.pdf">An analysis of reshuffled handshaking expansions</a>.</q> Proceedings Seventh International Symposium on Asynchronous Circuits and Systems (ASYNC), IEEE, 2001.</li>
+<li>Martin, Alain J. <q><a href="https://authors.library.caltech.edu/26709/2/postscript.pdf">The design of an asynchronous microprocessor</a>.</q> (1989).</li>
+<li>Manohar, Rajit, and Alain J. Martin. <q><a href="https://csl.yale.edu/~rajit/ps/mpc98.pdf">Slack elasticity in concurrent computing</a>.</q> International Conference on Mathematics of Program Construction. Berlin, Heidelberg: Springer Berlin Heidelberg, 1998.</li>
+<li>Manohar, Rajit, Tak-Kwan Lee, and Alain J. Martin. <q><a href="https://csl.yale.edu/~rajit/ps/proj.pdf">Projection: A synthesis technique for concurrent systems</a>.</q> Proceedings. Fifth International Symposium on Advanced Research in Asynchronous Circuits and Systems. IEEE, 1999.</li>
+</ul>
+<ol>
+<li>Handshake Expansion and Reshuffling (slides, video)</li>
+<li>Projection and Process Decomposition (slides, video)</li>
+<li>Simulation and State Elaboration (slides, video)</li>
+<li>State Conflicts and State Variable Insertion (slides, video)</li>
+<li>Guard Strengthening (slides, video)</li>
+<li>Bubble Reshuffling (slides, video)</li>
+</ol>
+
+<h2>Advanced Topics</h2>
+<ul>
+<li>Jackson, Sandra, and Rajit Manohar. <q><a href="https://csl.yale.edu/~rajit/ps/gsync.pdf">Gradual synchronization</a>.</q> International Symposium on Asynchronous Circuits and Systems (ASYNC). IEEE, 2016.</li>
+<li>Bingham, Ned, and Rajit Manohar. <q><a href="https://www.nedbingham.com/papers/counter/QDI%20Constant%20Time%20Counters.pdf">QDI constant-time counters</a>.</q> Transactions on Very Large Scale Integration Systems, volume 27 issue 1 pages 83-91. IEEE, 2018.</li>
+<li>Bingham, Ned, and Rajit Manohar. <q><a href="https://nedbingham.com/papers/arbiters/A%20Systematic%20Approach%20for%20Arbitration%20Expressions.pdf">A Systematic Approach for Arbitration Expressions</a>.</q> Transactions on Circuits and Systems I: Regular Papers, volume 67 issue 12 pages 4960-4969. IEEE, 2020.</li>
+</ul>
+<ol>
+<li>Exchange Channels (slides, video)</li>
+<li>Design Strategies (slides, video)</li>
+<li>Implementation Strategies (slides, video)</li>
+<li>Synchronization and Non-Deterministic Behavior (slides, video)</li>
+<li>Arbitration Expressions (slides, video)</li>
+<li>Asynchronous to Synchronous Interfacing (slides, video)</li>
+</ol>
+
+</article>
+

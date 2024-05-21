@@ -15,7 +15,8 @@ if __name__ == "__main__":
 			Body() << [
 				Navigate(),
 				Div(Class="main") << [
-					Post("courses/self_timed_circuits.html")
+					Post("courses/2024_self_timed_circuits.html"),
+					Post("courses/2023_self_timed_circuits.html")
 				],
 				Script() << """includeHTML(document)
 .then(waitFor(loadCode))
