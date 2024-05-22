@@ -7,6 +7,7 @@ if __name__ == "__main__":
 	print(Document() << [
 		Html() << [
 			Head() << [
+				Title("Courses | Broccoli"),
 				Link(Rel="stylesheet", Type="text/css", Href="index.css"),
 				Script(Src="js/imports.js"),
 				Script(Src="js/pubcss.js"),

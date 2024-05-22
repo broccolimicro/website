@@ -18,7 +18,7 @@ def Navigate():
 			A(Class="nav_button", Href="/")    << "News",
 			A(Class="nav_button", Href="/BroccoliCapabilities.pdf") << "Government",
 			A(Class="nav_button", Href="/courses.py")  << "Courses",
-			A(Class="nav_button", Href="/contact.py")  << "Contact",
+			A(Class="nav_button", Href="/about.py")  << "About",
 		]
 	]
 

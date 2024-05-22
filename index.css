@@ -50,6 +50,7 @@ body {
 
 .main {
 	width: 100%;
+	text-align: center;
 }
 
 #title {
@@ -83,60 +84,37 @@ h1 {
 }
 
 .banner {
-	position: relative;
-	width: 100%;
-	height: 70%;
-	background-repeat: no-repeat;
-	background-size: 25%;
+	display: inline-block;
+	width: 70%;
+	text-align: center;
+	font-size: 1.3rem;
+	margin: 50px 50px 50px 50px;
+}
+
+.left-banner {
+	display: inline-block;
+	width: 70%;
+	text-align: left;
+	font-size: 1.3rem;
+	margin: 50px 50px 50px 50px;
+}
+
+.banner h1 {
 	font-size: 3rem;
 }
 
-.dark-banner {
-	background-color: #000000;
-	background-position: 80% 45%;
-	color: #FFFFFF;
-}
-
-.light-banner {
-	background-color: #FFFFFF;
-	background-position: 20% 45%;
-	color: #000000;
-}
-
-.left-banner-text {
-	position: absolute;
-	left: 20%;
-	top: 40%;
-	width: 40%;
-	text-align: left;
-	color: inherit;
-}
-
-.right-banner-text {
-	position: absolute;
-	left: 50%;
-	top: 40%;
-	width: 40%;
-	text-align: left;
-	color: inherit;
-}
-
-.center-banner-text {
-	position: absolute;
-	top: 40%;
-	width: 100%;
-	text-align: center;
-	color: inherit;
-}
-
-
-.banner h1 {
+.left-banner h1 {
 	font-size: 3rem;
 }
 
 .banner * {
 	font-size: 1.3rem;
 }
+
+.left-banner * {
+	font-size: 1.3rem;
+}
+
 
 cite {
 	display: block;
@@ -176,6 +154,38 @@ code {
 
 #logo_img {
 	height: 3.5rem;
+}
+
+.contact-card {
+	display:inline-block;
+	text-align: center;
+	margin: 20px 20px 20px 20px;
+}
+
+.contact-photo {
+	display: inline-block;
+	margin: 5px 5px 5px 5px;
+}
+
+.contact-info {
+	display: block;
+	padding: 5px 5px 5px 5px;
+	font-weight: bold;
+}
+
+.contact-info address {
+	font-weight: normal;
+}
+
+.contact-img-frame {
+	border-radius: 20px;
+	overflow: hidden;
+	width: 256px;
+	height: 300px;
+}
+
+.contact-img {
+	width: 256px;
 }
 
 @media (max-width: 1000px) {
