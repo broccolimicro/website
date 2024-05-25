@@ -1,5 +1,6 @@
 from pyhtml.html import *
 import sys
+from urllib.parse import unquote
 
 def Post(path):
 	try:
@@ -16,7 +17,7 @@ def getPOST():
 		t = arg.split('=')
 		if len(t)>1:
 			k, v = arg.split('=')
-			post[k] = v
+			post[unquote(k)] = unquote(v)
 	return post
 
 def Navigate(whitepaper=False):
