@@ -14,8 +14,8 @@ def Navigate():
 			Div(Id="name", Class="nav_button") << "Broccoli",
 		],
 		Nav(Id="menu") << [
-			#A(Class="nav_button", Href="/products") << "Products",
 			A(Class="nav_button", Href="/")    << "News",
+			A(Class="nav_button", Href="/products.py") << "Products",
 			A(Class="nav_button", Href="/tools.py") << "Tools",
 			A(Class="nav_button", Href="/courses.py")  << "Courses",
 			A(Class="nav_button", Href="/BroccoliCapabilities.pdf") << "Government",

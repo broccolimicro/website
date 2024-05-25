@@ -13,6 +13,14 @@ body {
 	text-align: center;
 }
 
+#whitepaper-form input {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+	width: 300px;
+}
+
 #navigate {
 	position: relative;	
 	background-color: #FFFFFF;
