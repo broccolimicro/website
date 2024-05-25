@@ -9,17 +9,17 @@ def Post(path):
 
 def Navigate():
 	return Header(Id="navigate") << [
-		A(Id="title", Href="/") << [
-			Div(Id="logo") << Img(Id="logo_img", Src="logo_simple.png"),
-			Div(Id="name", Class="nav_button") << "Broccoli",
-		],
 		Nav(Id="menu") << [
-			A(Class="nav_button", Href="/")    << "News",
-			A(Class="nav_button", Href="/products.py") << "Products",
-			A(Class="nav_button", Href="/tools.py") << "Tools",
-			A(Class="nav_button", Href="/courses.py")  << "Courses",
-			A(Class="nav_button", Href="/BroccoliCapabilities.pdf") << "Government",
-			A(Class="nav_button", Href="/about.py")  << "About",
+			A(Id="title", Href="/news.py") << [
+				Div(Id="logo") << Img(Id="logo_img", Src="logo_simple.png"),
+				Div(Id="name", Class="nav_button") << "Broccoli",
+			],
+			A(Class="nav_button", Href="/index.py#products", Style="border-bottom: 3px solid black;") << "Products",
+			A(Class="nav_button", Href="/index.py#tools") << "Tools",
+			A(Class="nav_button", Href="/index.py#courses")  << "Courses",
+			A(Class="nav_button", Href="/index.py#about")  << "About",
+			A(Class="nav_button", Href="/BroccoliCapabilities.pdf", Style="float: right;") << "Government",
+			A(Class="nav_button", Href="/BroccoliWhitepaper.pdf", Style="float: right;") << "Whitepaper",
 		],
 	]
 

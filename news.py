@@ -7,7 +7,7 @@ if __name__ == "__main__":
 	print(Document() << [
 		Html() << [
 			Head() << [
-				Title("Courses | Broccoli"),
+				Title("News | Broccoli"),
 				Link(Rel="stylesheet", Type="text/css", Href="index.css"),
 				Script(Src="js/imports.js"),
 				Script(Src="js/pubcss.js"),
@@ -16,8 +16,9 @@ if __name__ == "__main__":
 			Body() << [
 				Navigate(),
 				Div(Class="main") << [
-					Post("courses/2024_self_timed_circuits.html"),
-					Post("courses/2023_self_timed_circuits.html")
+					Post("blog/2023-08-31-intro-self-timed-circuits.html"),
+					Post("blog/2022-06-21-dsp.html"),
+					Post("blog/2022-04-10-technology-trends.html")
 				],
 				Script() << """includeHTML(document)
 .then(waitFor(loadCode))

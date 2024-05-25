@@ -22,7 +22,10 @@ body {
 }
 
 #navigate {
-	position: relative;	
+	position: fixed;
+	top: 0%;
+	left: 0%;	
+	width: 100%;
 	background-color: #FFFFFF;
 	border-bottom: solid 1px #E0E0E0;
 	text-align: center;
@@ -43,10 +46,9 @@ body {
 }
 
 .box {
-	border-bottom: solid 1px #E0E0E0;
-	padding: 25px 5px 45px 5px;
-	margin: 15px 15px 15px 15px;
-	text-align: left;
+	/*border-bottom: solid 1px #E0E0E0;*/
+	padding: 7rem 0 7rem 0;
+	text-align: center;
 }
 
 .post {
@@ -62,10 +64,8 @@ body {
 }
 
 #title {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	margin: 0 0 0 0;
+	float: left;
+	text-align: left;
 }
 
 #logo {
@@ -83,6 +83,7 @@ body {
 article, article * {
 	margin-top: 0.5rem;
 	font-size: 1.3rem;
+	text-align: left;
 }
 
 h1 {
