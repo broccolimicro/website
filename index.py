@@ -8,6 +8,21 @@ import os
 if __name__ == "__main__":
 	cookies = SimpleCookie(os.environ.get('HTTP_COOKIE', ''))
 
+	formItems = []
+	if "whitepaper" not in cookies:
+		formItems += [
+			Input(Type="text", Placeholder="First Name", Name="first", Required=True),
+			Input(Type="text", Placeholder="Last Name", Name="last", Required=True), Br(),
+			Input(Type="email", Placeholder="Email", name="email", Required=True)
+		]
+	formItems.append(Input(Type="submit", Value="Read our Whitepaper"))
+
+	form = None
+	if "whitepaper" in cookies:
+		form = Form(Id="whitepaper-form", Method="post", action="/BroccoliWhitepaper.pdf") << formItems
+	else:
+		form = Form(Id="whitepaper-form", Method="post", onsubmit="submitWhitepaper(event)") << formItems
+
 	print(Document() << [
 		Html() << [
 			Head() << [
@@ -26,14 +41,11 @@ if __name__ == "__main__":
 						Div(Id="products-box", Class="box") << [
 							Div(Class="left-banner") << [
 								Img(Src="photo/cgra.svg", Width="512px", Style="float: left; margin: 4rem 4rem 4rem 4rem;"),
-								H1(Style="margin: 5rem 0px 0px 0px;") << ["Dataflow acceleration", Br(), "that gets out of your way."],
-								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "More execution nodes on chip for your program."],
-								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Less Power. ", "Cut out the cruft. Energy is carefully managed to ensure it contributes exclusively to solving your problem."],
+								H1(Style="margin: 3rem 0px 0px 0px;") << ["Dataflow acceleration", Br(), "that gets out of your way."],
+								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "Reduced network overhead allow more execution nodes on chip for your program."],
+								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Less Power. ", "Energy is carefully managed to ensure it contributes exclusively to solving your problem."],
 								P(Style="margin: 2rem 0px 3rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any program for ASIC level performance and power."],
-								Form(Id="whitepaper-form", Action="/whitepaper.py", Method="post") << [
-									Input(Type="text", Placeholder="First Name", Name="first"), Input(Type="text", Placeholder="Last Name", Name="last"), Br(),
-									Input(Type="email", Placeholder="Email", name="email"), Input(Type="submit", Value="Read our Whitepaper"),
-								],
+								form,
 							],
 						],
 					],

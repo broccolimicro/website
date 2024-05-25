@@ -31,3 +31,37 @@ startWindow = function() {
 		}
 	}
 }
+
+async function submitWhitepaper(event) {
+	event.preventDefault();
+
+	// Get form data
+	const form = event.target;
+	const formData = new FormData(form);
+	const data = new URLSearchParams(formData);
+
+	try {
+		// Send the POST request to the backend
+		const response = await fetch('/whitepaper.py', {
+			method: 'POST',
+			body: data,
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+		});
+
+		if (response.ok) {
+			// Handle successful response
+			document.cookie = 'whitepaper=1; path=/;';
+			window.location.href = '/BroccoliWhitepaper.pdf'; // Redirect to the index page
+		} else {
+			// Handle errors
+			const errorText = await response.text();
+			console.error('Error:', errorText);
+			alert('Login failed: ' + errorText);
+		}
+	} catch (error) {
+		console.error('Error:', error);
+		alert('An error occurred: ' + error.message);
+	}
+}

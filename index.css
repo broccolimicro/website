@@ -21,6 +21,14 @@ body {
 	width: 300px;
 }
 
+#products-box {
+	padding: 11rem 0 7rem 0;
+}
+
+#about-box {
+	padding: 0 0 2rem 0;
+}
+
 #navigate {
 	position: fixed;
 	top: 0%;
@@ -51,7 +59,7 @@ body {
 
 .box {
 	/*border-bottom: solid 1px #E0E0E0;*/
-	padding: 7rem 0 7rem 0;
+	padding: 3rem 0 7rem 0;
 	text-align: center;
 }
 
