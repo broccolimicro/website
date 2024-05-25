@@ -11,7 +11,7 @@ html {
 
 body {
 	text-align: center;
-}
+} 
 
 #whitepaper-form input {
 	border: 1px solid black;
@@ -43,6 +43,10 @@ body {
 	color: #000000;
 	font-weight: 500;
 	font-size: 1.8rem;
+}
+
+.selected {
+	border-bottom: 3px solid black;
 }
 
 .box {

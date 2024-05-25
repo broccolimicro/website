@@ -2,8 +2,12 @@
 
 from pyhtml.html import *
 from common import Navigate, Post
+from http.cookies import SimpleCookie
+import os
 
 if __name__ == "__main__":
+	cookies = SimpleCookie(os.environ.get('HTTP_COOKIE', ''))
+
 	print(Document() << [
 		Html() << [
 			Head() << [
@@ -12,27 +16,29 @@ if __name__ == "__main__":
 				Script(Src="js/imports.js"),
 				Script(Src="js/pubcss.js"),
 				Script(Src="js/code.js"),
+				Script(Src="index.js"),
 			],
 			Body() << [
-				Navigate(),
+				P() << str(cookies),
+				Navigate("whitepaper" in cookies),
 				Div(Class="main") << [
 					A(Id="products") << [
-						Div(Class="box") << [
+						Div(Id="products-box", Class="box") << [
 							Div(Class="left-banner") << [
 								Img(Src="photo/cgra.svg", Width="512px", Style="float: left; margin: 4rem 4rem 4rem 4rem;"),
 								H1(Style="margin: 5rem 0px 0px 0px;") << ["Dataflow acceleration", Br(), "that gets out of your way."],
 								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "More execution nodes on chip for your program."],
 								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Less Power. ", "Cut out the cruft. Energy is carefully managed to ensure it contributes exclusively to solving your problem."],
 								P(Style="margin: 2rem 0px 3rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any program for ASIC level performance and power."],
-								Form(Id="whitepaper-form") << [
-									Input(Type="text", Placeholder="First Name"), Input(Type="text", Placeholder="Last Name"), Br(),
-									Input(Type="email", Placeholder="Email"), Input(Type="submit", Value="Read our Whitepaper"),
+								Form(Id="whitepaper-form", Action="/whitepaper.py", Method="post") << [
+									Input(Type="text", Placeholder="First Name", Name="first"), Input(Type="text", Placeholder="Last Name", Name="last"), Br(),
+									Input(Type="email", Placeholder="Email", name="email"), Input(Type="submit", Value="Read our Whitepaper"),
 								],
 							],
 						],
 					],
 					A(Id="tools") << [
-						Div(Class="box") << [
+						Div(Id="tools-box", Class="box") << [
 							Div(Class="left-banner") << [
 								Img(Src="photo/bcli.png", Width="768px", Style="float: left; margin: 4rem 4rem 4rem 4rem;"),
 								H1(Style="margin: 5rem 0px 0px 0px;") << ["Broccoli CLI ", A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ", A(Href="https://github.com/broccolimicro/bcli/releases") << Img(Src="logos/tag.svg", Width="40px")],
@@ -51,13 +57,13 @@ if __name__ == "__main__":
 						],
 					],
 					A(Id="courses") << [
-						Div(Class="box") << [
+						Div(Id="courses-box", Class="box") << [
 							Post("courses/2024_self_timed_circuits.html"),
 							Post("courses/2023_self_timed_circuits.html"),
 						],
 					],
 					A(Id="about") << [
-						Div(Class="box") << [
+						Div(Id="about-box", Class="box") << [
 							Div(Class="left-banner") << [
 								Img(Src="logo.svg", Width="256px", Style="float: left; margin: 4rem 4rem 4rem 4rem;"),
 								P(Style="margin: 7rem 0px 7rem 0px;") << "Broccoli was founded in 2021 to bring about a categorical improvement in compute performance. Autonomous systems require reconfigurable Digital Signal Processors (DSP) with order of magnitude improvements in throughput, power, latency, and capacity. Field Programmable Gate Arrays push timing and pipeline management challenges to the user, making them very difficult to use. With the added challenge of managing multiple clock domains, designs often have a low operating frequency and therefore throughput unless significant time and effort are taken to tune the design and its mapping. Broccoli is solving these challenges in hardware to dramatically simplify the compilation and mapping process, and allow designers to iterate on designs quickly while meeting their power and performance constraints."
@@ -72,7 +78,8 @@ if __name__ == "__main__":
 						],
 					],
 				],
-				Script() << """includeHTML(document)
+				Script() << """startWindow();
+includeHTML(document)
 .then(waitFor(loadCode))
 .then(waitFor(formatAnchors))
 .then(waitFor(formatLinks));"""
