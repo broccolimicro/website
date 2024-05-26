@@ -12,6 +12,7 @@ if __name__ == "__main__":
 				Script(Src="js/imports.js"),
 				Script(Src="js/pubcss.js"),
 				Script(Src="js/code.js"),
+                Script(Src="index.js"),
 			],
 			Body() << [
 				Navigate(),
@@ -20,7 +21,8 @@ if __name__ == "__main__":
 					Post("blog/2022-06-21-dsp.html"),
 					Post("blog/2022-04-10-technology-trends.html")
 				],
-				Script() << """includeHTML(document)
+				Script() << """startWindow();
+includeHTML(document)
 .then(waitFor(loadCode))
 .then(waitFor(formatAnchors))
 .then(waitFor(formatLinks));"""
