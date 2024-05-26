@@ -21,20 +21,38 @@ def getPOST():
 	return post
 
 def Navigate(whitepaper=False):
-	nav = [
-		A(Id="title", Href="/news.py") << [
-			Div(Id="logo") << Img(Id="logo_img", Src="logo_simple.png"),
-			Div(Id="name", Class="nav_button") << "Broccoli",
+	return Header(Id="header") << [
+		Nav(Id="nav") << [
+			Div(Id="nav-top") << [
+				Div(Id="nav-left") << [
+					A(Id="title", Href="/news.py") << [
+						Div(Id="logo") << Img(Id="logo_img", Src="logo_simple.png"),
+						Div(Id="name") << "Broccoli",
+					],
+				], Div(Id="nav-mid") << [
+					A(Class="nav-button", Id="products-button", Href="/#products") << "Products",
+					A(Class="nav-button", Id="tools-button", Href="/#tools") << "Tools",
+					A(Class="nav-button", Id="courses-button", Href="/#courses")  << "Courses",
+					A(Class="nav-button", Id="about-button", Href="/#about")  << "About",
+				], Div(Id="nav-right") << [
+					A(Class="nav-button", Href="/BroccoliCapabilities.pdf") << "Government",
+				] + ([
+					A(Class="nav-button", Href="/BroccoliWhitepaper.pdf") << "Whitepaper",
+				] if whitepaper else []), Div(Id="nav-small") << [
+					A(Class="nav-button", Id="toggle", Href="javascript:toggleMenu()") << Img(Id="toggle_img", Src="logos/menu.svg"),
+				],
+			],
+			Div(Id="menu-top") << [
+				Div(Id="menu") << [
+					A(Class="nav-button", Href="/#products", Onclick="toggleMenu()") << "Products",
+					A(Class="nav-button", Href="/#tools", Onclick="toggleMenu()") << "Tools",
+					A(Class="nav-button", Href="/#courses", Onclick="toggleMenu()")  << "Courses",
+					A(Class="nav-button", Href="/#about", Onclick="toggleMenu()")  << "About",
+					A(Class="nav-button", Href="/BroccoliCapabilities.pdf", Onclick="toggleMenu()") << "Government",
+				] + ([
+					A(Class="nav-button", Href="/BroccoliWhitepaper.pdf", Onclick="toggleMenu()") << "Whitepaper",
+				] if whitepaper else []),
+			],
 		],
-		A(Class="nav_button", Id="products-button", Href="/index.py#products") << "Products",
-		A(Class="nav_button", Id="tools-button", Href="/index.py#tools") << "Tools",
-		A(Class="nav_button", Id="courses-button", Href="/index.py#courses")  << "Courses",
-		A(Class="nav_button", Id="about-button", Href="/index.py#about")  << "About",
-		A(Class="nav_button", Href="/BroccoliCapabilities.pdf", Style="float: right;") << "Government",
-	]
-	if whitepaper:
-		nav.append(A(Class="nav_button", Href="/BroccoliWhitepaper.pdf", Style="float: right;") << "Whitepaper")
-	return Header(Id="navigate") << [
-		Nav(Id="menu") << nav,
 	]
 
