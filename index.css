@@ -11,7 +11,7 @@ html {
 
 body {
 	text-align: center;
-	padding: 3rem 0 0 0;
+	padding: 4.3rem 0 0 0;
 } 
 
 /* Navigation Bar */
@@ -23,6 +23,12 @@ body {
 	width: 100%;
 	background-color: #FFFFFF;
 	border-bottom: solid 1px #E0E0E0;
+	text-align: center;
+}
+
+#main {
+	display: block;
+	width: 100%;
 	text-align: center;
 }
 
@@ -69,11 +75,14 @@ body {
 
 #nav-small {
 	display: none;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .nav-button {
 	display: inline-block;
-	padding: 15px 15px 15px 15px;
+	height: 3rem;
+	padding: 1rem 0.5rem 0 0.5rem;
 	text-decoration: none;
 	color: #000000;
 	font-weight: 500;
@@ -81,29 +90,58 @@ body {
 }
 
 .selected {
-	border-bottom: 3px solid black;
+	border-bottom: 0.3rem solid black;
 }
 
 #title {
 	display: inline-block;
+	height: 4rem;
 	text-align: left;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 }
 
 #logo {
+	width: 5rem;
+	height: 4rem;
 	display: inline-block;
-	padding: 4px 4px 4px 20px;
+	background-image: url("logo_simple.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #name {
 	display: inline-block;
+	height: 3rem;
 	text-decoration: none;
 	color: #000000;
 	font-weight: 500;
 	vertical-align: top;
 	font-size: 2.5rem;
-	margin: 0.8rem 0.5rem 0rem 0.5rem;
+	padding: 1rem 0 0 0;
+}
+
+#menu-top {
+	display: none;
+	width: 100%;
+	text-align: right;
+}
+
+#menu {
+	display: none;
+	width: 100%;
+	text-align: right;
+}
+
+#toggle {
+	display: none;
+	float: right;
+	width: 3rem;
+	height: 2.75rem;
+	padding: 0.75rem 1rem 0.5rem 1rem;
+	cursor: pointer;
+	text-align: center;
 }
 
 
@@ -129,7 +167,37 @@ body {
 	padding: 0 0 2rem 0;
 }
 
+.contact-card {
+	display:inline-block;
+	text-align: center;
+	margin: 20px 20px 20px 20px;
+}
 
+.contact-photo {
+	display: inline-block;
+	margin: 5px 5px 5px 5px;
+}
+
+.contact-info {
+	display: block;
+	padding: 5px 5px 5px 5px;
+	font-weight: bold;
+}
+
+.contact-info address {
+	font-weight: normal;
+}
+
+.contact-img-frame {
+	border-radius: 20px;
+	overflow: hidden;
+	width: 256px;
+	height: 300px;
+}
+
+.contact-img {
+	width: 256px;
+}
 
 
 
@@ -144,11 +212,6 @@ body {
 	max-width: 11in;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.main {
-	width: 100%;
-	text-align: center;
 }
 
 
@@ -234,57 +297,9 @@ code {
 	padding: 5px 5px 5px 5px;
 }
 
-#logo_img {
-	height: 3.5rem;
-}
 
-.contact-card {
-	display:inline-block;
-	text-align: center;
-	margin: 20px 20px 20px 20px;
-}
 
-.contact-photo {
-	display: inline-block;
-	margin: 5px 5px 5px 5px;
-}
 
-.contact-info {
-	display: block;
-	padding: 5px 5px 5px 5px;
-	font-weight: bold;
-}
-
-.contact-info address {
-	font-weight: normal;
-}
-
-.contact-img-frame {
-	border-radius: 20px;
-	overflow: hidden;
-	width: 256px;
-	height: 300px;
-}
-
-.contact-img {
-	width: 256px;
-}
-
-#menu-top {
-	display: none;
-	width: 100%;
-	text-align: right;
-}
-
-#menu {
-	display: none;
-	width: 100%;
-	text-align: right;
-}
-
-#toggle {
-	display: none;
-}
 
 
 
@@ -292,6 +307,11 @@ code {
 html {
 	font-size: 0.8cm;
 }
+
+body {
+	text-align: center;
+	padding: 4rem 0 0 0;
+} 
 
 #nav-top {
 	display: grid;
@@ -350,7 +370,6 @@ li {
 
 #name {
 	font-size: 2.5rem;
-	margin: 0.8rem 0.5rem 0rem 0.5rem;
 }
 
 #logo_img {
@@ -363,10 +382,6 @@ li {
 
 #toggle {
 	display: block;
-	float: right;
-	width: 3.5rem;
-	padding: 1rem 1rem 1rem 1rem;
-	cursor: pointer;
 }
 
 #toggle_img {
@@ -374,12 +389,8 @@ li {
 	height: 2.5rem;
 }
 
-.nav_wide {
-	display: none;
-}
-
-.nav_wide_right {
-	display: none;
+#products-box {
+	padding: 0rem 0 7rem 0;
 }
 
 }

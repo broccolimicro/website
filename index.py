@@ -34,9 +34,8 @@ if __name__ == "__main__":
 				Script(Src="index.js"),
 			],
 			Body() << [
-				P() << str(cookies),
 				Navigate("whitepaper" in cookies),
-				Div(Class="main") << [
+				Div(Id="main") << [
 					A(Id="products") << [
 						Div(Id="products-box", Class="box") << [
 							Div(Class="left-banner") << [

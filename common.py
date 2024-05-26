@@ -26,7 +26,7 @@ def Navigate(whitepaper=False):
 			Div(Id="nav-top") << [
 				Div(Id="nav-left") << [
 					A(Id="title", Href="/news.py") << [
-						Div(Id="logo") << Img(Id="logo_img", Src="logo_simple.png"),
+						Div(Id="logo"),
 						Div(Id="name") << "Broccoli",
 					],
 				], Div(Id="nav-mid") << [
