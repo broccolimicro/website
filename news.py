@@ -2,9 +2,14 @@
 
 from pyhtml.html import *
 from common import Navigate, Post
+from http.cookies import SimpleCookie
+import os
 
 if __name__ == "__main__":
+	cookies = SimpleCookie(os.environ.get('HTTP_COOKIE', ''))
+
 	print(Document() << [
+		Doctype(Html=True),
 		Html() << [
 			Head() << [
 				Title("News | Broccoli"),
@@ -15,7 +20,7 @@ if __name__ == "__main__":
 				Script(Src="index.js"),
 			],
 			Body() << [
-				Navigate(),
+				Navigate("whitepaper" in cookies),
 				Div(Class="main") << [
 					Post("blog/2023-08-31-intro-self-timed-circuits.html"),
 					Post("blog/2022-06-21-dsp.html"),

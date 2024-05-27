@@ -29,9 +29,6 @@ if __name__ == "__main__":
 			Head() << [
 				Title("Broccoli"),
 				Link(Rel="stylesheet", Type="text/css", Href="index.css"),
-				Script(Src="js/imports.js"),
-				Script(Src="js/pubcss.js"),
-				Script(Src="js/code.js"),
 				Script(Src="index.js"),
 			],
 			Body() << [
@@ -95,11 +92,7 @@ if __name__ == "__main__":
 						]
 					],
 				],
-				Script() << """startWindow();
-includeHTML(document)
-.then(waitFor(loadCode))
-.then(waitFor(formatAnchors))
-.then(waitFor(formatLinks));"""
+				Script() << "startWindow();"
 			]
 		]
 	])
