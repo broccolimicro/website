@@ -12,7 +12,7 @@ if __name__ == "__main__":
 				Script(Src="js/imports.js"),
 				Script(Src="js/pubcss.js"),
 				Script(Src="js/code.js"),
-                Script(Src="index.js"),
+				Script(Src="index.js"),
 			],
 			Body() << [
 				Navigate(),

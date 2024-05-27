@@ -158,9 +158,16 @@ body {
 #whitepaper-form input {
 	border: 1px solid black;
 	border-radius: 5px;
-	padding: 10px;
-	margin: 10px;
-	width: 20rem;
+	padding: 1rem;
+	margin: 0.5rem;
+	width: 18rem;
+}
+
+#whitepaper-form {
+	display: inline-block;
+	width: 40rem;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 #about-box {
@@ -236,6 +243,14 @@ h1 {
 	margin: 25px 25px 25px 25px;
 }
 
+.banner h1 {
+	font-size: 3rem;
+}
+
+.banner * {
+	font-size: 1.3rem;
+}
+
 .left-banner {
 	display: inline-block;
 	width: 70%;
@@ -244,16 +259,31 @@ h1 {
 	margin: 25px 25px 25px 25px;
 }
 
-.banner h1 {
-	font-size: 3rem;
-}
-
 .left-banner h1 {
 	font-size: 3rem;
 }
 
-.banner * {
-	font-size: 1.3rem;
+.left-img {
+	float: left;
+	max-width: 768px;
+	width: 60%;
+	margin: 4rem 2% 4rem 2%;
+	object-fit: cover;
+}
+
+.right-img {
+	float: right;
+	max-width: 768px;
+	width: 60%;
+	margin: 4rem 2% 4rem 2%;
+	object-fit: cover;
+}
+
+#cgra-img {
+	float: left;
+	margin: 4rem 1% 4rem 1%;
+	max-width: 512px;
+	width: 70%;
 }
 
 .left-banner * {
@@ -349,7 +379,9 @@ body {
 	display: block;
 }
 
-
+#whitepaper-form {
+	width: 20rem;
+}
 
 
 
@@ -391,6 +423,27 @@ li {
 
 #products-box {
 	padding: 0rem 0 7rem 0;
+}
+
+.left-img {
+	float: none;
+	max-width: none;
+	width: 96%;
+	margin: 0 2% 0 2%;
+}
+
+.right-img {
+	float: none;
+	max-width: none;
+	width: 96%;
+	margin: 0 2% 0 2%;
+}
+
+#cgra-img {
+	float: none;
+	width: 96%;
+	max-width: none;
+	margin: 0 2% 0 2%;
 }
 
 }
