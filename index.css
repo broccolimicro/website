@@ -158,7 +158,7 @@ body {
 
 #whitepaper-form input {
 	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 0.75rem;
 	padding: 1rem 1rem 1rem 1rem;
 	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 	width: 18rem;
@@ -198,10 +198,10 @@ body {
 }
 
 .contact-img-frame {
-	border-radius: 20px;
+	border-radius: 1rem;
 	overflow: hidden;
-	width: 256px;
-	height: 300px;
+	width: 15rem;
+	height: 20rem;
 }
 
 .contact-img {
