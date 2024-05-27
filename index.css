@@ -286,6 +286,14 @@ h1 {
 	width: 70%;
 }
 
+#logo-img {
+	float: left;
+	max-width: 256px;
+	width: 60%;
+	margin: 4rem 2% 4rem 2%;
+	object-fit: cover;
+}
+
 .left-banner * {
 	font-size: 1.3rem;
 }
@@ -444,6 +452,13 @@ li {
 	width: 96%;
 	max-width: none;
 	margin: 0 2% 0 2%;
+}
+
+#logo-img {
+	float: none;
+	max-width: none;
+	width: 50%;
+	margin: 0 25% 0 25%;
 }
 
 }

@@ -43,7 +43,7 @@ if __name__ == "__main__":
 								H1(Style="margin: 3rem 0px 0px 0px;") << ["Dataflow acceleration", Br(), "that gets out of your way."],
 								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "Reduced network overhead allow more execution nodes on chip for your program."],
 								P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Less Power. ", "Energy is carefully managed to ensure it contributes exclusively to solving your problem."],
-								P(Style="margin: 2rem 0px 3rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any program for ASIC level performance and power."],
+								P(Style="margin: 2rem 0px 3rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
 								form,
 							],
 						],
@@ -76,8 +76,8 @@ if __name__ == "__main__":
 					A(Id="about") << [
 						Div(Id="about-box", Class="box") << [
 							Div(Class="left-banner") << [
-								Img(Src="logo.svg", Width="256px", Style="float: left; margin: 4rem 4rem 4rem 4rem;"),
-								P(Style="margin: 7rem 0px 7rem 0px;") << "Broccoli was founded in 2021 to bring about a categorical improvement in compute performance. Autonomous systems require reconfigurable Digital Signal Processors (DSP) with order of magnitude improvements in throughput, power, latency, and capacity. Field Programmable Gate Arrays push timing and pipeline management challenges to the user, making them very difficult to use. With the added challenge of managing multiple clock domains, designs often have a low operating frequency and therefore throughput unless significant time and effort are taken to tune the design and its mapping. Broccoli is solving these challenges in hardware to dramatically simplify the compilation and mapping process, and allow designers to iterate on designs quickly while meeting their power and performance constraints."
+								Img(Id="logo-img", Src="logo.svg"),
+								P(Style="margin: 5rem 0px 7rem 0px;") << "Broccoli was founded in 2021 to bring about a categorical improvement in compute performance. Autonomous systems require reconfigurable Digital Signal Processors (DSP) with order of magnitude improvements in throughput, power, latency, and capacity. Field Programmable Gate Arrays push timing and pipeline management challenges to the user, making them very difficult to use. With the added challenge of managing multiple clock domains, designs often have a low operating frequency and therefore throughput unless significant time and effort are taken to tune the design and its mapping. Broccoli is solving these challenges in hardware to dramatically simplify the compilation and mapping process, and allow designers to iterate on designs quickly while meeting their power and performance constraints."
 							],
 							Div(Class="banner") << [
 								H1() << "Team",
