@@ -158,14 +158,15 @@ body {
 #whitepaper-form input {
 	border: 1px solid black;
 	border-radius: 5px;
-	padding: 1rem;
-	margin: 0.5rem;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 	width: 18rem;
+	box-sizing: content-box;
 }
 
 #whitepaper-form {
 	display: inline-block;
-	width: 40rem;
+	width: 44rem;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 }
@@ -243,12 +244,12 @@ h1 {
 	margin: 25px 25px 25px 25px;
 }
 
-.banner h1 {
-	font-size: 3rem;
+.banner p,a {
+	font-size: 1.3rem;
 }
 
-.banner * {
-	font-size: 1.3rem;
+.banner h1 {
+	font-size: 3rem;
 }
 
 .left-banner {
@@ -257,6 +258,10 @@ h1 {
 	text-align: left;
 	font-size: 1.3rem;
 	margin: 25px 25px 25px 25px;
+}
+
+.left-banner p,a {
+	font-size: 1.3rem;
 }
 
 .left-banner h1 {
@@ -292,10 +297,6 @@ h1 {
 	width: 60%;
 	margin: 4rem 2% 4rem 2%;
 	object-fit: cover;
-}
-
-.left-banner * {
-	font-size: 1.3rem;
 }
 
 
@@ -340,12 +341,13 @@ code {
 
 
 
-
-@media (max-width: 75rem) {
-html {
-	font-size: 0.8cm;
+@media (pointer:none), (pointer:coarse) {
+	html {
+		font-size: 0.8cm;
+	}
 }
 
+@media (max-width: 75rem) {
 body {
 	text-align: center;
 	padding: 4rem 0 0 0;

@@ -34,11 +34,11 @@ def Navigate(whitepaper=False):
 					A(Class="nav-button", Id="tools-button", Href="/#tools") << "Tools",
 					A(Class="nav-button", Id="courses-button", Href="/#courses")  << "Courses",
 					A(Class="nav-button", Id="about-button", Href="/#about")  << "About",
-				], Div(Id="nav-right") << [
-					A(Class="nav-button", Href="/BroccoliCapabilities.pdf") << "Government",
-				] + ([
+				], Div(Id="nav-right") << ([
 					A(Class="nav-button", Href="/BroccoliWhitepaper.pdf") << "Whitepaper",
-				] if whitepaper else []), Div(Id="nav-small") << [
+				] if whitepaper else []) + [
+					A(Class="nav-button", Href="/BroccoliCapabilities.pdf") << "Government",
+				], Div(Id="nav-small") << [
 					A(Class="nav-button", Id="toggle", Href="javascript:toggleMenu()") << Img(Id="toggle_img", Src="logos/menu.svg"),
 				],
 			],
@@ -48,10 +48,11 @@ def Navigate(whitepaper=False):
 					A(Class="nav-button", Href="/#tools", Onclick="toggleMenu()") << "Tools",
 					A(Class="nav-button", Href="/#courses", Onclick="toggleMenu()")  << "Courses",
 					A(Class="nav-button", Href="/#about", Onclick="toggleMenu()")  << "About",
-					A(Class="nav-button", Href="/BroccoliCapabilities.pdf", Onclick="toggleMenu()") << "Government",
 				] + ([
 					A(Class="nav-button", Href="/BroccoliWhitepaper.pdf", Onclick="toggleMenu()") << "Whitepaper",
-				] if whitepaper else []),
+				] if whitepaper else []) + [
+					A(Class="nav-button", Href="/BroccoliCapabilities.pdf", Onclick="toggleMenu()") << "Government",
+				],
 			],
 		],
 	]
