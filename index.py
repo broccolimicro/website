@@ -38,10 +38,10 @@ if __name__ == "__main__":
 					Div(Id="products-box", Class="box") << [
 						Div(Class="left-banner") << [
 							Img(Id="cgra-img", Src="photo/cgra.svg"),
-							H1(Style="margin: 3rem 0px 0px 0px;") << ["Dataflow acceleration", Br(), "that gets out of your way."],
+							H1(Style="margin: 3rem 0px 0px 0px;") << ["Programmable dataflow acceleration", Br(), "without the hassle."],
 							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "Reduced network overhead allow more execution nodes on chip for your program."],
 							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Less Power. ", "Energy is carefully managed to ensure it contributes exclusively to solving your problem."],
-							P(Style="margin: 2rem 0px 3rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
+							P(Style="margin: 2rem 0px 2rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
 							form,
 						],
 					],
