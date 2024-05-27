@@ -22,6 +22,7 @@ if __name__ == "__main__":
 			Body() << [
 				Navigate("whitepaper" in cookies),
 				Div(Class="main") << [
+					Post("blog/2024-05-27-months-of-progress.html"),
 					Post("blog/2023-08-31-intro-self-timed-circuits.html"),
 					Post("blog/2022-06-21-dsp.html"),
 					Post("blog/2022-04-10-technology-trends.html")
