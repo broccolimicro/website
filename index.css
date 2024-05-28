@@ -185,6 +185,7 @@ body {
 .contact-photo {
 	display: inline-block;
 	margin: 5px 5px 5px 5px;
+	object-fit: cover;
 }
 
 .contact-info {
@@ -345,6 +346,10 @@ code {
 @media (pointer:none), (pointer:coarse) {
 	html {
 		font-size: 0.8cm;
+	}
+
+	#whitepaper-form input {
+		border-radius: 0px;
 	}
 }
 
