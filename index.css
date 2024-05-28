@@ -185,7 +185,6 @@ body {
 .contact-photo {
 	display: inline-block;
 	margin: 5px 5px 5px 5px;
-	object-fit: cover;
 }
 
 .contact-info {
@@ -206,7 +205,7 @@ body {
 }
 
 .contact-img {
-	width: 256px;
+	width: 100%;
 }
 
 
