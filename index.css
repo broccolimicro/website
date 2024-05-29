@@ -172,6 +172,10 @@ body {
 	padding: 0 0 0 0;
 }
 
+#whitepaper-button {
+	cursor: pointer;
+}
+
 #about-box {
 	padding: 0 0 2rem 0;
 }
