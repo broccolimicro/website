@@ -342,11 +342,13 @@ code {
 
 
 
-@media (pointer:none), (pointer:coarse) {
+@media (pointer:none), (pointer:coarse) and (orientation:portrait) {
 	html {
 		font-size: 0.8cm;
 	}
+}
 
+@media (pointer:none), (pointer:coarse) {
 	#whitepaper-form input {
 		border-radius: 0px;
 	}
