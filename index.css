@@ -106,7 +106,7 @@ body {
 	width: 5rem;
 	height: 4rem;
 	display: inline-block;
-	background-image: url("logo_simple.png");
+	background-image: url("logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
