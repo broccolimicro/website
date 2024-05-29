@@ -15,7 +15,7 @@ if __name__ == "__main__":
 			Input(Type="text", Placeholder="Last Name", Name="last", Required=True), Br(),
 			Input(Type="email", Placeholder="Email", name="email", Required=True)
 		]
-	formItems.append(Input(Type="submit", Value="Read our Whitepaper"))
+	formItems.append(Input(Id="submit-whitepaper", Type="submit", Value="Read our Whitepaper"))
 
 	form = None
 	if "whitepaper" in cookies:

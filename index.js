@@ -34,6 +34,7 @@ startWindow = function() {
 
 async function submitWhitepaper(event) {
 	event.preventDefault();
+	document.querySelector("#submit-whitepaper").setAttribute("disabled","");
 
 	// Get form data
 	const form = event.target;
@@ -56,11 +57,13 @@ async function submitWhitepaper(event) {
 			window.location.href = '/BroccoliWhitepaper.pdf'; // Redirect to the index page
 		} else {
 			// Handle errors
+			document.querySelector("#submit-whitepaper").removeAttribute("disabled");
 			const errorText = await response.text();
 			console.error('Error:', errorText);
 			alert('Login failed: ' + errorText);
 		}
 	} catch (error) {
+		document.querySelector("#submit-whitepaper").removeAttribute("disabled");
 		console.error('Error:', error);
 		alert('An error occurred: ' + error.message);
 	}
