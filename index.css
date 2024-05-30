@@ -249,7 +249,7 @@ h1 {
 	margin: 25px 25px 25px 25px;
 }
 
-.banner p,a {
+.banner p,a,b {
 	font-size: 1.3rem;
 }
 
@@ -265,7 +265,7 @@ h1 {
 	margin: 25px 25px 25px 25px;
 }
 
-.left-banner p,a {
+.left-banner p,a,b {
 	font-size: 1.3rem;
 }
 
