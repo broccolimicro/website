@@ -39,7 +39,7 @@ if __name__ == "__main__":
 						Div(Class="left-banner") << [
 							Img(Id="cgra-img", Src="photo/cgra.svg"),
 							H1(Style="margin: 3rem 0px 0px 0px;") << ["Programmable dataflow acceleration", Br(), "without the hassle."],
-							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "Reduced network overhead allow more execution nodes on chip for your program."],
+							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Larger programs. ", "Reduced network overhead allows more execution nodes on chip for your program."],
 							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Less Power. ", "Energy is carefully managed to ensure it contributes exclusively to solving your problem."],
 							P(Style="margin: 2rem 0px 2rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
 							form,
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 						Div(Class="left-banner") << [
 							Img(Class="left-img", Src="photo/bcli.png"),
 							H1(Style="margin: 5rem 0px 0px 0px;") << ["Broccoli CLI ", A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ", A(Href="https://github.com/broccolimicro/bcli/releases") << Img(Src="logos/tag.svg", Width="40px")],
-							P(Style="margin: 0px 0px 7rem 0px;") << "BCLI is a containerized development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, and Xyce. Your home directory is mounted as a volume, the user information is replicated, and X11 forwarding is enabled to provide a seamless development experience."
+							P(Style="margin: 0px 0px 7rem 0px;") << "BCLI is a containerized development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, and Xyce. Your home directory is mounted as a volume, the user account is copied into the container, and X11 forwarding is enabled to provide a seamless development experience."
 						],
 						Div(Class="left-banner") << [
 							Img(Class="right-img", Src="photo/control.svg", Height="280px", Style="object-fit: cover; object-position: 0 35%;"),
