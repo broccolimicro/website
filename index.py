@@ -49,18 +49,32 @@ if __name__ == "__main__":
 					Div(Id="tools-box", Class="box") << [
 						Div(Class="left-banner") << [
 							Img(Class="left-img", Src="photo/bcli.png"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << ["Broccoli CLI ", A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ", A(Href="https://github.com/broccolimicro/bcli/releases") << Img(Src="logos/tag.svg", Width="40px")],
-							P(Style="margin: 0px 0px 7rem 0px;") << "BCLI is a containerized development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, and Xyce. Your home directory is mounted as a volume, the user account is copied into the container, and X11 forwarding is enabled to provide a seamless development experience."
+							H1(Style="margin: 5rem 0px 0px 0px;") << [
+								"Broccoli-CLI ",
+								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://github.com/broccolimicro/bcli/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
+							],
+							P(Style="margin: 0px 0px 7rem 0px;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more."
 						],
 						Div(Class="left-banner") << [
 							Img(Class="right-img", Src="photo/control.svg", Height="280px", Style="object-fit: cover; object-position: 0 35%;"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << ["Haystack ", A(Href="https://github.com/broccolimicro/haystack") << Img(Src="logos/github.jpg", Width="40px"), " ", A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Src="logos/tag.svg", Width="40px")],
-							P(Style="margin: 0px 0px 7rem 0px;") << "Haystack is a high level synthesis engine for compiling Communicating Hardware Processes (CHP) to Production Rules (PRS). This is still under development, but can currently handle disambiguated Handshaking Expansions (HSE)."
+							H1(Style="margin: 5rem 0px 0px 0px;") << [
+								"Haystack ",
+								A(Href="https://github.com/broccolimicro/haystack") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
+								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
+							],
+							P(Style="margin: 0px 0px 7rem 0px;") << "Haystack is a high level synthesis engine for compiling Communicating Hardware Processes (CHP) to Production Rules (PRS). This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding."
 						],
 						Div(Class="left-banner") << [
 							Img(Class="left-img", Src="photo/floret.png"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << ["Floret ", A(Href="https://github.com/broccolimicro/floret") << Img(Src="logos/github.jpg", Width="40px"), " ", A(Href="https://github.com/broccolimicro/floret/releases") << Img(Src="logos/tag.svg", Width="40px")],
-							P(Style="margin: 0px 0px 7rem 0px;") << "Floret is an automated cell layout engine. While it is still under development, it produces layouts that are often good enough with minor modifications. While Floret is currently being tested against Skywater 130nm, new technologies can be defined with design rules specified in Python."
+							H1(Style="margin: 5rem 0px 0px 0px;") << [
+								"Floret ",
+								A(Href="https://github.com/broccolimicro/floret") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://github.com/broccolimicro/floret/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
+								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
+							],
+							P(Style="margin: 0px 0px 7rem 0px;") << "Floret is an automated cell layout engine. This is still under development, but it currently produces layouts that are often good enough with minor modifications. While Floret is currently being tested against Skywater 130nm, new technologies can be defined with design rules specified in Python."
 						],
 					],
 					A(Id="courses"),
