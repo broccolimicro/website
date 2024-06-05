@@ -52,7 +52,7 @@ if __name__ == "__main__":
 							H1(Style="margin: 5rem 0px 0px 0px;") << [
 								"Broccoli-CLI ",
 								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ",
-								A(Href="https://github.com/broccolimicro/bcli/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
+								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Src="logos/docker.svg", Width="40px"),
 							],
 							P(Style="margin: 0px 0px 7rem 0px;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more."
 						],
