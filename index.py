@@ -48,17 +48,6 @@ if __name__ == "__main__":
 					A(Id="tools"),
 					Div(Id="tools-box", Class="box") << [
 						Div(Class="left-banner") << [
-							Img(Class="left-img", Src="photo/bcli.png"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << [
-								"Broccoli-CLI ",
-							],
-							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more.",
-							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ",
-								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Src="logos/docker.svg", Width="40px"),
-							],
-						],
-						Div(Class="left-banner") << [
 							Img(Class="right-img", Src="photo/control.svg", Height="280px", Style="object-fit: cover; object-position: 0 35%;"),
 							H1(Style="margin: 5rem 0px 0px 0px;") << [
 								"Haystack ",
@@ -81,7 +70,17 @@ if __name__ == "__main__":
 								A(Href="https://github.com/broccolimicro/floret/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
 								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
 							],
-
+						],
+						Div(Class="left-banner") << [
+							Img(Class="right-img", Src="photo/bcli.png"),
+							H1(Style="margin: 5rem 0px 0px 0px;") << [
+								"Broccoli-CLI ",
+							],
+							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more.",
+							H1(Style="margin: 0 0 7rem 0;") << [
+								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Src="logos/docker.svg", Width="40px"),
+							],
 						],
 					],
 					A(Id="courses"),
