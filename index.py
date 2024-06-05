@@ -86,7 +86,7 @@ if __name__ == "__main__":
 					A(Id="courses"),
 					Div(Id="courses-box", Class="box") << [
 						Div(Class="left-banner") << [
-							A(Href="https://www.youtube.com/watch?v=_dsd3ecJ-8Y&list=PLUCgknFT8LMilpLkfwXddes_TS0W9XvO-&pp=gAQBiAQB") << Img(Class="right-img", Src="photo/courses.png"),
+							Iframe(Class="right-img", Style="aspect-ratio: 16 / 9;", Src="https://www.youtube-nocookie.com/embed/videoseries?si=ZFy0bMNimvsltEu2&amp;list=PLUCgknFT8LMilpLkfwXddes_TS0W9XvO-", Title="YouTube video player", Frameborder="0", Allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share", Referrerpolicy="strict-origin-when-cross-origin", Allowfullscreen=True),
 							H1(Style="margin: 0 0 0 0;") << ["Introduction to Self Timed Circuits"],
 							P(Style="margin: 0 0 0 0;") << [
 								"This course covers the fundamentals of self-timed circuits including timing assumptions and guarantees, failure modes, pipeline structures, data encodings, conditional logic, internal memory, and non-deterministic behavior, hardware description languages for different layers of abstraction, and two design methodologies. It is designed with a bottom up approach, starting with circuitry and working its way up through more abstract representations. Background experience with programming is required, and circuit design is helpful but optional. The course is offered for free with the goal of building local expertise and community in VLSI, Computer Architecture, and Self-Timed Circuits.",
