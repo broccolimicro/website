@@ -177,8 +177,8 @@ body {
 }
 
 .img-link {
-	width: 2.4rem;
-	height: 2.4rem;
+	width: 40px;
+	height: 40px;
 }
 
 #course-links {
@@ -189,19 +189,20 @@ body {
 }
 
 .course-link {
+	display: inline-block;
 	border: 1px solid black;
 	background-color: #EEEEEE;
-	border-radius: 20px;
+	border-radius: 2rem;
 	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-	padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+	padding: 0.5rem 0.75rem 0.5rem 3rem;
 	box-sizing: content-box;
 	text-decoration: none;
 	color: #000000;
 	cursor: pointer;
-	background-position: -1px -1px;
+	background-position: 0px 0px;
 	background-image: url('logos/github.png');
 	background-repeat: no-repeat;
-	background-size: 2.4rem 2.4rem;
+	background-size: auto 100%;
 }
 
 .course-link:hover {
@@ -379,15 +380,21 @@ code {
 
 
 @media (pointer:none), (pointer:coarse) and (orientation:portrait) {
-	html {
-		font-size: 0.8cm;
-	}
+html {
+	font-size: 0.8cm;
+}
 }
 
 @media (pointer:none), (pointer:coarse) {
-	#whitepaper-form input {
-		border-radius: 0px;
-	}
+#whitepaper-form input {
+	border-radius: 0px;
+}
+
+.img-link {
+	width: 80px;
+	height: 80px;
+}
+
 }
 
 @media (max-width: 75rem) {
