@@ -54,7 +54,7 @@ if __name__ == "__main__":
 							],
 							P(Style="margin: 0 0 1rem 0;") << "Haystack is a high level synthesis engine for compiling Communicating Hardware Processes (CHP) to Production Rules (PRS). This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/haystack") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://github.com/broccolimicro/haystack") << Img(Src="logos/github.png", Width="40px"), " ",
 								A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
 								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
 							],
@@ -66,7 +66,7 @@ if __name__ == "__main__":
 							],
 							P(Style="margin: 0 0 1rem 0;") << "Floret is an automated cell layout engine. This is still under development, but it currently produces layouts that are often good enough with minor modifications. While Floret is currently being tested against Skywater 130nm, new technologies can be defined with design rules specified in Python.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/floret") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://github.com/broccolimicro/floret") << Img(Src="logos/github.png", Width="40px"), " ",
 								A(Href="https://github.com/broccolimicro/floret/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
 								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
 							],
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 							],
 							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.jpg", Width="40px"), " ",
+								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.png", Width="40px"), " ",
 								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Src="logos/docker.svg", Width="40px"),
 							],
 						],
@@ -90,9 +90,9 @@ if __name__ == "__main__":
 							H1(Style="margin: 0 0 0 0;") << ["Introduction to Self Timed Circuits"],
 							P(Style="margin: 0 0 0 0;") << [
 								"This course covers the fundamentals of self-timed circuits including timing assumptions and guarantees, failure modes, pipeline structures, data encodings, conditional logic, internal memory, and non-deterministic behavior, hardware description languages for different layers of abstraction, and two design methodologies. It is designed with a bottom up approach, starting with circuitry and working its way up through more abstract representations. Background experience with programming is required, and circuit design is helpful but optional. The course is offered for free with the goal of building local expertise and community in VLSI, Computer Architecture, and Self-Timed Circuits.",
-								Ul(Style="margin: 1rem 0 7rem 0;") << [
-									Li() << (A(Href="https://github.com/broccolimicro/course-self-timed-circuits/tree/summer-2023") << "Summer 2023"),
-									Li() << (A(Href="https://github.com/broccolimicro/course-self-timed-circuits") << "Summer 2024"),
+								Div(Id="course-links") << [
+									(A(Class="course-link", Href="https://github.com/broccolimicro/course-self-timed-circuits/tree/summer-2023") << "Summer 2023"),
+									(A(Class="course-link", Href="https://github.com/broccolimicro/course-self-timed-circuits") << ["Summer 2024"]),
 								],
 							],
 						],

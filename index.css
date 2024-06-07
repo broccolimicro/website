@@ -176,6 +176,33 @@ body {
 	cursor: pointer;
 }
 
+#course-links {
+	margin: 3rem 0 7rem 0;
+	max-width: 36rem;
+	text-align: center;
+	width: 100%;
+}
+
+.course-link {
+	border: 1px solid black;
+	background-color: #EEEEEE;
+	border-radius: 20px;
+	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+	padding: 9px 15px 9px 50px;
+	box-sizing: content-box;
+	text-decoration: none;
+	color: #000000;
+	cursor: pointer;
+	background-position: -1px -1px;
+	background-image: url('logos/github.png');
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+}
+
+.course-link:hover {
+	background-color: #BBBBBB;
+}
+
 #about-box {
 	padding: 0 0 2rem 0;
 }
