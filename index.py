@@ -54,9 +54,9 @@ if __name__ == "__main__":
 							],
 							P(Style="margin: 0 0 1rem 0;") << "Haystack is a high level synthesis engine for compiling Communicating Hardware Processes (CHP) to Production Rules (PRS). This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/haystack") << Img(Src="logos/github.png", Width="40px"), " ",
-								A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
-								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
+								A(Href="https://github.com/broccolimicro/haystack") << Img(Class="img-link", Src="logos/github.png"), " ",
+								A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
+								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Class="img-link", Src="logos/donate.svg"),
 							],
 						],
 						Div(Class="left-banner") << [
@@ -66,9 +66,9 @@ if __name__ == "__main__":
 							],
 							P(Style="margin: 0 0 1rem 0;") << "Floret is an automated cell layout engine. This is still under development, but it currently produces layouts that are often good enough with minor modifications. While Floret is currently being tested against Skywater 130nm, new technologies can be defined with design rules specified in Python.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/floret") << Img(Src="logos/github.png", Width="40px"), " ",
-								A(Href="https://github.com/broccolimicro/floret/releases") << Img(Src="logos/tag.svg", Width="40px"), " ",
-								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Src="logos/donate.svg", Width="40px"),
+								A(Href="https://github.com/broccolimicro/floret") << Img(Class="img-link", Src="logos/github.png"), " ",
+								A(Href="https://github.com/broccolimicro/floret/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
+								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Class="img-link", Src="logos/donate.svg"),
 							],
 						],
 						Div(Class="left-banner") << [
@@ -78,8 +78,8 @@ if __name__ == "__main__":
 							],
 							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/bcli") << Img(Src="logos/github.png", Width="40px"), " ",
-								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Src="logos/docker.svg", Width="40px"),
+								A(Href="https://github.com/broccolimicro/bcli") << Img(Class="img-link", Src="logos/github.png"), " ",
+								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Class="img-link", Src="logos/docker.svg"),
 							],
 						],
 					],

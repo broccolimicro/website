@@ -176,6 +176,11 @@ body {
 	cursor: pointer;
 }
 
+.img-link {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+
 #course-links {
 	margin: 3rem 0 7rem 0;
 	max-width: 36rem;
@@ -188,7 +193,7 @@ body {
 	background-color: #EEEEEE;
 	border-radius: 20px;
 	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-	padding: 9px 15px 9px 50px;
+	padding: 0.5rem 0.75rem 0.5rem 2.5rem;
 	box-sizing: content-box;
 	text-decoration: none;
 	color: #000000;
@@ -196,7 +201,7 @@ body {
 	background-position: -1px -1px;
 	background-image: url('logos/github.png');
 	background-repeat: no-repeat;
-	background-size: 40px 40px;
+	background-size: 2.4rem 2.4rem;
 }
 
 .course-link:hover {
