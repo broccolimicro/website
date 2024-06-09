@@ -39,9 +39,9 @@ if __name__ == "__main__":
 						Div(Class="left-banner") << [
 							Img(Id="cgra-img", Src="photo/cgra.svg"),
 							H1(Style="margin: 3rem 0px 0px 0px;") << ["Programmable dataflow acceleration", Br(), "without the hassle."],
-							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Unconstrained. ", "Reduced network overhead allows more execution nodes on chip, and energy is carefully managed to ensure it contributes exclusively to solving your problem."],
-							P(Style="margin: 2rem 0px 0rem 0px;") << [B() << "Open Source. ", "Our tools are developed in the open so you can trust in their quality and longevity."],
-							P(Style="margin: 2rem 0px 2rem 0px;") << [B() << "Just Works. ", "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
+							P(Style="margin: 2rem 0px 0rem 0px;") << [B(Style="font-size: 1.6rem;") << "Unconstrained", Br(), "Reduced network overhead allows more execution nodes on chip, and energy is carefully managed to ensure it contributes exclusively to solving your problem."],
+							P(Style="margin: 2rem 0px 0rem 0px;") << [B(Style="font-size: 1.6rem;") << "Open Source", Br(), "Our tools are developed in the open so you can trust in their quality and longevity."],
+							P(Style="margin: 2rem 0px 2rem 0px;") << [B(Style="font-size: 1.6rem;") << "Just Works", Br(), "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
 							form,
 						],
 					],
