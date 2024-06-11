@@ -103,8 +103,9 @@ body {
 }
 
 #logo {
-	width: 5rem;
+	width: 4.5rem;
 	height: 4rem;
+	margin: 0.25rem 0 -0.25rem 0.25rem;
 	display: inline-block;
 	background-image: url("logo.svg");
 	background-size: contain;
