@@ -52,7 +52,7 @@ if __name__ == "__main__":
 							H1(Style="margin: 5rem 0px 0px 0px;") << [
 								"Haystack ",
 							],
-							P(Style="margin: 0 0 1rem 0;") << "Haystack is a high level synthesis engine for compiling Communicating Hardware Processes (CHP) to Production Rules (PRS). This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
+							P(Style="margin: 0 0 1rem 0;") << "Haystack is a high level circuit synthesis engine. It compiles Communicating Hardware Processes (CHP), a message passing control flow language similar to Golang, into Production Rules (PRS), which specify the digital logic that implements those Quasi-Delay Insensitive (QDI) processes. This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
 							H1(Style="margin: 0 0 7rem 0;") << [
 								A(Href="https://github.com/broccolimicro/haystack") << Img(Class="img-link", Src="logos/github.png"), " ",
 								A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
