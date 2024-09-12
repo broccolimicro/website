@@ -50,12 +50,12 @@ if __name__ == "__main__":
 						Div(Class="left-banner") << [
 							Img(Class="right-img", Src="photo/control.svg", Height="280px", Style="object-fit: cover; object-position: 0 35%;"),
 							H1(Style="margin: 5rem 0px 0px 0px;") << [
-								"Haystack ",
+								"Loom ",
 							],
-							P(Style="margin: 0 0 1rem 0;") << "Haystack is a high level circuit synthesis engine. It compiles Communicating Hardware Processes (CHP), a message passing control flow language similar to Golang, into Production Rules (PRS), which specify the digital logic that implements those Quasi-Delay Insensitive (QDI) processes. This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
+							P(Style="margin: 0 0 1rem 0;") << "Loom is a high level circuit synthesis engine. It compiles Communicating Hardware Processes (CHP), a message passing control flow language similar to Golang, into Production Rules (PRS), which specify the digital logic that implements those Quasi-Delay Insensitive (QDI) processes. This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
 							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/haystack") << Img(Class="img-link", Src="logos/github.png"), " ",
-								A(Href="https://github.com/broccolimicro/haystack/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
+								A(Href="https://github.com/broccolimicro/loom") << Img(Class="img-link", Src="logos/github.png"), " ",
+								A(Href="https://github.com/broccolimicro/loom/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
 								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Class="img-link", Src="logos/donate.svg"),
 							],
 						],
@@ -76,7 +76,7 @@ if __name__ == "__main__":
 							H1(Style="margin: 5rem 0px 0px 0px;") << [
 								"Broccoli-CLI ",
 							],
-							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Haystack, Xyce, Gaw, and more.",
+							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Loom, Xyce, Gaw, and more.",
 							H1(Style="margin: 0 0 7rem 0;") << [
 								A(Href="https://github.com/broccolimicro/bcli") << Img(Class="img-link", Src="logos/github.png"), " ",
 								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Class="img-link", Src="logos/docker.svg"),
