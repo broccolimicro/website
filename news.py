@@ -12,6 +12,14 @@ if __name__ == "__main__":
 		Doctype(Html=True),
 		Html() << [
 			Head() << [
+				Script(Src="https://www.googletagmanager.com/gtag/js?id=G-FT6E284Y58", Async=True),
+				Script() << [
+"""window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-FT6E284Y58');""",
+				],
 				Title("News | Broccoli"),
 				Link(Rel="stylesheet", Type="text/css", Href="index.css"),
 				Script(Src="js/imports.js"),
