@@ -60,23 +60,6 @@ gtag('config', 'G-FT6E284Y58');""",
 						],
 					],
 					
-
-
-
-					A(Id="about"),
-					Div(Id="about-box", Class="box") << [	
-						Div(Class="banner") << [
-							Div(Class="banner-bh") << [
-								Img(Id="logo-img", Src="logo.svg"),
-								P(Style="margin: 5rem 0 5rem 0;") << "<b>Broccoli</b> was founded in December of 2021 to bring about a categorical improvement in compute performance, and we believe that asynchronous design is the next step. With asynchronous design, it is possible to implement complex control that takes advantage of pareto rules in the workload to dramatically improve performance and power. However, asynchronous design has proven to be far too difficult for commercial viability. Our first step toward achieving our mission is to remove that blocker with Loom.",
-								Div(Class="contact-card") << [
-									Div(Class="contact-photo") << (Div(Class="contact-img-frame") << Img(Class="contact-img", Src="photo/ned.jpg")),
-									Div(Class="contact-info") << (P() << [A(Href="https://nedbingham.com") << "Ned Bingham, Founder", Address() << "edward.bingham@broccolimicro.io"]),
-								],
-							],
-						],
-					],
-	
 				],
 				Script() << "startWindow();"
 			]
