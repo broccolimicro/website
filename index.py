@@ -80,7 +80,7 @@ gtag('config', 'G-FT6E284Y58');""",
 								],
 							], Div(Class="banner-lt") << [
 								H2() << [
-									"Correct by construction", Br(), "Insensitive to delay",
+									"Correct by construction", Br(), "No timing required",
 								],
 								P(Style="margin: 0 0 1rem 0;") << "Synthesize your design directly from your functional specification. Synthesis is correct by construction and generates circuits that function correctly regardless of timing. This dramatically reduces the need for both functional and timing verification allowing you to focus on your product.",
 
