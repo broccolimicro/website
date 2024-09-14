@@ -91,7 +91,7 @@ $ klayout cells.gds
 """,
 									],
 								],
-								Img(Id="layout-example-imgs", Src="photo/cell_01.png", Style="max-width: 100%; height: 30rem; border-radius: 0.75rem; display: none;"),
+								Img(Id="layout-example-imgs", Class="feature-img", Src="photo/cell_01.png", Style="display: none;"),
 							], Div(Class="banner-rt") << [
 								H2() << "Automating physical design", #Automated physical design
                                 # Devices are sized and
@@ -114,7 +114,7 @@ $ klayout cells.gds
 										Pre(Id="simulate-example", Class="terminal-window", inline=True),
 									],
 								],
-								Img(Id="simulate-example-imgs", Src="photo/hsesim.png", Style="max-width: 100%; height: 30rem; border-radius: 0.75rem;"),
+								Img(Id="simulate-example-imgs", Class="feature-img", Src="photo/hsesim.png"),
 							], Div(Class="banner-lt") << [
 								H2() << "Flexible to your needs",
 								P(Style="margin: 0 0 1rem 0;") << "Want to make low level changes in the compiled circuits? Simulate your behavioral and digital specifications with random timing for verification. View the results in gtkwave or work directly on the command line.",
