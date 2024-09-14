@@ -25,18 +25,17 @@ def Navigate(whitepaper=False):
 		Nav(Id="nav") << [
 			Div(Id="nav-top") << [
 				Div(Id="nav-left") << [
-					A(Id="title", Href="/news.py") << [
-						Div(Id="logo"),
-						Div(Id="name") << "Broccoli",
-					],
-				], Div(Id="nav-mid") << [
-					A(Class="nav-button", Id="products-button", Href="/#products") << "Products",
-					A(Class="nav-button", Id="tools-button", Href="/#tools") << "Tools",
-					A(Class="nav-button", Id="courses-button", Href="/#courses")  << "Courses",
+					Div(Id="logo", Href="/news.py"),
+					A(Id="name", Href="/news.py") << "Broccoli",
+				], 
+				Div(Id="nav-mid") << [
+					A(Class="nav-button", Id="loom-button", Href="/#loom") << "Loom",
+					A(Class="nav-button", Id="download-button", Href="/#download")  << "Download",
+					A(Class="nav-button", Id="sponsor-button", Href="/#sponsor")  << "Sponsor",
 					A(Class="nav-button", Id="about-button", Href="/#about")  << "About",
-				], Div(Id="nav-right") << ([
-					A(Class="nav-button", Href="/BroccoliWhitepaper.pdf") << "Whitepaper",
-				] if whitepaper else []) + [
+					A(Class="nav-button", Id="docs-button", Href="/docs.py")  << "Docs",
+					A(Class="nav-button", Id="forum-button", Href="/forum.py")  << "Forum",
+				], Div(Id="nav-right") << [
 					A(Class="nav-button", Href="/BroccoliCapabilities.pdf") << "Government",
 				], Div(Id="nav-small") << [
 					A(Class="nav-button", Id="toggle", Href="javascript:toggleMenu()") << Img(Id="toggle_img", Src="logos/menu.svg"),
@@ -44,13 +43,12 @@ def Navigate(whitepaper=False):
 			],
 			Div(Id="menu-top") << [
 				Div(Id="menu") << [
-					A(Class="nav-button", Href="/#products", Onclick="toggleMenu()") << "Products",
-					A(Class="nav-button", Href="/#tools", Onclick="toggleMenu()") << "Tools",
-					A(Class="nav-button", Href="/#courses", Onclick="toggleMenu()")  << "Courses",
+					A(Class="nav-button", Href="/#loom", Onclick="toggleMenu()") << "Loom",
+					A(Class="nav-button", Href="/#download", Onclick="toggleMenu()")  << "Download",
+					A(Class="nav-button", Href="/#sponsor", Onclick="toggleMenu()")  << "Sponsor",
 					A(Class="nav-button", Href="/#about", Onclick="toggleMenu()")  << "About",
-				] + ([
-					A(Class="nav-button", Href="/BroccoliWhitepaper.pdf", Onclick="toggleMenu()") << "Whitepaper",
-				] if whitepaper else []) + [
+					A(Class="nav-button", Href="/docs.py", Onclick="toggleMenu()")  << "Docs",
+					A(Class="nav-button", Href="/forum.py", Onclick="toggleMenu()")  << "Forum",
 					A(Class="nav-button", Href="/BroccoliCapabilities.pdf", Onclick="toggleMenu()") << "Government",
 				],
 			],

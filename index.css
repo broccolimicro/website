@@ -1,18 +1,22 @@
 html {
-	font-family: Calibri, Roboto, sans-serif;
 	font-variant-ligatures: none;
+	font-family: 'Inter', sans-serif;
+  --font-sans-serif: 'Inter';
 }
 
 * {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
-	font-size: 1.0rem;
 }
 
 body {
 	text-align: center;
 	padding: 4.3rem 0 0 0;
 } 
+
+b {
+	font-weight: 700;
+}
 
 /* Navigation Bar */
 
@@ -40,7 +44,7 @@ body {
 
 #nav-top {
 	display: grid;
-	grid-template-columns: 20% 45% 35%;
+	grid-template-columns: 20% 60% 20%;
 	grid-column-gap: 0;
 	justify-items: center;
 	width: 100%;
@@ -83,7 +87,7 @@ body {
 .nav-button {
 	display: inline-block;
 	height: 3rem;
-	padding: 1rem 0.5rem 0 0.5rem;
+	padding: 1rem 1rem 0 1rem;
 	text-decoration: none;
 	color: #000000;
 	font-weight: 500;
@@ -94,19 +98,13 @@ body {
 	border-bottom: 0.3rem solid black;
 }
 
-#title {
-	display: inline-block;
-	height: 4rem;
-	text-align: left;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-}
-
 #logo {
-	width: 4.5rem;
-	height: 4rem;
-	margin: 0.25rem 0 -0.25rem 0.25rem;
+	float: left;
 	display: inline-block;
+	height: 4rem;
+	width: 4rem;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
 	background-image: url("logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -116,12 +114,11 @@ body {
 #name {
 	display: inline-block;
 	height: 3rem;
+	padding: 1rem 1rem 0 1rem;
 	text-decoration: none;
 	color: #000000;
 	font-weight: 500;
-	vertical-align: top;
-	font-size: 2.5rem;
-	padding: 1rem 0 0 0;
+	font-size: 1.8rem;
 }
 
 #menu-top {
@@ -146,72 +143,104 @@ body {
 	text-align: center;
 }
 
-
-.box {
-	/*border-bottom: solid 1px #E0E0E0;*/
-	padding: 3rem 0 7rem 0;
-	text-align: center;
-}
-
-#products-box {
-	padding: 11rem 0 7rem 0;
-}
-
-#whitepaper-form input {
-	border: 1px solid black;
+.terminal {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 2rem auto;
+	column-gap: 0;
+	row-gap: 0;
+	
+	background-color: rgb(50,50,50);
 	border-radius: 0.75rem;
-	padding: 1rem 1rem 1rem 1rem;
-	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-	width: 18rem;
-	box-sizing: content-box;
-}
-
-#whitepaper-form {
-	display: inline-block;
-	width: 44rem;
-	margin: 0 0 0 0;
 	padding: 0 0 0 0;
-}
-
-#submit-whitepaper {
-	cursor: pointer;
-}
-
-.img-link {
-	width: 40px;
-	height: 40px;
-}
-
-#course-links {
-	margin: 3rem 0 7rem 0;
-	max-width: 36rem;
-	text-align: center;
+	text-align: left;
+	max-width: 40rem;
 	width: 100%;
+	height: 30rem;
 }
 
-.course-link {
+.terminal-window {
+	grid-row-start: 2;
+	grid-row-end: span 1;
+
+	font-size: 1rem;
+	background-color: rgb(0,0,0);
+	color: rgb(255,255,255);
+	overflow: scroll;
+	padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+	border-radius: 0 0 0.75rem 0.75rem;
+	white-space: pre;
+	font-family: monospace;
+}
+
+.terminal-window * {
+	font-size: 1rem;
+	background-color: rgb(0,0,0);
+	color: rgb(255,255,255);
+	white-space: pre;
+	font-family: monospace;
+}
+
+.button {
 	display: inline-block;
-	border: 1px solid black;
-	background-color: #EEEEEE;
-	border-radius: 2rem;
-	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-	padding: 0.5rem 0.75rem 0.5rem 3rem;
+	background-color: rgb(255,255,255);
+	border: 1px solid rgb(128,128,128);
+	border-radius: 0.75rem;
+	padding: 1rem 2rem 1rem 2rem;
+	margin: 0.3rem 0.3rem 0.3rem 0.3rem;
 	box-sizing: content-box;
-	text-decoration: none;
-	color: #000000;
 	cursor: pointer;
-	background-position: 0px 0px;
-	background-image: url('logos/github.png');
-	background-repeat: no-repeat;
-	background-size: auto 100%;
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-decoration: none;
 }
 
-.course-link:hover {
-	background-color: #BBBBBB;
+.green-button {
+	display: inline-block;
+	background-color: rgb(10, 133, 55);
+	color: rgb(255, 255, 255);
+	border: 0px;
+	border-radius: 0.75rem;
+	padding: 1rem 2rem 1rem 2rem;
+	margin: 0.3rem 0.3rem 0.3rem 0.3rem;
+	box-sizing: content-box;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.small-button {
+	display: inline-block;
+	background-color: rgb(255,255,255);
+	border: 1px solid rgb(128,128,128);
+	border-radius: 0.75rem;
+	padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+	margin: 1rem 0.6rem 0.3rem 0.0rem;
+	box-sizing: content-box;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.small-green-button {
+	display: inline-block;
+	background-color: rgb(10, 133, 55);
+	color: rgb(255, 255, 255);
+	border: 0px;
+	border-radius: 0.75rem;
+	padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+	margin: 1rem 0.6rem 0.3rem 0.0rem;
+	box-sizing: content-box;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-decoration: none;
 }
 
 #about-box {
-	padding: 0 0 2rem 0;
+	padding: 2rem 0 2rem 0;
 }
 
 .contact-card {
@@ -246,22 +275,12 @@ body {
 	width: 100%;
 }
 
-
-
-
-
-
-
-
-
 .post {
 	display: block;
 	max-width: 11in;
 	margin-left: auto;
 	margin-right: auto;
 }
-
-
 
 article, article * {
 	margin-top: 0.5rem;
@@ -270,74 +289,107 @@ article, article * {
 }
 
 h1 {
+	font-size: 4rem;
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	margin: 0 0 1rem 0;
+}
+
+h2 {
+	font-size: 2.5rem;
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	margin: 2rem 0 1rem 0;
+}
+
+h3 {
 	font-size: 2rem;
 	width: 100%;
+	text-align: center;
+	font-weight: 600;
+	margin: 0 0 1rem 0;
+}
+
+h4 {
+	font-size: 1.4rem;
+	width: 100%;
+	text-align: left;
+	font-weight: 700;
+	margin: 0 0 0.25rem 0;
+}
+
+.box {
+	padding: 4rem 0 4rem 0;
 	text-align: center;
 }
 
 .banner {
-	display: inline-block;
+	display: inline-grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"bh bh"
+		"blt bri"
+		"bli brt"
+		"bf bf";
+	column-gap: 3rem;
+	row-gap: 1rem;
 	width: 70%;
+	font-size: 1.2rem;
+	padding: 5rem 0 0 0;
 	text-align: center;
-	font-size: 1.3rem;
-	margin: 25px 25px 25px 25px;
 }
 
-.banner p,a,b {
-	font-size: 1.3rem;
-}
-
-.banner h1 {
-	font-size: 3rem;
-}
-
-.left-banner {
-	display: inline-block;
-	width: 70%;
+.banner p,a,b,li,ul {
 	text-align: left;
-	font-size: 1.3rem;
-	margin: 25px 25px 25px 25px;
 }
 
-.left-banner p,a,b {
-	font-size: 1.3rem;
+.banner-bh {
+	grid-area: bh;
+	text-align: center;
+	background: no-repeat center;
 }
 
-.left-banner h1 {
-	font-size: 3rem;
+.banner-li {
+	grid-area: bli;
+	text-align: center;
+	background: no-repeat right;
 }
 
-.left-img {
-	float: left;
-	max-width: 768px;
-	width: 60%;
-	margin: 4rem 2% 4rem 2%;
-	object-fit: cover;
+.banner-lt {
+	grid-area: blt;
+	text-align: left;
+	background: no-repeat right;
 }
 
-.right-img {
-	float: right;
-	max-width: 768px;
-	width: 60%;
-	margin: 4rem 2% 4rem 2%;
-	object-fit: cover;
+.banner-rt {
+	grid-area: brt;
+	text-align: left;
+	background: no-repeat left;
 }
 
-#cgra-img {
-	float: left;
-	margin: 4rem 1% 4rem 1%;
-	max-width: 512px;
-	width: 70%;
+.banner-ri {
+	grid-area: bri;
+	text-align: center;
+	background: no-repeat left;
 }
+
+.banner-bf {
+	grid-area: bf;
+	text-align: center;
+	background: no-repeat center;
+}
+
 
 #logo-img {
 	float: left;
-	max-width: 256px;
+	max-width: 180px;
 	width: 60%;
-	margin: 4rem 2% 4rem 2%;
+	margin: 2rem 2% 2rem 2%;
 	object-fit: cover;
 }
-
 
 cite {
 	display: block;
@@ -375,10 +427,16 @@ code {
 	padding: 5px 5px 5px 5px;
 }
 
+li {
+	margin-left: 2.5rem;
+	margin-top: 1.0rem;
+}
 
-
-
-
+a {
+	color: rgb(0,0,0);
+	text-decoration: underline;
+	cursor: pointer;
+}
 
 @media (pointer:none), (pointer:coarse) and (orientation:portrait) {
 html {
@@ -387,15 +445,9 @@ html {
 }
 
 @media (pointer:none), (pointer:coarse) {
-#whitepaper-form input {
+* {
 	border-radius: 0px;
 }
-
-.img-link {
-	width: 80px;
-	height: 80px;
-}
-
 }
 
 @media (max-width: 75rem) {
@@ -403,6 +455,18 @@ body {
 	text-align: center;
 	padding: 4rem 0 0 0;
 } 
+
+.banner {
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"bh"
+		"blt"
+		"brt"
+		"bli"
+		"bri"
+		"bf";
+}
 
 #nav-top {
 	display: grid;
@@ -434,18 +498,12 @@ body {
 .nav-button {
 	display: block;
 	padding: 0.2rem 1rem 0.2rem 0.2rem;
+	text-align: right;
 }
 
 #menu-top {
 	display: block;
 }
-
-#whitepaper-form {
-	width: 20rem;
-}
-
-
-
 
 article {
 	margin-left: 1rem;
@@ -462,11 +520,8 @@ li {
 }
 
 #name {
-	font-size: 2.5rem;
-}
-
-#logo_img {
-	height: 4rem;
+	font-size: 1.8rem;
+	padding: 1rem 1rem 0 1rem;
 }
 
 .selected {
@@ -480,31 +535,6 @@ li {
 #toggle_img {
 	width: 2.5rem;
 	height: 2.5rem;
-}
-
-#products-box {
-	padding: 0rem 0 7rem 0;
-}
-
-.left-img {
-	float: none;
-	max-width: none;
-	width: 96%;
-	margin: 0 2% 0 2%;
-}
-
-.right-img {
-	float: none;
-	max-width: none;
-	width: 96%;
-	margin: 0 2% 0 2%;
-}
-
-#cgra-img {
-	float: none;
-	width: 96%;
-	max-width: none;
-	margin: 0 2% 0 2%;
 }
 
 #logo-img {

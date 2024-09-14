@@ -8,21 +8,6 @@ import os
 if __name__ == "__main__":
 	cookies = SimpleCookie(os.environ.get('HTTP_COOKIE', ''))
 
-	formItems = []
-	if "whitepaper" not in cookies:
-		formItems += [
-			Input(Type="text", Placeholder="First Name", Name="first", Required=True),
-			Input(Type="text", Placeholder="Last Name", Name="last", Required=True), Br(),
-			Input(Type="email", Placeholder="Email", name="email", Required=True)
-		]
-	formItems.append(Input(Id="submit-whitepaper", Type="submit", Value="Read our Whitepaper"))
-
-	form = None
-	if "whitepaper" in cookies:
-		form = Form(Id="whitepaper-form", Method="post", action="/BroccoliWhitepaper.pdf") << formItems
-	else:
-		form = Form(Id="whitepaper-form", Method="post", onsubmit="submitWhitepaper(event)") << formItems
-
 	print(Document() << [
 		Doctype(Html=True),
 		Html() << [
@@ -34,83 +19,196 @@ if __name__ == "__main__":
 			Body() << [
 				Navigate("whitepaper" in cookies),
 				Div(Id="main") << [
-					A(Id="products"),
-					Div(Id="products-box", Class="box") << [
-						Div(Class="left-banner") << [
-							Img(Id="cgra-img", Src="photo/cgra.svg"),
-							H1(Style="margin: 3rem 0px 0px 0px;") << ["Programmable dataflow acceleration", Br(), "without the hassle."],
-							P(Style="margin: 2rem 0px 0rem 0px;") << [B(Style="font-size: 1.6rem;") << "Unconstrained", Br(), "Reduced network overhead allows more execution nodes on chip, and energy is carefully managed to ensure it contributes exclusively to solving your problem."],
-							P(Style="margin: 2rem 0px 0rem 0px;") << [B(Style="font-size: 1.6rem;") << "Open Source", Br(), "Our tools are developed in the open so you can trust in their quality and longevity."],
-							P(Style="margin: 2rem 0px 2rem 0px;") << [B(Style="font-size: 1.6rem;") << "Just Works", Br(), "No need for timing closure, no need for retiming, and no need for synthesis. Map any dataflow program for ASIC-like performance and power."],
-							form,
-						],
-					],
-					A(Id="tools"),
-					Div(Id="tools-box", Class="box") << [
-						Div(Class="left-banner") << [
-							Img(Class="right-img", Src="photo/control.svg", Height="280px", Style="object-fit: cover; object-position: 0 35%;"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << [
-								"Loom ",
-							],
-							P(Style="margin: 0 0 1rem 0;") << "Loom is a high level circuit synthesis engine. It compiles Communicating Hardware Processes (CHP), a message passing control flow language similar to Golang, into Production Rules (PRS), which specify the digital logic that implements those Quasi-Delay Insensitive (QDI) processes. This is still under development, but can currently simulate and compile Handshaking Expansions (HSE) that have a complete state encoding.",
-							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/loom") << Img(Class="img-link", Src="logos/github.png"), " ",
-								A(Href="https://github.com/broccolimicro/loom/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
-								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Class="img-link", Src="logos/donate.svg"),
+					A(Id="loom"),
+					Div(Class="loom-box box") << [
+						Div(Class="banner", Style="max-width: 42rem;") << [
+							Div(Class="banner-bh") << [
+								H1() << "Loom",
+								H3() << "pre-alpha release",
+								P(Style="margin: 0 0 1rem 0; text-align: center;") << "A programming language for quasi-delay insensitive asynchronous circuits.",
+								Ul(Style="margin: 0 0 1rem 0;") << [
+									Li() << (A(href="#synthesis") << "Logic synthesis from functional specifications"),
+									Li() << (A(href="#layout") << "Automated custom cell layout, placement, and routing"),
+									Li() << (A(href="#simulation") << "Behavioral and digital simulation"),
+								],
+								A(Class="button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", href="#download") << "Get Started",
+
+								A(Class="button", href="#sponsor") << "Sponsor",
+								A(Class="button", href="https://github.com/broccolimicro/loom") << "View Source",
 							],
 						],
-						Div(Class="left-banner") << [
-							Img(Class="left-img", Src="photo/floret.png"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << [
-								"Floret ",
-							],
-							P(Style="margin: 0 0 1rem 0;") << "Floret is an automated cell layout engine. This is still under development, but it currently produces layouts that are often good enough with minor modifications. While Floret is currently being tested against Skywater 130nm, new technologies can be defined with design rules specified in Python.",
-							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/floret") << Img(Class="img-link", Src="logos/github.png"), " ",
-								A(Href="https://github.com/broccolimicro/floret/releases") << Img(Class="img-link", Src="logos/tag.svg"), " ",
-								A(Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << Img(Class="img-link", Src="logos/donate.svg"),
-							],
-						],
-						Div(Class="left-banner") << [
-							Img(Class="right-img", Src="photo/bcli.png"),
-							H1(Style="margin: 5rem 0px 0px 0px;") << [
-								"Broccoli-CLI ",
-							],
-							P(Style="margin: 0 0 1rem 0;") << "bcli is a docker container with a full development environment for self-timed circuits. It includes ACT, OpenROAD, Magic, KLayout, Floret, Loom, Xyce, Gaw, and more.",
-							H1(Style="margin: 0 0 7rem 0;") << [
-								A(Href="https://github.com/broccolimicro/bcli") << Img(Class="img-link", Src="logos/github.png"), " ",
-								A(Href="https://hub.docker.com/r/broccolimicro/broccoli-cli") << Img(Class="img-link", Src="logos/docker.svg"),
+
+						Div(Class="banner") << [
+							A(Id="sponsors"),
+							Div(Class="banner-bh") << [
+								A(Href="#sponsor") << "Help shape this community with your logo here.",
 							],
 						],
 					],
-					A(Id="courses"),
-					Div(Id="courses-box", Class="box") << [
-						Div(Class="left-banner") << [
-							Iframe(Class="right-img", Style="aspect-ratio: 16 / 9;", Src="https://www.youtube-nocookie.com/embed/videoseries?si=ZFy0bMNimvsltEu2&amp;list=PLUCgknFT8LMilpLkfwXddes_TS0W9XvO-", Title="YouTube video player", Frameborder="0", Allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share", Referrerpolicy="strict-origin-when-cross-origin", Allowfullscreen=True),
-							H1(Style="margin: 0 0 0 0;") << ["Introduction to Self Timed Circuits"],
-							P(Style="margin: 0 0 0 0;") << [
-								"This course covers the fundamentals of self-timed circuits including timing assumptions and guarantees, failure modes, pipeline structures, data encodings, conditional logic, internal memory, and non-deterministic behavior, hardware description languages for different layers of abstraction, and two design methodologies. It is designed with a bottom up approach, starting with circuitry and working its way up through more abstract representations. Background experience with programming is required, and circuit design is helpful but optional. The course is offered for free with the goal of building local expertise and community in VLSI, Computer Architecture, and Self-Timed Circuits.",
-								Div(Id="course-links") << [
-									(A(Class="course-link", Href="https://github.com/broccolimicro/course-self-timed-circuits/tree/summer-2023") << "Summer 2023"),
-									(A(Class="course-link", Href="https://github.com/broccolimicro/course-self-timed-circuits") << ["Summer 2024"]),
+
+
+			
+					Div(Class="loom-box box", Style="background-color: rgb(244, 244, 245);") << [
+						A(Id="problem"),
+						Div(Class="banner") << [
+							Div(Class="banner-li", Style="height: 20rem; background-image: url('photo/memory.png');") << [
+							], Div(Class="banner-rt") << [
+								H2() << [
+									"Chip design is challenging",
+								],
+								P(Style="margin: 0 0 0.5rem 0;") << "\"Chips like GPUs require nearly 1,000 people to build, and each must understand how pieces of the design work together as they work to continuously improve them\"",
+								P(Style="margin: 0 0 1.5rem 0; text-align: right;") << (A(href="https://www.wsj.com/articles/designing-chips-is-getting-harder-these-engineers-say-chatbots-and-ai-can-help-092b4c49") << "Bryan Catanzaro, VP of Applied Deep Learning Research, NVidia"),
+								P(Style="margin: 0 0 1rem 0;") << "Chip design is challenging, and the vast majority of that comes from functional and timing verification. Manufacturing a chip is slow and expensive, mistakes in the design are doubly so.",
+							],
+						],
+
+	
+						A(Id="synthesis"),
+						Div(Class="banner") << [
+							Div(Class="banner-ri") << [
+								Div(Class="terminal") << [
+									Pre(Id="synthesis-example", Class="terminal-window", inline=True),
+								],
+							], Div(Class="banner-lt") << [
+								H2() << [
+									"Correct by construction", Br(), "Insensitive to delay",
+								],
+								P(Style="margin: 0 0 1rem 0;") << "Synthesize your design directly from your functional specification. Synthesis is correct by construction and generates circuits that function correctly regardless of timing. This dramatically reduces the need for both functional and timing verification allowing you to focus on your product.",
+
+								A(Id="synthesis-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="synthesize()") << "Synthesize your design",
+							],
+						],
+
+
+						A(Id="layout"),
+						Div(Class="banner") << [
+							Div(Class="banner-li") << [
+								Div(Id="layout-example", Class="terminal") << [
+									Pre(Class="terminal-window", inline=True) << [
+Span(Style="font-weight: 700;", inline=True) << "$ lm wchb1b.hse sky130.py",
+"""
+$ klayout wchb1b.gds
+""",
+									],
+								],
+								Img(Id="layout-example-imgs", Src="photo/cell_01.png", Style="max-width: 100%; height: 30rem; border-radius: 0.75rem; display: none;"),
+							], Div(Class="banner-rt") << [
+								H2() << "Automated physical design",
+								P(Style="margin: 0 0 1rem 0;") << "Devices are sized and cell layouts are generated automatically. Design rules are specified through a simple python interface. This reduces the timeline for physical design from 6 months to the click of a button.",
+								P(Style="margin: 0 0 1rem 0;") << [
+									"See the spec for ",
+									A(href="https://github.com/broccolimicro/floret/blob/main/tech/sky130.py") << "Skywater 130nm",
+									".",
+								],
+								A(Id="layout-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="layout()", Dataview=True) << "Generate your layout",
+							],
+						],
+
+
+						A(Id="simulation"),
+						Div(Class="banner") << [
+							Div(Class="banner-ri") << [
+								Div(Id="simulate-example-main") << [
+									Div(Class="terminal") << [
+										Pre(Id="simulate-example", Class="terminal-window", inline=True),
+									],
+								],
+								Img(Id="simulate-example-imgs", Src="photo/hsesim.png", Style="max-width: 100%; height: 30rem; border-radius: 0.75rem;"),
+							], Div(Class="banner-lt") << [
+								H2() << "Flexible to your needs",
+								P(Style="margin: 0 0 1rem 0;") << "Want to make low level changes in the compiled circuits? Simulate your behavioral and digital specifications with random timing for verification. View the results in gtkwave or work directly on the command line.",
+								A(Id="gtkwave-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="simulate(true)", Dataview=True) << "View in gtkwave",
+								A(Id="simulate-button", Class="small-button", Onclick="simulate(false)") << "Simulate your devices",
+							],
+						],
+					],
+
+
+
+					A(Id="download"),
+					Div(Id="download-box", Class="box") << [
+						Div(Class="banner") << [
+							Div(Class="banner-bh") << [
+								H1() << "Get started with Loom",
+								P(Style="text-align: center;") << "A pre-alpha release is available for Linux, Windows, and macOS.",
+							], Div(Class="banner-lt", Style="padding-top: 6.5rem;") << [
+								H4() << "Linux",
+								P() << "Download the latest version for Ubuntu 18.04 or later.",
+								P() << [
+									A(Class="small-green-button", Href="") << "Download",
+									A(Class="small-button", Href="docs.py") << "Docs",
+									A(Class="small-button", Href="forum.py") << "Forum",
+								],
+								H4(Style="margin-top: 2rem;") << "Windows",
+								P() << "Download the latest version for Windows 10 or later.",
+								P() << [
+									A(Class="small-green-button", Href="") << "Download",
+									A(Class="small-button", Href="docs.py") << "Docs",
+									A(Class="small-button", Href="forum.py") << "Forum",
+								],
+								H4(Style="margin-top: 2rem;") << "macOS",
+								P() << "Download the latest version for macOS 10.15 or later.",
+								P() << [
+									A(Class="small-green-button", Href="") << "Download",
+									A(Class="small-button", Href="docs.py") << "Docs",
+									A(Class="small-button", Href="forum.py") << "Forum",
+								],
+							], Div(Class="banner-ri", Style="height: 45rem; background-image: url('photo/control.svg');") << [
+							],
+						],
+					],
+
+
+
+					A(Id="sponsor"),
+					Div(Id="sponsor-box", Class="box", Style="background-color: rgb(244, 244, 245);") << [
+						Div(Class="banner") << [
+							Div(Class="banner-bh") << [
+								H1() << [
+									"Support the Development of Loom",
+								],
+								P(Style="text-align: center;") << "Become a sponsor and help us improve and maintain Loom. Your support is greatly appreciated.",
+
+								Div(Style="background-color: rgb(255,255,255); border-radius: 0.75rem; width: 20rem; text-align: center; padding: 2rem 1rem 2rem 1rem; margin: 2rem 1rem 2rem 1rem; border: 1px solid rgb(128,128,128); display: inline-block;") << [
+									H3(Style="text-align: center; margin: 0 0 1rem 0;") << "Individual",
+									H4(Style="text-align: center; margin: 0 0 2rem 0;") << "$1 to $100 / month",
+									P(Style="text-align: center; margin: 0 0 2rem 0;") << "Support the development of Loom and receive exclusive updates.",
+									A(Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << "Become a Sponsor",
+								],
+
+								Div(Style="background-color: rgb(255,255,255); border-radius: 0.75rem; width: 20rem; text-align: center; padding: 2rem 1rem 2rem 1rem; margin: 2rem 1rem 2rem 1rem; border: 1px solid rgb(128,128,128); display: inline-block;") << [
+									H3(Style="text-align: center; margin: 0 0 1rem 0;") << "Organization",
+									H4(Style="text-align: center; margin: 0 0 2rem 0;") << "$2,000 / month",
+									P(Style="text-align: center; margin: 0 0 2rem 0;") << "Support the development of Loom. Your bug tickets are prioritized, you have direct access to the team, and you may display your logo prominantly on this site.",
+									A(Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << "Become a Sponsor",
+								],
+
+								Div(Style="background-color: rgb(255,255,255); border-radius: 0.75rem; width: 20rem; text-align: center; padding: 2rem 1rem 2rem 1rem; margin: 2rem 1rem 2rem 1rem; border: 1px solid rgb(128,128,128); display: inline-block;") << [
+									H3(Style="text-align: center; margin: 0 0 1rem 0;") << "Enterprise",
+									H4(Style="text-align: center; margin: 0 0 2rem 0;") << "$10,000 / month",
+									P(Style="text-align: center; margin: 0 0 2rem 0;") << "Support the development of Loom. Your bug tickets are prioritized, you have direct access to the team, and you may display your logo prominantly on this site. Your feature requests are prioritized, and you are given an advisary position in which you may guide development with bi-weekly 1:1s. You are allocated half an engineer for every multiple of this sponsorship.",
+									A(Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Href="https://www.paypal.com/donate/?hosted_button_id=6633ZXZTED63A") << "Become a Sponsor",
+								],
+							],
+						],	
+					],
+
+
+
+					A(Id="about"),
+					Div(Id="about-box", Class="box") << [	
+						Div(Class="banner") << [
+							Div(Class="banner-bh") << [
+								Img(Id="logo-img", Src="logo.svg"),
+								P(Style="margin: 5rem 0 5rem 0;") << "<b>Broccoli</b> was founded in December of 2021 to bring about a categorical improvement in compute performance, and we believe that asynchronous design is the next step. With asynchronous design, it is possible to implement complex control that takes advantage of pareto rules in the workload to dramatically improve performance and power. However, asynchronous design has proven to be far too difficult for commercial viability. Our first step toward achieving our mission is to remove that blocker with Loom.",
+								Div(Class="contact-card") << [
+									Div(Class="contact-photo") << (Div(Class="contact-img-frame") << Img(Class="contact-img", Src="photo/ned.jpg")),
+									Div(Class="contact-info") << (P() << [A(Href="https://nedbingham.com") << "Ned Bingham, Founder", Address() << "edward.bingham@broccolimicro.io"]),
 								],
 							],
 						],
 					],
-					A(Id="about"),
-					Div(Id="about-box", Class="box") << [
-						Div(Class="left-banner") << [
-							Img(Id="logo-img", Src="logo.svg"),
-							P(Style="margin: 5rem 0px 7rem 0px;") << "Broccoli was founded in 2021 to bring about a categorical improvement in compute performance. Autonomous systems require reconfigurable Digital Signal Processors (DSP) with order of magnitude improvements in throughput, power, latency, and capacity. Field Programmable Gate Arrays push timing and pipeline management challenges to the user, making them very difficult to use. With the added challenge of managing multiple clock domains, designs often have a low operating frequency and therefore throughput unless significant time and effort are taken to tune the design and its mapping. Broccoli is solving these challenges in hardware to dramatically simplify the compilation and mapping process, and allow designers to iterate on designs quickly while meeting their power and performance constraints."
-						],
-						Div(Class="banner") << [
-							H1() << "Team",
-							Div(Class="contact-card") << [
-								Div(Class="contact-photo") << (Div(Class="contact-img-frame") << Img(Class="contact-img", Src="photo/ned.jpg")),
-								Div(Class="contact-info") << (P() << [A(Href="https://nedbingham.com") << "Ned Bingham, Founder", Address() << "edward.bingham@broccolimicro.io"]),
-							],
-						]
-					],
+	
 				],
 				Script() << "startWindow();"
 			]
