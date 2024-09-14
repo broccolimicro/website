@@ -171,7 +171,7 @@ $ klayout wchb1b.gds
 
 								Div(Style="background-color: rgb(255,255,255); border-radius: 0.75rem; width: 20rem; text-align: center; padding: 2rem 1rem 2rem 1rem; margin: 2rem 1rem 2rem 1rem; border: 1px solid rgb(128,128,128); display: inline-block;") << [
 									H3(Style="text-align: center; margin: 0 0 1rem 0;") << "Individual",
-									H4(Style="text-align: center; margin: 0 0 2rem 0;") << "$1 to $100 / month",
+									H4(Style="text-align: center; margin: 0 0 2rem 0;") << "$10 / month",
 									P(Style="text-align: center; margin: 0 0 2rem 0;") << "Support the development of Loom and receive exclusive updates.",
 									A(Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Href="https://github.com/sponsors/broccolimicro/sponsorships?tier_id=428571&preview=false") << "Become a Sponsor",
 								],
