@@ -144,7 +144,7 @@ b {
 }
 
 .terminal {
-	display: grid;
+	display: inline-grid;
 	grid-template-columns: 100%;
 	grid-template-rows: 2rem auto;
 	column-gap: 0;
@@ -472,6 +472,7 @@ body {
 		"bli"
 		"bri"
 		"bf";
+	width: 90%;
 }
 
 #nav-top {
