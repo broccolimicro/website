@@ -130,10 +130,10 @@ $ klayout wchb1b.gds
 						Div(Class="banner") << [
 							Div(Class="banner-bh") << [
 								H1() << "Get started with Loom",
-								P(Style="text-align: center;") << "A pre-alpha release is available for Linux, Windows, and macOS.",
+								P(Style="text-align: center;") << "A pre-alpha release is currently only available for Linux.",#, Windows, and macOS.",
 							], Div(Class="banner-lt", Style="padding-top: 6.5rem;") << [
 								H4() << "Linux",
-								P() << "Download the latest version for Ubuntu 18.04 or later.",
+								P() << "Download the latest version for Ubuntu 24.04 or later.",
 								P() << [
 									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
