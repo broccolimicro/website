@@ -28,7 +28,7 @@ if __name__ == "__main__":
 								P(Style="margin: 0 0 1rem 0; text-align: center;") << "A programming language for quasi-delay insensitive asynchronous circuits.",
 								Ul(Style="margin: 0 0 1rem 0;") << [
 									Li() << (A(href="#synthesis") << "Logic synthesis from functional specifications"),
-									Li() << (A(href="#layout") << "Automated custom cell layout, placement, and routing"),
+									Li() << (A(href="#layout") << "Automated custom cell layout"),#, placement, and routing"),
 									Li() << (A(href="#simulation") << "Behavioral and digital simulation"),
 								],
 								A(Class="button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", href="#download") << "Get Started",
@@ -85,16 +85,17 @@ if __name__ == "__main__":
 							Div(Class="banner-li") << [
 								Div(Id="layout-example", Class="terminal") << [
 									Pre(Class="terminal-window", inline=True) << [
-Span(Style="font-weight: 700;", inline=True) << "$ lm wchb1b.hse sky130.py",
+Span(Style="font-weight: 700;", inline=True) << "$ lm cells.spi sky130.py",# wchb1b.hse sky130.py",
 """
-$ klayout wchb1b.gds
+$ klayout cells.gds
 """,
 									],
 								],
 								Img(Id="layout-example-imgs", Src="photo/cell_01.png", Style="max-width: 100%; height: 30rem; border-radius: 0.75rem; display: none;"),
 							], Div(Class="banner-rt") << [
-								H2() << "Automated physical design",
-								P(Style="margin: 0 0 1rem 0;") << "Devices are sized and cell layouts are generated automatically. Design rules are specified through a simple python interface. This reduces the timeline for physical design from 6 months to the click of a button.",
+								H2() << "Automating physical design", #Automated physical design
+                                # Devices are sized and
+								P(Style="margin: 0 0 1rem 0;") << "Cell layouts are generated automatically. Design rules are specified through a simple python interface. This reduces the timeline for physical design from 6 months to the click of a button.",
 								P(Style="margin: 0 0 1rem 0;") << [
 									"See the spec for ",
 									A(href="https://github.com/broccolimicro/floret/blob/main/tech/sky130.py") << "Skywater 130nm",
