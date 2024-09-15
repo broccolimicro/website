@@ -35,7 +35,7 @@ def Navigate(whitepaper=False):
 					A(Class="nav-button", Id="about-button", Href="/#about")  << "About",
 					A(Class="nav-button", Id="docs-button", Href="https://github.com/broccolimicro/loom")  << "Docs",
 					A(Class="nav-button", Id="courses-button", Href="/courses.py")  << "Courses",
-					#A(Class="nav-button", Id="forum-button", Href="/forum.py")  << "Forum",
+					A(Class="nav-button", Id="forum-button", Href="https://github.com/broccolimicro/loom/discussions")  << "Forum",
 				], Div(Id="nav-right") << [
 					A(Class="nav-button", Href="/BroccoliCapabilities.pdf") << "Government",
 				], Div(Id="nav-small") << [
@@ -50,7 +50,7 @@ def Navigate(whitepaper=False):
 					A(Class="nav-button", Href="/#about", Onclick="toggleMenu()")  << "About",
 					A(Class="nav-button", Href="https://github.com/broccolimicro/loom", Onclick="toggleMenu()")  << "Docs",
 					A(Class="nav-button", Href="/courses.py", Onclick="toggleMenu()")  << "Courses",
-					#A(Class="nav-button", Href="/forum.py", Onclick="toggleMenu()")  << "Forum",
+					A(Class="nav-button", Href="https://github.com/broccolimicro/loom/discussions", Onclick="toggleMenu()")  << "Forum",
 					A(Class="nav-button", Href="/BroccoliCapabilities.pdf", Onclick="toggleMenu()") << "Government",
 				],
 			],

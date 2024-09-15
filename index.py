@@ -147,7 +147,7 @@ $ klayout cells.gds
 								P() << [
 									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
-									#A(Class="small-button", Href="forum.py") << "Forum",
+									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 								#H4(Style="margin-top: 2rem;") << "Windows",
 								#P() << "Download the latest version for Windows 10 or later.",
