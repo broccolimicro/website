@@ -157,7 +157,7 @@ $ klayout cells.gds
 									A(Class="small-button", Href="forum.py") << "Forum",
 								],
 								H4(Style="margin-top: 2rem;") << "macOS",
-								P() << "Download the v.0.7.0 for macOS 12.0 or later.",
+								P() << "Download the v0.7.0 for macOS 12.0 or later.",
 								P() << [
 									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-macos") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
