@@ -140,29 +140,29 @@ $ klayout cells.gds
 						Div(Class="banner") << [
 							Div(Class="banner-bh") << [
 								H1() << "Get started with Loom",
-								P(Style="text-align: center;") << "A pre-alpha release is currently only available for Linux.",#, Windows, and macOS.",
+								P(Style="text-align: center;") << "A pre-alpha release is available for Linux, Windows, and macOS.",
 							], Div(Class="banner-lt", Style="padding-top: 6.5rem;") << [
 								H4() << "Linux",
-								P() << "Download the latest version for Ubuntu 24.04 or later.",
+								P() << "Download the v0.7.0 for Ubuntu 22.04 or later.",
 								P() << [
-									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases") << "Download",
+									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-linux") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
-								#H4(Style="margin-top: 2rem;") << "Windows",
-								#P() << "Download the latest version for Windows 10 or later.",
-								#P() << [
-								#	A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases") << "Download",
-								#	A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
-								#	A(Class="small-button", Href="forum.py") << "Forum",
-								#],
-								#H4(Style="margin-top: 2rem;") << "macOS",
-								#P() << "Download the latest version for macOS 10.15 or later.",
-								#P() << [
-								#	A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases") << "Download",
-								#	A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
-								#	A(Class="small-button", Href="forum.py") << "Forum",
-								#],
+								H4(Style="margin-top: 2rem;") << "Windows",
+								P() << "Download the v0.7.0 for Windows 10 or later.",
+								P() << [
+									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-windows.exe") << "Download",
+									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
+									A(Class="small-button", Href="forum.py") << "Forum",
+								],
+								H4(Style="margin-top: 2rem;") << "macOS",
+								P() << "Download the v.0.7.0 for macOS 12.0 or later.",
+								P() << [
+									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-macos") << "Download",
+									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
+									A(Class="small-button", Href="forum.py") << "Forum",
+								],
 							], Div(Class="banner-ri", Style="height: 45rem; background-image: url('photo/control.svg');") << [
 							],
 						],
