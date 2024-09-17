@@ -62,7 +62,7 @@ gtag('config', 'G-FT6E284Y58');""",
 					Div(Class="loom-box box", Style="background-color: rgb(244, 244, 245);") << [
 						A(Id="problem"),
 						Div(Class="banner") << [
-							Div(Class="banner-li", Style="height: 20rem; background-image: url('photo/memory2.png');") << [
+							Div(Class="banner-li", Style="height: 20rem; background-image: url('photo/memory.png');") << [
 							], Div(Class="banner-rt") << [
 								H2() << [
 									"Chip design is challenging",
