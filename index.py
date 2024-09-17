@@ -26,6 +26,7 @@ gtag('config', 'G-FT6E284Y58');""",
 				Script(Src="index.js"),
 			],
 			Body() << [
+				A(Id="skip-link", Href="#loom") << "Skip to main content",
 				Navigate("whitepaper" in cookies),
 				Div(Id="main") << [
 					A(Id="loom"),
