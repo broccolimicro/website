@@ -1,5 +1,10 @@
 startWindow = function() {
-	
+	let scrollHeight = Math.max(
+		document.body.scrollHeight, document.documentElement.scrollHeight,
+		document.body.offsetHeight, document.documentElement.offsetHeight,
+		document.body.clientHeight, document.documentElement.clientHeight
+	);
+	downarrow = document.querySelector("#downarrow");
 	cellimgs = document.querySelector("#layout-example-imgs");
 	cellidx = 0;
 	cellcount = 6;
@@ -28,6 +33,7 @@ startWindow = function() {
 	layout();
 
 	window.onscroll = function() {
+		downarrow.style.opacity = Math.max(0, 300 - window.pageYOffset)/300;
 		for (var i = 0; i < sections.length; i++) {
 			bboxes = [...sections[i]]
 				.map(el => el.getBoundingClientRect());

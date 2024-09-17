@@ -55,12 +55,13 @@ gtag('config', 'G-FT6E284Y58');""",
 						],
 					],
 
+					Img(Id="downarrow", Src="photo/doubledownarrow.svg", Style="position: fixed; top: 80%; left: calc(50%-25px); width: 50px;"),
 
-			
+
 					Div(Class="loom-box box", Style="background-color: rgb(244, 244, 245);") << [
 						A(Id="problem"),
 						Div(Class="banner") << [
-							Div(Class="banner-li", Style="height: 20rem; background-image: url('photo/memory.png');") << [
+							Div(Class="banner-li", Style="height: 20rem; background-image: url('photo/memory2.png');") << [
 							], Div(Class="banner-rt") << [
 								H2() << [
 									"Chip design is challenging",
@@ -85,6 +86,7 @@ gtag('config', 'G-FT6E284Y58');""",
 								P(Style="margin: 0 0 1rem 0;") << "Synthesize your design directly from your functional specification. Synthesis is correct by construction and generates circuits that function correctly regardless of timing. This dramatically reduces the need for both functional and timing verification allowing you to focus on your product.",
 
 								A(Id="synthesis-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="synthesize()") << "Synthesize your design",
+								Img(Src="photo/leftcurvearrow.svg", Style="width: 100px; margin-bottom: 20px;"),
 							],
 						],
 
@@ -111,6 +113,7 @@ $ klayout cells.gds
 									".",
 								],
 								A(Id="layout-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="layout()", Dataview=True) << "Generate your layout",
+								Img(Src="photo/leftcurvearrow.svg", Style="width: 100px; margin-bottom: 20px;"),
 							],
 						],
 
@@ -129,6 +132,7 @@ $ klayout cells.gds
 								P(Style="margin: 0 0 1rem 0;") << "Want to make low level changes in the compiled circuits? Simulate your behavioral and digital specifications with random timing for verification. View the results in gtkwave or work directly on the command line.",
 								A(Id="gtkwave-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="simulate(true)", Dataview=True) << "View in gtkwave",
 								A(Id="simulate-button", Class="small-button", Onclick="simulate(false)") << "Simulate your devices",
+								Img(Src="photo/leftcurvearrow.svg", Style="width: 100px; margin-bottom: 20px;"),
 							],
 						],
 					],
