@@ -553,6 +553,11 @@ html {
 * {
 	border-radius: 0px;
 }
+
+#downarrow {
+	visibility: hidden;
+}
+
 }
 
 @media (max-width: 75rem) {
