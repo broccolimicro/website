@@ -155,6 +155,14 @@ b {
 	text-align: center;
 }
 
+.img-button .terminal:hover {
+	box-shadow: 0px 0px 20px rgb(0,0,0);
+}
+.img-button img:hover {
+	box-shadow: 0px 0px 20px rgb(0,0,0);
+}
+
+
 .terminal {
 	display: inline-grid;
 	grid-template-columns: 100%;

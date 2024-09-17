@@ -28,8 +28,7 @@ startWindow = function() {
 	]
 
 	synthesize();
-	simulate(false);
-	simulate(true);
+	simulate();
 	layout();
 
 	window.onscroll = function() {
@@ -120,7 +119,6 @@ function synthesize() {
 	var term = document.querySelector("#synthesis-example");
 	var button = document.querySelector("#synthesis-button");
 	if (button.hasAttribute("dataview")) {
-		button.textContent = "View your design";
 		button.removeAttribute("dataview");
 		term.innerHTML = `<b>$ lm wchb1b.hse</b>
 v0->L.f'1-
@@ -144,7 +142,6 @@ R.e&L.f&_Reset->v2-
 R.e&L.t&_Reset->v3-
 ~R.e&~L.t|~_Reset->v3+`
 	} else {
-		button.textContent = "Synthesize your design";
 		button.setAttribute("dataview","");
 		term.innerHTML = `<b>$ cat wchb1b.hse</b>
 (L.f-,L.t-; [L.e];
@@ -160,7 +157,9 @@ L.e+,R.f-,R.t-; [R.e & ~L.f & ~L.t];
  ] ||
 
 (R.e+; [~R.f & ~R.t];
-*[[R.f | R.t]; R.e-; [~R.f & ~R.t]; R.e+])'1`
+*[[R.f | R.t]; R.e-; [~R.f & ~R.t]; R.e+])'1
+
+<b>$ lm wchb1b.hse</b>`
 	}
 }
 
@@ -169,12 +168,10 @@ function layout() {
 	var imgs = document.querySelector("#layout-example-imgs");
 	var button = document.querySelector("#layout-button");
 	if (button.hasAttribute("dataview")) {
-		button.textContent = "View the commands";
 		button.removeAttribute("dataview");
 		term.style.display = "none";
 		imgs.style.display = "inline-block";
  	} else {
-		button.textContent = "Generate your layout";
 		button.setAttribute("dataview","");
 		term.style.display = "inline-grid";
 		imgs.style.display = "none";
@@ -467,51 +464,25 @@ GND-,Vdd+,L.f'1-,v0-,L.t'1-,v1+,L.e+,R.f-,R.t-,v2+,v3+,R.e'1+,R.f'1-,R.t'1-,_Res
 	var term2 = document.querySelector("#simulate-example-main");
 	var imgs = document.querySelector("#simulate-example-imgs");
 	var button = document.querySelector("#simulate-button");
-	var button2 = document.querySelector("#gtkwave-button");
-	if (button2.hasAttribute("dataview")) {
-		if (view) {
-			button2.removeAttribute("dataview");
-			button2.textContent = "View in terminal";
-			term2.style.display = "none";
-			imgs.style.display = "inline-block";
-		}
-		
-		if ((!view && button.hasAttribute("datahse")) || (view && !button.hasAttribute("datahse"))) {
-			if (!view) {
-				button.textContent = "Simulate your behavior";
-				button.removeAttribute("datahse");
-			}
-			term.innerHTML = prsim;
-			imgs.src="photo/prsim.png";
-		} else {
-			if (!view) {
-				button.textContent = "Simulate your circuit";
-				button.setAttribute("datahse","");
-			}
-			term.innerHTML = hsesim;
-			imgs.src="photo/hsesim.png";
-		}
+	console.log(button.getAttribute("datastep"));
+	var step = (Number(button.getAttribute("datastep"))+1)%4;
+	console.log(step);	
+	button.setAttribute("datastep", step);
+	if (step == 0) {
+		term.innerHTML = hsesim;
+		imgs.src="photo/hsesim.png";
+		term2.style.display = "none";
+		imgs.style.display = "inline-block";
+	} else if (step == 1) {
+		term2.style.display = "inline-grid";
+		imgs.style.display = "none";
+	} else if (step == 2) {
+		term.innerHTML = prsim;
+		imgs.src="photo/prsim.png";
+		term2.style.display = "none";
+		imgs.style.display = "inline-block";
 	} else {
-		if (view) {
-			button2.setAttribute("dataview","");
-			button2.textContent = "View in gtkwave";
-			term2.style.display = "inline-grid";
-			imgs.style.display = "none";
-		}
-		if ((!view && button.hasAttribute("datahse")) || (view && !button.hasAttribute("datahse"))) {
-			if (!view) {
-				button.textContent = "Simulate your behavior";
-				button.removeAttribute("datahse");
-			}
-			term.innerHTML = prsim;
-			imgs.src="photo/prsim.png";
-		} else {
-			if (!view) {
-				button.textContent = "Simulate your circuit";
-				button.setAttribute("datahse","");
-			}
-			term.innerHTML = hsesim;
-			imgs.src="photo/hsesim.png";
-		}
+		term2.style.display = "inline-grid";
+		imgs.style.display = "none";
 	}
 }

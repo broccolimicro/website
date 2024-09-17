@@ -77,17 +77,16 @@ gtag('config', 'G-FT6E284Y58');""",
 						A(Id="synthesis"),
 						Div(Class="banner") << [
 							Div(Class="banner-ri") << [
-								Div(Class="terminal") << [
-									Pre(Id="synthesis-example", Class="terminal-window", inline=True),
+								A(Id="synthesis-button", Class="img-button", Onclick="synthesize()") << [
+									Div(Class="terminal") << [
+										Pre(Id="synthesis-example", Class="terminal-window", inline=True),
+									],
 								],
 							], Div(Class="banner-lt") << [
 								H2() << [
 									"Correct by construction", Br(), "No timing required",
 								],
 								P(Style="margin: 0 0 1rem 0;") << "Synthesize your design directly from your functional specification. Synthesis is correct by construction and generates circuits that function correctly regardless of timing. This dramatically reduces the need for both functional and timing verification allowing you to focus on your product.",
-
-								A(Id="synthesis-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="synthesize()") << "Synthesize your design",
-								Img(Src="photo/leftcurvearrow.svg", Style="width: 100px; margin-bottom: 20px;"),
 							],
 						],
 
@@ -95,15 +94,18 @@ gtag('config', 'G-FT6E284Y58');""",
 						A(Id="layout"),
 						Div(Class="banner") << [
 							Div(Class="banner-li") << [
-								Div(Id="layout-example", Class="terminal") << [
-									Pre(Class="terminal-window", inline=True) << [
-Span(Style="font-weight: 700;", inline=True) << "$ lm cells.spi sky130.py",# wchb1b.hse sky130.py",
+								A(Id="layout-button", Class="img-button", Onclick="layout()", Dataview=True) << [
+
+									Div(Id="layout-example", Class="terminal") << [
+										Pre(Class="terminal-window", inline=True) << [
+	Span(Style="font-weight: 700;", inline=True) << "$ lm cells.spi sky130.py",# wchb1b.hse sky130.py",
 """
 $ klayout cells.gds
 """,
+										],
 									],
+									Img(Id="layout-example-imgs", Class="feature-img", Src="photo/cell_01.png", Style="display: none;"),
 								],
-								Img(Id="layout-example-imgs", Class="feature-img", Src="photo/cell_01.png", Style="display: none;"),
 							], Div(Class="banner-rt") << [
 								H2() << "Automating physical design", #Automated physical design
                                 # Devices are sized and
@@ -113,8 +115,6 @@ $ klayout cells.gds
 									A(href="https://github.com/broccolimicro/floret/blob/main/tech/sky130.py") << "Skywater 130nm",
 									".",
 								],
-								A(Id="layout-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="layout()", Dataview=True) << "Generate your layout",
-								Img(Src="photo/leftcurvearrow.svg", Style="width: 100px; margin-bottom: 20px;"),
 							],
 						],
 
@@ -122,18 +122,17 @@ $ klayout cells.gds
 						A(Id="simulation"),
 						Div(Class="banner") << [
 							Div(Class="banner-ri") << [
-								Div(Id="simulate-example-main") << [
-									Div(Class="terminal") << [
-										Pre(Id="simulate-example", Class="terminal-window", inline=True),
+								A(Id="simulate-button", Class="img-button", Onclick="simulate()", Datastep=-1) << [
+									Div(Id="simulate-example-main") << [
+										Div(Class="terminal") << [
+											Pre(Id="simulate-example", Class="terminal-window", inline=True),
+										],
 									],
+									Img(Id="simulate-example-imgs", Class="feature-img", Src="photo/hsesim.png"),
 								],
-								Img(Id="simulate-example-imgs", Class="feature-img", Src="photo/hsesim.png"),
 							], Div(Class="banner-lt") << [
 								H2() << "Flexible to your needs",
 								P(Style="margin: 0 0 1rem 0;") << "Want to make low level changes in the compiled circuits? Simulate your behavioral and digital specifications with random timing for verification. View the results in gtkwave or work directly on the command line.",
-								A(Id="gtkwave-button", Class="small-button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", Onclick="simulate(true)", Dataview=True) << "View in gtkwave",
-								A(Id="simulate-button", Class="small-button", Onclick="simulate(false)") << "Simulate your devices",
-								Img(Src="photo/leftcurvearrow.svg", Style="width: 100px; margin-bottom: 20px;"),
 							],
 						],
 					],
