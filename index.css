@@ -215,6 +215,10 @@ b {
 	text-decoration: none;
 }
 
+.button:hover {
+	box-shadow: 0px 0px 10px rgb(100,100,100);
+}
+
 .green-button {
 	display: inline-block;
 	background-color: rgb(10, 133, 55);
@@ -228,6 +232,10 @@ b {
 	font-size: 1.2rem;
 	font-weight: 600;
 	text-decoration: none;
+}
+
+.green-button:hover {
+	box-shadow: 0px 0px 10px rgb(100,100,100);
 }
 
 .small-button {
@@ -244,6 +252,10 @@ b {
 	text-decoration: none;
 }
 
+.small-button:hover {
+	box-shadow: 0px 0px 10px rgb(100,100,100);
+}
+
 .small-green-button {
 	display: inline-block;
 	background-color: rgb(10, 133, 55);
@@ -257,6 +269,10 @@ b {
 	font-size: 1.2rem;
 	font-weight: 500;
 	text-decoration: none;
+}
+
+.small-green-button:hover {
+	box-shadow: 0px 0px 10px rgb(100,100,100);
 }
 
 .sponsor-tier {

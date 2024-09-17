@@ -32,7 +32,14 @@ startWindow = function() {
 	layout();
 
 	window.onscroll = function() {
-		downarrow.style.opacity = Math.max(0, 300 - window.pageYOffset)/300;
+		var value = Math.max(0, 300 - window.pageYOffset)/300;
+		if (value > 0) {
+			downarrow.style.display = "inline-block";
+			downarrow.style.opacity = value;
+		} else {
+			downarrow.style.display = "none";
+		}
+			
 		for (var i = 0; i < sections.length; i++) {
 			bboxes = [...sections[i]]
 				.map(el => el.getBoundingClientRect());
