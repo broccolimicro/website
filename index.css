@@ -35,9 +35,10 @@ b {
 
 #downarrow {
 	position: fixed;
-	bottom: 100px;
+	bottom: 50px;
 	left: calc(50%-25px);
 	width: 50px;
+	cursor: pointer;
 }
 
 #header {
