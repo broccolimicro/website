@@ -8,6 +8,8 @@ import os
 if __name__ == "__main__":
 	cookies = SimpleCookie(os.environ.get('HTTP_COOKIE', ''))
 
+	currentRelease = "0.8.0"
+
 	print(Document() << [
 		Doctype(Html=True),
 		Html() << [
@@ -144,26 +146,26 @@ $ klayout cells.gds
 						Div(Class="banner") << [
 							Div(Class="banner-bh") << [
 								H1() << "Get started with Loom",
-								P(Style="text-align: center;") << "Version 0.8.0 (pre-alpha) is available for Linux, Windows, and macOS.",
+								P(Style="text-align: center;") << f"Version {currentRelease} (pre-alpha) is available for Linux, Windows, and macOS.",
 							], Div(Class="banner-lt", Style="padding-top: 6.5rem;") << [
 								H4() << "Linux",
 								P() << "Download the latest release for Ubuntu 22.04 or later.",
 								P() << [
-									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.8.0/lm-linux.deb") << "Download",
+									A(Class="small-green-button", Href=f"https://github.com/broccolimicro/loom/releases/download/v{currentRelease}/lm-linux.deb") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 								H4(Style="margin-top: 2rem;") << "Windows",
 								P() << "Download the latest release for Windows 10 or later.",
 								P() << [
-									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.8.0/lm-windows.zip") << "Download",
+									A(Class="small-green-button", Href=f"https://github.com/broccolimicro/loom/releases/download/v{currentRelease}/lm-windows.zip") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 								H4(Style="margin-top: 2rem;") << "macOS",
 								P() << "Download the latest release for macOS 12.0 or later.",
 								P() << [
-									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.8.0/lm-macos") << "Download",
+									A(Class="small-green-button", Href=f"https://github.com/broccolimicro/loom/releases/download/v{currentRelease}/lm-macos") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
