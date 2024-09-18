@@ -1,7 +1,8 @@
 html {
 	font-variant-ligatures: none;
 	font-family: 'Inter', sans-serif;
-  --font-sans-serif: 'Inter';
+	--font-sans-serif: 'Inter';
+	scroll-behavior: smooth;
 }
 
 * {
