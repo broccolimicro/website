@@ -158,14 +158,14 @@ $ klayout cells.gds
 								P() << [
 									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-windows.zip") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
-									A(Class="small-button", Href="forum.py") << "Forum",
+									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 								H4(Style="margin-top: 2rem;") << "macOS",
 								P() << "Download the latest release for macOS 12.0 or later.",
 								P() << [
 									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-macos") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
-									A(Class="small-button", Href="forum.py") << "Forum",
+									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 							], Div(Class="banner-ri", Style="height: 45rem; background-image: url('photo/control.svg');") << [
 							],
