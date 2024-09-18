@@ -149,7 +149,7 @@ $ klayout cells.gds
 								H4() << "Linux",
 								P() << "Download the latest release for Ubuntu 22.04 or later.",
 								P() << [
-									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-linux") << "Download",
+									A(Class="small-green-button", Href="https://github.com/broccolimicro/loom/releases/download/v0.7.0/lm-linux.deb") << "Download",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
