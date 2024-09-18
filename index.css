@@ -33,6 +33,13 @@ b {
 	z-index: 0;
 }
 
+#downarrow {
+	position: fixed;
+	bottom: 100px;
+	left: calc(50%-25px);
+	width: 50px;
+}
+
 #header {
 	position: fixed;
 	top: 0%;
