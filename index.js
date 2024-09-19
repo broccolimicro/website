@@ -164,9 +164,7 @@ L.e+,R.f-,R.t-; [R.e & ~L.f & ~L.t];
  ] ||
 
 (R.e+; [~R.f & ~R.t];
-*[[R.f | R.t]; R.e-; [~R.f & ~R.t]; R.e+])'1
-
-<b>$ lm wchb1b.hse</b>`
+*[[R.f | R.t]; R.e-; [~R.f & ~R.t]; R.e+])'1`
 	}
 }
 
