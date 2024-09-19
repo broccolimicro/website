@@ -32,7 +32,7 @@ gtag('config', 'G-FT6E284Y58');""",
 				Navigate("whitepaper" in cookies),
 				Div(Id="main") << [
 					A(Id="loom"),
-					Div(Class="loom-box box") << [
+					Div(Class="loom-box box", Style="height:100vh;") << [
 						Div(Class="banner", Style="max-width: 42rem;") << [
 							Div(Class="banner-bh") << [
 								H1() << "Loom",
