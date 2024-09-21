@@ -472,10 +472,18 @@ h4 {
 	background: no-repeat right;
 }
 
+.banner-lt h2 {
+	text-align: left;
+}
+
 .banner-rt {
 	grid-area: brt;
 	text-align: left;
 	background: no-repeat left;
+}
+
+.banner-rt h2 {
+	text-align: left;
 }
 
 .banner-ri {

@@ -89,6 +89,10 @@ gtag('config', 'G-FT6E284Y58');""",
 									"Correct by construction", Br(), "No timing required",
 								],
 								P(Style="margin: 0 0 1rem 0;") << "Synthesize your design directly from your functional specification. Synthesis is correct by construction and generates circuits that function correctly regardless of timing. This dramatically reduces the need for both functional and timing verification allowing you to focus on your product.",
+								P(Style="width: 100%; text-align: right; font-weight: 600; margin-top: 6rem; cursor: pointer;", Onclick="synthesize()") << [
+									"Click and scroll to synthesize the circuit",
+									Img(Src="photo/rightarrow.svg", Style="display: inline-block; width: 100px;"),
+								],
 							],
 						],
 
@@ -100,8 +104,8 @@ gtag('config', 'G-FT6E284Y58');""",
 
 									Div(Id="layout-example", Class="terminal") << [
 										Pre(Class="terminal-window", inline=True) << [
-	Span(Style="font-weight: 700;", inline=True) << "$ lm cells.spi sky130.py",# wchb1b.hse sky130.py",
 """
+<b>$ lm cells.spi sky130.py</b> # generate the cell layouts
 $ klayout cells.gds
 """,
 										],
@@ -116,6 +120,10 @@ $ klayout cells.gds
 									"See the spec for ",
 									A(href="https://github.com/broccolimicro/floret/blob/main/tech/sky130.py") << "Skywater 130nm",
 									".",
+								],
+								P(Style="width: 100%; text-align: left; font-weight: 600; margin-top: 6rem; cursor: pointer;", Onclick="layout()") << [
+									Img(Src="photo/leftarrow.svg", Style="display: inline-block; width: 100px;"),
+									"Click to see how easy layout is",
 								],
 							],
 						],
@@ -135,6 +143,10 @@ $ klayout cells.gds
 							], Div(Class="banner-lt") << [
 								H2() << "Flexible to your needs",
 								P(Style="margin: 0 0 1rem 0;") << "Want to make low level changes in the compiled circuits? Simulate your behavioral and digital specifications with random timing for verification. View the results in gtkwave or work directly on the command line.",
+								P(Style="width: 100%; text-align: right; font-weight: 600; margin-top: 6rem; cursor: pointer;", Onclick="simulate()") << [
+									"Click and scroll to see the interactive CLI",
+									Img(Src="photo/rightarrow.svg", Style="display: inline-block; width: 100px;"),
+								],
 							],
 						],
 					],

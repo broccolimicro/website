@@ -127,27 +127,81 @@ function synthesize() {
 	var button = document.querySelector("#synthesis-button");
 	if (button.hasAttribute("dataview")) {
 		button.removeAttribute("dataview");
-		term.innerHTML = `<b>$ lm wchb1b.hse</b>
-v0->L.f'1-
-~v0->L.f'1+
-v1->L.t'1-
-~v1->L.t'1+
-R.t|R.f->L.e-
-~R.f&~R.t->L.e+
-v2->R.f-
-~v2->R.f+
-v3->R.t-
-~v3->R.t+
-R.t'1|R.f'1->R.e'1-
-~R.f'1&~R.t'1->R.e'1+
-L.e'1&v1&_Reset->v0- {v1}
-~L.e'1|~v1|~_Reset->v0+
-L.e'1&v0&_Reset->v1- {v0}
-~L.e'1|~v0|~_Reset->v1+
-R.e&L.f&_Reset->v2-
-~R.e&~L.f|~_Reset->v2+
-R.e&L.t&_Reset->v3-
-~R.e&~L.t|~_Reset->v3+`
+		term.innerHTML = `<b>$ lm wchb1b.hse</b> # generate the production rules
+require driven, stable, noninterfering
+@_12&R.t<1>|_Reset<3>&L.t<3>&R.e<3>->v3-
+@_13&~R.t<1>|~_Reset<1>|~L.t<2>&~R.e<2>->v3+
+@_12&R.f<1>|_Reset<3>&L.f<3>&R.e<3>->v2-
+@_13&~R.f<1>|~_Reset<1>|~L.f<2>&~R.e<2>->v2+
+_Reset<3>&v0<3>&L.e'1<3>->v1- {v0}
+~_Reset<1>|~v0<1>|~L.e'1<1>->v1+
+_Reset<3>&v1<3>&L.e'1<3>->v0- {v1}
+~_Reset<1>|~v1<1>|~L.e'1<1>->v0+
+R.f'1<1>|R.t'1<1>->R.e'1-
+~R.t'1<2>&~R.f'1<2>->R.e'1+
+v3<1>->R.t-
+~v3<1>->R.t+
+v2<1>->R.f-
+~v2<1>->R.f+
+R.f<1>|R.t<1>->L.e-
+~R.t<2>&~R.f<2>->L.e+
+v1<1>->L.t'1-
+~v1<1>->L.t'1+
+v0<1>->L.f'1-
+~v0<1>->L.f'1+
+Vdd<0.1>->_12- [weak]
+~GND<0.1>->_13+ [weak]
+
+<b>$ lm -n wchb1b.hse sky130.py</b> # generate the spice netlist
+.subckt top GND Vdd
+x0 L_0f_31 v0 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x1 L_0f_31 v0 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x2 L_0t_31 v1 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x3 L_0t_31 v1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x4 L_0e R_0t GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x5 L_0e R_0f GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x6 L_0e R_0f __0 Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x7 __0 R_0t Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x8 R_0f v2 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x9 R_0f v2 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x10 R_0t v3 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x11 R_0t v3 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x12 R_0e_31 R_0t_31 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x13 R_0e_31 R_0f_31 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x14 R_0e_31 R_0f_31 __1 Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x15 __1 R_0t_31 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x16 v0 L_0e_31 __2 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x17 __2 v1 __3 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x18 __3 __Reset GND GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x19 v0 L_0e_31 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x20 v0 v1 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x21 v0 __Reset Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x22 v1 L_0e_31 __4 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x23 __4 v0 __5 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x24 __5 __Reset GND GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x25 v1 L_0e_31 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x26 v1 v0 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x27 v1 __Reset Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x28 v2 R_0e __6 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x29 __6 L_0f __7 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x30 __7 __Reset GND GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x31 v2 R_0e __8 Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x32 __8 L_0f Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x33 v2 __Reset Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x34 v3 R_0e __9 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x35 __9 L_0t __10 GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x36 __10 __Reset GND GND sky130_fd_pr__nfet_01v8 w=1.35u l=0.15u
+x37 v3 R_0e __11 Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x38 __11 L_0t Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.9u l=0.15u
+x39 v3 __Reset Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x40 __12 Vdd GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=1.5u
+x41 __13 GND Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=1.5u
+x42 v2 R_0f __12 GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x43 v2 R_0f __13 Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+x44 v3 R_0t __12 GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
+x45 v3 R_0t __13 Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
+.ends
+.end`
 	} else {
 		button.setAttribute("dataview","");
 		term.innerHTML = `<b>$ cat wchb1b.hse</b>
