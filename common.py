@@ -24,10 +24,10 @@ def Navigate(whitepaper=False):
 	return Header(Id="header") << [
 		Nav(Id="nav") << [
 			Div(Id="nav-top") << [
-				Div(Id="nav-left") << [
+				A(Id="nav-left", Href="/#loom") << [
 					Div(Id="logo"),
-					A(Id="name", Href="/#loom") << "Broccoli",
-				], 
+					Div(Id="name") << "Broccoli",
+				],
 				Div(Id="nav-mid") << [
 					A(Class="nav-button", Id="loom-button", Href="/#problem") << "Loom",
 					A(Class="nav-button", Id="download-button", Href="/#download")  << "Download",
