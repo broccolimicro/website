@@ -115,7 +115,7 @@ $ klayout cells.gds
 							], Div(Class="banner-rt") << [
 								H2() << "Automating physical design", #Automated physical design
                                 # Devices are sized and
-								P(Style="margin: 0 0 1rem 0;") << "Cell layouts are generated automatically. Design rules are specified through a simple python interface. Only 14 minutes to layout all 2752 cells in the Skywater PDK. This reduces the timeline for physical design from 6 months to a coffee break.",
+								P(Style="margin: 0 0 1rem 0;") << "Cell layouts are generated automatically. Design rules are specified through a simple python interface. Only 14 minutes to layout all 2752 cells in the Skywater PDK. What would have taken 40 people 5 months to do manually has been reduced to a coffee break.",
 								P(Style="margin: 0 0 1rem 0;") << [
 									"See the spec for ",
 									A(href="https://github.com/broccolimicro/floret/blob/main/tech/sky130.py") << "Skywater 130nm",
@@ -123,7 +123,7 @@ $ klayout cells.gds
 								],
 								P(Style="width: 100%; text-align: left; font-weight: 600; margin-top: 6rem; cursor: pointer;", Onclick="layout()") << [
 									Img(Src="photo/leftarrow.svg", Style="display: inline-block; width: 100px;"),
-									"Click to see how easy layout is",
+									"Click to see the commands that generated these cells",
 								],
 							],
 						],

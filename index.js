@@ -152,6 +152,8 @@ v0<1>->L.f'1-
 Vdd<0.1>->_12- [weak]
 ~GND<0.1>->_13+ [weak]
 
+
+
 <b>$ lm -n wchb1b.hse sky130.py</b> # generate the spice netlist
 .subckt top GND Vdd
 x0 L_0f_31 v0 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
