@@ -33,7 +33,7 @@ def Navigate(whitepaper=False):
 					A(Class="nav-button", Id="download-button", Href="/#download")  << "Download",
 					A(Class="nav-button", Id="sponsor-button", Href="/#sponsor")  << "Sponsor",
 					A(Class="nav-button", Id="about-button", Href="/#about")  << "About",
-					A(Class="nav-button", Id="docs-button", Href="https://github.com/broccolimicro/loom")  << "Docs",
+					A(Class="nav-button", Id="docs-button", Href="https://broccolimicro.github.io/loom")  << "Docs",
 					#A(Class="nav-button", Id="courses-button", Href="/courses.py")  << "Courses",
 					A(Class="nav-button", Id="forum-button", Href="https://github.com/broccolimicro/loom/discussions")  << "Forum",
 				], Div(Id="nav-right") << [
@@ -48,7 +48,7 @@ def Navigate(whitepaper=False):
 					A(Class="nav-button", Href="/#download", Onclick="toggleMenu()")  << "Download",
 					A(Class="nav-button", Href="/#sponsor", Onclick="toggleMenu()")  << "Sponsor",
 					A(Class="nav-button", Href="/#about", Onclick="toggleMenu()")  << "About",
-					A(Class="nav-button", Href="https://github.com/broccolimicro/loom", Onclick="toggleMenu()")  << "Docs",
+					A(Class="nav-button", Href="https://broccolimicro.github.io/loom", Onclick="toggleMenu()")  << "Docs",
 					#A(Class="nav-button", Href="/courses.py", Onclick="toggleMenu()")  << "Courses",
 					A(Class="nav-button", Href="https://github.com/broccolimicro/loom/discussions", Onclick="toggleMenu()")  << "Forum",
 					A(Class="nav-button", Href="/BroccoliCapabilities.pdf", Onclick="toggleMenu()") << "Government",

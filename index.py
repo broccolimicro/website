@@ -164,21 +164,21 @@ $ klayout cells.gds
 								P() << "Download the latest release for Ubuntu 22.04 or later.",
 								P() << [
 									A(Class="small-green-button", Href=f"https://github.com/broccolimicro/loom/releases/download/v{currentRelease}/lm-linux.deb") << "Download",
-									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
+									A(Class="small-button", Href="https://broccolimicro.github.io/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 								H4(Style="margin-top: 2rem;") << "Windows",
 								P() << "Download the latest release for Windows 10 or later.",
 								P() << [
 									A(Class="small-green-button", Href=f"https://github.com/broccolimicro/loom/releases/download/v{currentRelease}/lm-windows.zip") << "Download",
-									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
+									A(Class="small-button", Href="https://broccolimicro.github.io/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 								H4(Style="margin-top: 2rem;") << "macOS",
 								P() << "Download the latest release for macOS 12.0 or later.",
 								P() << [
 									A(Class="small-green-button", Href=f"https://github.com/broccolimicro/loom/releases/download/v{currentRelease}/lm-macos") << "Download",
-									A(Class="small-button", Href="https://github.com/broccolimicro/loom") << "Docs",
+									A(Class="small-button", Href="https://broccolimicro.github.io/loom") << "Docs",
 									A(Class="small-button", Href="https://github.com/broccolimicro/loom/discussions") << "Forum",
 								],
 							], Div(Class="banner-ri", Style="height: 45rem; background-image: url('photo/control.svg');") << [
