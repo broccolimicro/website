@@ -12,10 +12,10 @@ html {
 }
 
 body {
-	display: flex;
 	text-align: center;
 	padding: 4.3rem 0 0 0;
 	height: 100%;
+	box-sizing: border-box;
 }
 
 b {
@@ -57,8 +57,9 @@ b {
 #main {
 	display: block;
 	width: 100%;
-	flex: 1;
+	height: 100%;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 #nav {

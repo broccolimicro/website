@@ -32,7 +32,7 @@ gtag('config', 'G-FT6E284Y58');""",
 				Navigate("whitepaper" in cookies),
 				A(Id="main-content"),
 				Div(Id="main") << [
-					Iframe(Src="https://broccolimicro.github.io/loom/", Width="100%", Frameborder="0", Style="height: 100%"),
+					Iframe(Src="https://broccolimicro.github.io/loom/", Width="100%", Frameborder="0", Style="height: 100%;"),
 				],
 				Script() << "startWindow();"
 			]
