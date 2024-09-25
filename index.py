@@ -32,7 +32,7 @@ gtag('config', 'G-FT6E284Y58');""",
 				Navigate("whitepaper" in cookies),
 				Div(Id="main") << [
 					A(Id="loom"),
-					Div(Class="loom-box box", Style="height:100vh;") << [
+					Div(Id="loom-box", Class="box", Style="height:100vh;") << [
 						Div(Class="banner", Style="max-width: 42rem;") << [
 							Div(Class="banner-bh") << [
 								H1() << "Loom",
@@ -61,8 +61,8 @@ gtag('config', 'G-FT6E284Y58');""",
 					A(Href="#problem") << Img(Id="downarrow", Src="photo/doubledownarrow.svg"),
 
 
-					Div(Class="loom-box box", Style="background-color: rgb(244, 244, 245);") << [
-						A(Id="problem"),
+					Div(Id="feature-box", Class="box", Style="background-color: rgb(244, 244, 245);") << [
+						A(Id="features"),
 						Div(Class="banner") << [
 							Div(Class="banner-li", Style="height: 20rem; background-image: url('photo/memory.png');") << [
 							], Div(Class="banner-rt") << [

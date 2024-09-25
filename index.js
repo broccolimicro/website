@@ -16,12 +16,14 @@ startWindow = function() {
 
 	buttons = [
 		document.querySelector("#loom-button"),
+		document.querySelector("#feature-button"),
 		document.querySelector("#download-button"),
 		document.querySelector("#sponsor-button"),
 		document.querySelector("#about-button"),
 	]
 	sections = [
-		document.querySelectorAll(".loom-box"),
+		document.querySelectorAll("#loom-box"),
+		document.querySelectorAll("#feature-box"),
 		document.querySelectorAll("#download-box"),
 		document.querySelectorAll("#sponsor-box"),
 		document.querySelectorAll("#about-box"),
