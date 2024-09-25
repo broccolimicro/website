@@ -3,6 +3,7 @@ html {
 	font-family: 'Inter', sans-serif;
 	--font-sans-serif: 'Inter';
 	scroll-behavior: smooth;
+	height: 100%;
 }
 
 * {
@@ -11,9 +12,11 @@ html {
 }
 
 body {
+	display: flex;
 	text-align: center;
 	padding: 4.3rem 0 0 0;
-} 
+	height: 100%;
+}
 
 b {
 	font-weight: 700;
@@ -54,6 +57,7 @@ b {
 #main {
 	display: block;
 	width: 100%;
+	flex: 1;
 	text-align: center;
 }
 
