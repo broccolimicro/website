@@ -34,16 +34,17 @@ gtag('config', 'G-FT6E284Y58');""",
 				Div(Id="main") << [
 					Div(Id="loom-box", Class="box", Style="height:100vh;") << [
 						A(Id="loom"),
-						Div(Class="banner", Style="max-width: 42rem;") << [
+						Div(Class="banner", Style="max-width: 43rem;") << [
 							Div(Class="banner-bh") << [
 								H1() << "Loom",
 								H3() << "pre-alpha release",
-								P(Style="margin: 0 0 1rem 0; text-align: center;") << "A programming language for quasi-delay insensitive asynchronous circuits.",
-								Ul(Style="margin: 0 0 1rem 0;") << [
-									Li() << (A(href="#synthesis") << "Logic synthesis from functional specifications"),
-									Li() << (A(href="#layout") << "Automated custom cell layout"),#, placement, and routing"),
-									Li() << (A(href="#simulation") << "Behavioral and digital simulation"),
+								P(Style="margin: 0 0 1rem 0; text-align: center;") << (A(href="#features", Style="text-decoration: none;") << "Chip design is painful, lets fix that."),
+								Ul(Style="margin: 0 0 1rem 0; display: inline-block; width: 35rem;") << [
+									Li() << (A(href="#synthesis", Style="text-decoration: none;") << "Logic synthesis from functional specifications"),
+									Li() << (A(href="#layout", Style="text-decoration: none;") << "Automated custom cell layout"),#, placement, and routing"),
+									Li() << (A(href="#simulation", Style="text-decoration: none;") << "Behavioral and digital simulation"),
 								],
+								Br(),
 								A(Class="button", Style="background-color: rgb(10, 133, 55); border: 0px; color: rgb(255, 255, 255);", href="#download") << "Get Started",
 
 								A(Class="button", href="#sponsor") << "Sponsor",
