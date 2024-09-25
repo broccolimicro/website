@@ -32,8 +32,8 @@ gtag('config', 'G-FT6E284Y58');""",
 				Navigate("whitepaper" in cookies),
 				A(Id="main-content"),
 				Div(Id="main") << [
-					A(Id="loom"),
 					Div(Id="loom-box", Class="box", Style="height:100vh;") << [
+						A(Id="loom"),
 						Div(Class="banner", Style="max-width: 42rem;") << [
 							Div(Class="banner-bh") << [
 								H1() << "Loom",
@@ -77,7 +77,7 @@ gtag('config', 'G-FT6E284Y58');""",
 						],
 
 	
-						A(Id="synthesis"),
+						Br(), A(Id="synthesis"),
 						Div(Class="banner") << [
 							Div(Class="banner-ri") << [
 								A(Id="synthesis-button", Class="img-button", Onclick="synthesize()") << [
@@ -98,7 +98,7 @@ gtag('config', 'G-FT6E284Y58');""",
 						],
 
 
-						A(Id="layout"),
+						Br(), A(Id="layout"),
 						Div(Class="banner") << [
 							Div(Class="banner-li") << [
 								A(Id="layout-button", Class="img-button", Onclick="layout()", Dataview=True) << [
@@ -130,7 +130,7 @@ $ klayout cells.gds
 						],
 
 
-						A(Id="simulation"),
+						Br(), A(Id="simulation"),
 						Div(Class="banner") << [
 							Div(Class="banner-ri") << [
 								A(Id="simulate-button", Class="img-button", Onclick="simulate()", Datastep=-1) << [
@@ -154,8 +154,8 @@ $ klayout cells.gds
 
 
 
-					A(Id="download"),
 					Div(Id="download-box", Class="box") << [
+						A(Id="download"),
 						Div(Class="banner") << [
 							Div(Class="banner-bh") << [
 								H1() << "Get started with Loom",
@@ -189,8 +189,8 @@ $ klayout cells.gds
 
 
 
-					A(Id="sponsor"),
 					Div(Id="sponsor-box", Class="box", Style="background-color: rgb(244, 244, 245);") << [
+						A(Id="sponsor"),
 						Div(Class="banner") << [
 							Div(Class="banner-bh") << [
 								H1() << [
@@ -224,8 +224,8 @@ $ klayout cells.gds
 
 
 
-					A(Id="about"),
 					Div(Id="about-box", Class="box") << [	
+						A(Id="about"),
 						Div(Class="banner") << [
 							Div(Class="banner-bh") << [
 								Img(Id="logo-img", Src="logo.svg"),
