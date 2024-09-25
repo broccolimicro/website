@@ -39,7 +39,7 @@ gtag('config', 'G-FT6E284Y58');""",
 								H1() << "Loom",
 								H3() << "pre-alpha release",
 								P(Style="margin: 0 0 1rem 0; text-align: center;") << (A(href="#features", Style="text-decoration: none;") << "Chip design is painful, lets fix that."),
-								Ul(Style="margin: 0 0 1rem 0; display: inline-block; width: 35rem;") << [
+								Ul(Style="margin: 0 0 1rem 0; display: inline-block; max-width: 35rem;") << [
 									Li() << (A(href="#synthesis", Style="text-decoration: none;") << "Logic synthesis from functional specifications"),
 									Li() << (A(href="#layout", Style="text-decoration: none;") << "Automated custom cell layout"),#, placement, and routing"),
 									Li() << (A(href="#simulation", Style="text-decoration: none;") << "Behavioral and digital simulation"),
