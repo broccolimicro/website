@@ -59,7 +59,7 @@ gtag('config', 'G-FT6E284Y58');""",
 						],
 					],
 
-					A(Href="#problem") << Img(Id="downarrow", Src="photo/doubledownarrow.svg"),
+					A(Href="#features") << Img(Id="downarrow", Src="photo/doubledownarrow.svg"),
 
 
 					Div(Id="feature-box", Class="box", Style="background-color: rgb(244, 244, 245);") << [
