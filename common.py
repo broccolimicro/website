@@ -24,7 +24,7 @@ def Navigate(whitepaper=False):
 	return Header(Id="header") << [
 		Nav(Id="nav") << [
 			Div(Id="nav-top") << [
-				A(Id="nav-left", Href="/#loom") << [
+				A(Id="nav-left", Href="/news.py") << [
 					Div(Id="logo"),
 					Div(Id="name") << "Broccoli",
 				],
