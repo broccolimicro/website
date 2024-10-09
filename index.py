@@ -8,7 +8,7 @@ import os
 if __name__ == "__main__":
 	cookies = SimpleCookie(os.environ.get('HTTP_COOKIE', ''))
 
-	currentRelease = "0.8.2"
+	currentRelease = "0.9.0"
 
 	print(Document() << [
 		Doctype(Html=True),
