@@ -39,7 +39,7 @@ gtag('config', 'G-FT6E284Y58');""",
 								H1() << "Loom",
 								H3() << "pre-alpha release",
 								P(Style="margin: 0 0 1rem 0; text-align: center;") << (A(href="#features", Style="text-decoration: none;") << "Chip design is painful, lets fix that."),
-                                Ul(Style="margin: 0 0 1rem 0; display: inline-block; width: 100%; max-width: 35rem;") << [
+								Ul(Style="margin: 0 0 1rem 0; display: inline-block; width: 100%; max-width: 35rem;") << [
 									Li() << (A(href="#synthesis", Style="text-decoration: none;") << "Logic synthesis from functional specifications"),
 									Li() << (A(href="#layout", Style="text-decoration: none;") << "Automated custom cell layout"),#, placement, and routing"),
 									Li() << (A(href="#simulation", Style="text-decoration: none;") << "Behavioral and digital simulation"),
@@ -51,7 +51,7 @@ gtag('config', 'G-FT6E284Y58');""",
 								A(Class="button", href="https://github.com/broccolimicro/loom") << "View Source",
 							],
 						],
-
+						Br(),
 						Div(Class="banner") << [
 							A(Id="sponsors"),
 							Div(Class="banner-bh") << [
@@ -116,7 +116,7 @@ $ klayout cells.gds
 								],
 							], Div(Class="banner-rt") << [
 								H2() << "Automating physical design", #Automated physical design
-                                # Devices are sized and
+								# Devices are sized and
 								P(Style="margin: 0 0 1rem 0;") << "Cell layouts are generated automatically. Design rules are specified through a simple python interface. Only 14 minutes to layout all 2752 cells in the Skywater PDK. What would have taken 40 people 5 months to do manually has been reduced to a coffee break.",
 								P(Style="margin: 0 0 1rem 0;") << [
 									"See the spec for ",
@@ -202,7 +202,7 @@ $ klayout cells.gds
 								],
 								P(Style="text-align: center;") << "Become a sponsor and help us improve and maintain Loom. Your support is greatly appreciated.",
 
-                                Div(Class="sponsor-tier") << [
+								Div(Class="sponsor-tier") << [
 									H3() << "Individual",
 									H4() << "$10 / month",
 									P() << "Support the development of Loom and receive exclusive updates.",
