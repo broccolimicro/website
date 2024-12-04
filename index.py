@@ -162,7 +162,7 @@ $ klayout cells.gds
 								H1() << "Get started with Loom",
 								P(Style="text-align: center;") << f"Version {currentRelease} (pre-alpha) is available for Linux, Windows, and macOS.",
 								Br(),
-								Code() << "curl -L https://raw.githubusercontent.com/broccolimicro/loom/refs/heads/main/install.sh | sudo bash",
+								Code() << "curl -sL https://raw.githubusercontent.com/broccolimicro/loom/refs/heads/main/install.sh | sudo bash",
 								Br()
 							], Div(Class="banner-lt", Style="padding-top: 6.5rem;") << [
 								H4() << "Linux",
