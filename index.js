@@ -527,9 +527,7 @@ GND-,Vdd+,L.f'1-,v0-,L.t'1-,v1+,L.e+,R.f-,R.t-,v2+,v3+,R.e'1+,R.f'1-,R.t'1-,_Res
 	var term2 = document.querySelector("#simulate-example-main");
 	var imgs = document.querySelector("#simulate-example-imgs");
 	var button = document.querySelector("#simulate-button");
-	console.log(button.getAttribute("datastep"));
 	var step = (Number(button.getAttribute("datastep"))+1)%4;
-	console.log(step);	
 	button.setAttribute("datastep", step);
 	if (step == 0) {
 		term.innerHTML = hsesim;
