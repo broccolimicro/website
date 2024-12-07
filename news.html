@@ -1,0 +1,352 @@
+Content-type: text/html
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://www.googletagmanager.com/gtag/js?id=G-FT6E284Y58" async></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-FT6E284Y58');
+		</script>
+		<title>
+			News | Broccoli
+		</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="js/imports.js"></script>
+		<script src="js/pubcss.js"></script>
+		<script src="js/code.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<header id="header">
+			<nav id="nav">
+				<div id="nav-top">
+<a id="nav-left" href="/news.py"><div id="logo"></div><div id="name">	Broccoli</div></a>
+					<div id="nav-mid">
+<a class="nav-button" id="loom-button" href="/#loom">Loom</a><a class="small-nav-button" id="feature-button" href="/#features">Features</a><a class="small-nav-button" id="download-button" href="/#download">Download</a><a class="small-nav-button" id="sponsor-button" href="/#sponsor">Sponsor</a><a class="small-nav-button" id="about-button" href="/#about">About</a><a class="nav-button" id="docs-button" href="/docs.py">Docs</a><a class="nav-button" id="forum-button" href="https://github.com/broccolimicro/loom/discussions">Forum</a>
+					</div>
+					<div id="nav-right">
+<a class="nav-button" href="/BroccoliCapabilities.pdf">Government</a>
+					</div>
+					<div id="nav-small">
+<a class="nav-button" id="toggle" href="javascript:toggleMenu()"><img id="toggle_img" src="logos/menu.svg"></a>
+					</div>
+				</div>
+				<div id="menu-top">
+					<div id="menu">
+<a class="nav-button" href="/#loom" onclick="toggleMenu()">Loom</a><a class="small-nav-button" href="/#features" onclick="toggleMenu()">Features</a><a class="small-nav-button" href="/#download" onclick="toggleMenu()">Download</a><a class="small-nav-button" href="/#sponsor" onclick="toggleMenu()">Sponsor</a><a class="small-nav-button" href="/#about" onclick="toggleMenu()">About</a><a class="nav-button" href="/docs.py" onclick="toggleMenu()">Docs</a><a class="nav-button" href="https://github.com/broccolimicro/loom/discussions" onclick="toggleMenu()">Forum</a><a class="nav-button" href="/BroccoliCapabilities.pdf" onclick="toggleMenu()">Government</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="main">
+			<div class="box post">
+				<article>
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1>Pre-alpha release of Loom</h1>
+<address>Ned Bingham</address>
+<time>September 14, 2024</time>
+</div>
+
+<p>We are preparing for the alpha release of a toolset for asynchronous circuit
+design. Our previously named Haystack has been renamed to Loom. Loom now
+integrates the Floret flow as well, and we're in the process of tying the two
+flows together to allow for end-to-end synthesis. We have pivoted our full
+attention to Loom with the end goal of making the final chip design much
+easier. Tooling really makes all the difference. All of this comes with a
+website redesign putting that alpha release front and center.</p>
+
+</article>
+
+
+			</div>
+			<div class="box post">
+				<article>
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1>Months of Progress</h1>
+<address>Ned Bingham</address>
+<time>May 27, 2024</time>
+</div>
+
+<p>Today we have a few updates. Since our last post, we have developed an
+automated cell layout engine called Floret. It is targeted at <a
+href="https://www.skywatertechnology.com/cmos/">Skywater's 130nm process
+technology node</a> and produces mostly DRC clean layouts. Further, we have
+deployed an updated website that makes our whitepaper accessible and puts our
+EDA tooling work front and center. Finally, we have have prepared to offer our
+self-timed circuit course again this summer and posted it on our main page.
+Over the next few weeks, we will be preparing Haystack and Floret for further
+development, then we start diving into circuit design!</p>
+
+</article>
+
+
+			</div>
+			<div class="box post">
+				<article>
+<meta name="keywords" content="self-timed, asynchronous, circuits, lecture, course">
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1>Introduction to Self Timed Circuits</h1>
+<address>Ned Bingham</address>
+<time>August 31, 2023</time>
+</div>
+
+<p>We have completed our Introduction to Self Timed Circuits course. There are
+24 lectures split into 4 modules: Fundamentals, Templated Synthesis, Formal
+Synthesis, and Advanced Topics. Each lecture includes a walkthrough, working
+with real circuits in the <a href="https://avlsi.csl.yale.edu/act/doku.php">ACT
+language</a> with <a href="https://www.skywatertechnology.com/cmos/">Skywater's
+130nm process technology node</a>. All of the lectures have been recorded and
+made publicly available in our <a href="https://broccolimicro.io/courses.py">Courses</a> page.</p>
+
+</article>
+
+
+			</div>
+			<div class="box post">
+				<article>
+<meta name="keywords" content="architecture, trends, history, dsp, signal processing">
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1>Signal Processing Architecture Trends</h1>
+<address>Ned Bingham</address>
+<time>June 21, 2022</time>
+</div>
+
+<p>Since the 1960s, three distinct architectures have been used to accelerate
+computational tasks for DSP systems: Microprocessors, Field Programmable Gate
+Arrays (FPGA), and Coarse Grained Reconfigurable Arrays (CGRA), all with
+variations optimizing the problem domain with specialization <a
+href="#lee1988-#lee1989"></a>, parallelism <a href="#tan2003"></a>, and
+configurability <a href="#cardellini2022"></a>.</p>
+
+<figure id="b2022-06-21-classification" style="width:100%">
+<img src="blog/2022-06-21-dsp/classification.svg" style="width:100%">
+<figcaption>Classification of architectures for Digital Signal Processing <a href="#wijtvliet2016"></a>.</figcaption>
+</figure>
+
+<p>Early DSP history was myopically focused on specialization in Microprocessor
+architectures primarily due to limited area on die <a
+href="#lee1988-#lee1989"></a>. The first single-chip DSP, the TMC 0280, was
+developed in 1978 with a dedicated multiply accumulate (MAC) unit <a
+href="#wiggins1978"></a>, and dedicated complex operators are a mainstay of DSP
+architectures to this day. The TMS 32010 adopted the Harvard Architecture in
+1982 to satisfy intensive IO bandwidth requirements <a href="#so1983"></a>, and
+numerous variations appeared shortly thereafter <a href="#lee1988"></a>. The
+DSP 32 added floating point arithmetic to deal with data scaling issues in 1984
+<a href="#kershaw1985"></a>, and the DSP 56001 found a better solution in 1987
+with saturating fixed-point arithmetic on a wide datapath <a
+href="#kloker1986"></a>. The DSP 32 also added register indirect addressing
+modes to compress memory addresses in the instruction words, and the DSP 56001
+implemented circular buffers in memory to optimize delay computations.</p>
+
+<p>With shrinking process technology nodes yielding more transistors on die,
+DSP architectures shifted focus toward parallelism <a href="#tan2003"></a>. The
+TMS320C20 had a pipelined datapath to target data parallelism in 1993 <a
+href="#ti1993"></a>. In 1996, the TMS320C8x added multiple cores to optimize
+task parallelism <a href="#guttag1996"></a>. Then in 1997, the DSP16xxx
+introduced a two lane pipelined Very Long Instruction Word (VLIW) architecture
+<a href="#bier1997"></a>.</p>
+
+<p>In the 2000s, the DSP market saw a fundamental shift. First, Intel
+introduced DSP extensions for their general purpose processors targeting
+non-embedded applications in 1999 <a href="#gwennap1999"></a>. Second, Xilinx
+introduced FPGAs to the DSP market with the development of the Xilinx Virtex-II
+targeting embedded high-performance applications in 2001 <a
+href="#xilinx2001"></a>. While difficult to program, FPGAs are much more
+flexible, have orders of magnitude better performance and energy consumption,
+and may be reconfigured in the field. As a result, specialized microprocessor
+DSP architectures were relegated to embedded low-performance problem domains.
+Since then, FPGA innovations have focused on application specific operator
+integration and network optimization <a href="#podobas2020"></a>, ease of use
+<a href="#quraishi2021"></a>, embedded and non-embedded system integration <a
+href="#wu2019"></a>, and run-time and partial reconfigurability <a
+href="#cardellini2022"></a>.</p>
+
+<figure id="b2022-06-21-relative_performance" style="width:100%">
+<img src="blog/2022-06-21-dsp/relative_performance.svg" style="width:100%">
+<figcaption>Performance of architectures for Digital Signal Processing <a href="#liu2019"></a>.</figcaption>
+</figure>
+
+<p>While the dominance of FPGAs has demonstrated that array architectures are
+the right solution for the problem domain, CGRAs show the potential for
+significant improvements across the board <a href="#podobas2020"></a>.
+Historically, bit-parallel CGRAs have extremely limited capacity due to routing
+resource requirements. Digit-serial CGRAs solve the capacity issues by
+reducing the width of the datapath. However, they also sacrifice
+configurability in the face of complex timing and control requirements. This
+has led to a variety of systolic array architectures that accelerate extremely
+specific computational tasks. However, solving these configurability issues
+could open the door to a diverse set of new capabilities on mobile
+platforms.</p>
+
+<cite ref-num=1 id="lee1988">Edward A Lee. <q><a href="https://doi.org/10.1109/53.16926">Programmable dsp architectures i</a>.</q> ASSP, Volume 5, Issue 4. IEEE, 1988.</cite> 
+<cite id="lee1989">Edward A Lee. <q><a href="https://doi.org/10.1109/53.16934">Programmable dsp architectures ii</a>.</q> ASSP, Volume, 6 Issue 1. IEEE, 1989.</cite> 
+<cite id="tan2003">Edwin J. Tan, and Wendi B. Heinzelman. <q><a href="https://doi.org/10.1145/882105.882108">DSP architectures: past, present and futures</a>.</q> Computer Architecture News (SIGARCH), Volume 31 Issue 3, Pages 6-19. ACM, 2003.</cite>
+<cite id="wiggins1978">Richard Wiggins and Larry Brantingham. <q>Three-Chip System Synthesizes Human Speech.</q> Electronics, Pages 109-116. 1978.</cite>
+<cite id="so1983">John So. <q><a href="https://doi.org/10.1016/0141-9331(83)90532-X">TMS 320-a step forward in digital signal processing</a>.</q> Microprocessors and Microsystems, Volume 7, Issue 10, Pages 451-460. 1983.</cite>
+<cite id="kershaw1985">R. Kershaw, et al. <q><a href="https://doi.org/10.1109/ISSCC.1985.1156829">A programmable digital signal processor with 32b floating point arithmetic</a>.</q> International Solid-State Circuits Conference, Volume 28. IEEE, 1985.</cite>
+<cite id="kloker1986">Kevin Kloker. <q><a href="https://doi.ieeecomputersociety.org/10.1109/MM.1986.304807">The Motorola DSP56000 digital signal processor</a>.</q> Micro, Volume 6, Issue 06, Pages 29-48. IEEE, 1986.</cite>
+<cite id="bier1997">Jeff Bier. <q><a href="https://www.bdti.com/MyBDTI/pubs/DSP16xxx_uPR.pdf">DSP16xxx Targets Communications Apps</a>.</q> Memory, Volume 60, Page 16. 1997.</cite>
+<cite id="guttag1996">Karl Guttag. <q><a href="https://doi.org/10.1117/12.241977">TMS320C8x family architecture and future roadmap</a>.</q> Digital Signal Processing Technology, Volume 2750. SPIE, 1996.</cite>
+<cite id="ti1993">Texas Instruments, Inc. <q><a href="https://www.ele.uva.es/~jesman/BigSeti/ftp/DSPs/Texas_Instrument_TMS320Cxx/TMS320C3x-J.pdf">TMS32OC2x User's Guide</a>.</q> 1993.</cite>
+<cite id="gwennap1999">Linley Gwennap. <q><a href="http://www.cs.virginia.edu/~skadron/cs854_uproc_survey/spring_2001/cs854/131301.pdf">Merced Shows Innovative Design</a>.</q> Microprocessor Report, 13.13. 1999.</cite>
+<cite id="xilinx2001">Xilinx. <q><a href="http://edgar.secdatabase.com/1862/101287001501165/filing-main.htm">Fiscal Year 2001 Form 10-K Annual Report</a>.</q> US Securities and Exchange Commission, 2001.</cite>
+<cite id="podobas2020">Artur Podobas, et al. <q><a href="https://doi.org/10.1109/ACCESS.2020.3012084">A survey on coarse-grained reconfigurable architectures from a performance perspective</a>.</q> Access, 8. IEEE, 2020.</cite>
+<cite id="quraishi2021">Masudul Hassan Quraishi, et al. <q><a href="https://doi.org/10.1109/TPDS.2021.3063670">A survey of system architectures and techniques for FPGA virtualization</a>.</q> Transactions on Parallel and Distributed Systems, 32.9. IEEE, 2021.</cite>
+<cite id="wu2019">Song Wu, et al. <q><a href="https://doi.org/10.1109/ICDCS.2019.00180">When FPGA-accelerator meets stream data processing in the edge</a>.</q> 39th International Conference on Distributed Computing Systems (ICDCS). IEEE, 2019.</cite> 
+<cite id="cardellini2022">Valeria Cardellini, et al. <q><a href="https://doi.org/10.1145/3514496">Run-time Adaptation of Data Stream Processing Systems: The State of the Art</a>.</q> Computing Surveys. ACM, 2022.</cite>
+<cite id="wijtvliet2016">Mark Wijtvliet, Luc Waeijen, and Henk Corporaal. <q><a href="https://doi.org/10.1109/SAMOS.2016.7818353">Coarse grained reconfigurable architectures in the past 25 years: Overview and classification</a>.</q> International Conference on Embedded Computer Systems: Architectures, Modeling and Simulation (SAMOS). IEEE, 2016.</cite>
+<cite id="liu2019">Leibo Liu, et al. <q><a href="https://doi.org/10.1145/3357375">A survey of coarse-grained reconfigurable architecture and design: Taxonomy, challenges, and applications</a>.</q> Computing Surveys (CSUR), Volume 52, Issue 6, Pages 1-39. ACM, 2019.</cite>
+
+</article>
+
+
+			</div>
+			<div class="box post">
+				<article>
+<meta name="keywords" content="computing, trends, Moore's Law, Power Wall, Memory Wall, ILP, history">
+<meta name="author" content="Ned Bingham">
+<div class="article-header">
+<h1>Optimize for Energy</h1>
+<address>Ned Bingham</address>
+<time>April 10, 2022</time>
+</div>
+
+<p>The concepts introduced by Von Neumann in 1945 <a href="#neumann1945"></a>,
+remain the centerpiece of computer architectures to this day. His programmable
+model for general purpose compute combined with a relentless march toward
+increasingly efficient devices cultivated significant long-term advancement in
+the performance and power-efficiency of general-purpose computers. For a long
+time, chip area was the limiting factor and raw instruction throughput was the
+goal, leaving energy largely ignored. However, technology scaling has
+demonstrated diminishing returns, and the technology landscape has shifted
+quite a bit over the last 15 years.</p>
+
+<p>Around 2007, three things happened. First, Apple released the iPhone opening
+a new industry for mobile devices with limited access to power. Second, chips
+produced with technology nodes following Intel's 90nm process ceased scaling
+frequency (<a href="#b2022-04-10-intel-frequency"></a>) as the power density collided
+with the limitations of air-cooling (<a href="#b2022-04-10-intel-power"></a>). For the
+first time in the industry, a chip could not possibly run all transistors at
+full throughput without exceeding the thermal limits imposed by standard
+cooling technology. By 2011, up to 80% of transistors had to remain off at any
+given time <a href="#esmaeilzadeh2011"></a>.</p>
+
+<figure id="b2022-04-10-intel-frequency" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_frequency.png" style="width:100%"
+><figcaption>History of the clock frequency of Intel's processors.</figcaption
+></figure>
+
+<figure id="b2022-04-10-intel-power" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_tdp.png" style="width:100%"
+><figcaption>History of the power density in Intel's processors. Frequency, Thermal
+Design Point (<abbr title="Thermal Design Point">TDP</abbr>), and Die Area were
+scraped for all Intel processors. Frequency and <abbr title="Thermal Design
+Point">TDP</abbr>/Die Area were then averaged over all processors in each
+technology. Switching Energy was roughly estimated from <a
+href="#doyle2002"></a> and <a href="#bohr2012"></a> and combined with Frequency
+and Die Area to compute Power Density.</figcaption
+></figure>
+
+<p>Third, the growth in wire delay relative to frequency introduced new
+difficulties in clock distribution. Specifically, around the introduction of
+the 90nm process, global wire delay was just long enough relative to the clock
+period to prevent reliable distribution across the whole chip (<a
+href="#b2022-04-10-wire-delay"></a>).</p>
+
+<figure id="b2022-04-10-wire-delay" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/wire_delay.png" style="width:100%"
+><figcaption>Wire and Gate Delay across process technology nodes. These were
+roughly estimated from <a href="#bohr2012"></a> and <a
+href="#rusu2002"></a></figcaption
+></figure>
+
+<p>As a result of these factors, the throughput of <i>sequential</i> programs
+stopped scaling after 2005 (<a href="#b2022-04-10-specint"></a>). The industry adapted,
+turning its focus toward <i>parallelism</i>. In 2006, Intel's Spec Benchmark
+scores jump by a 135% with the transtion from NetBurst to the Core
+microarchitecture, dropping the base clock speed to optimize energy and
+doubling the width of the issue queue from two to four, targeting Instruction
+Level Parallelism (<abbr title="Instruction Level Parallelism">ILP</abbr>)
+instead of raw execution speed of sequential operations <a
+href="#intelpress2006"></a>. Afterward, performance grows steadily as
+architectures continue to optimize for <abbr title="Instruction Level Parallelism">ILP</abbr>. While Spec2000 focused on
+sequential tasks, Spec2006 introduced more parallel tasks <a
+href="#packirisamy2009"></a>.</p>
+
+<figure id="b2022-04-10-specint" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/specint.png" style="width:100%"
+><figcaption>History of SpecINT base mean, with benchmarks scaled appropriately <a href="#specBench"></a>.</figcaption
+></figure>
+
+<p>By 2012, Intel had pushed most other competitors out of the Desktop <abbr
+title="Central Processing Unit">CPU</abbr> market, and chips following Intel's
+32nm process ceased scaling total transistor counts. While smaller feature
+sizes supported higher transistor density, it also brought higher defect
+density (<a href="#b2022-04-10-intel-defect"></a>) causing yield losses that make
+larger chips significantly more expensive (<a
+href="#b2022-04-10-intel-transistor"></a>).</p>
+
+<figure id="b2022-04-10-intel-defect" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_defect_density.png" style="width:100%"
+><figcaption>History of Intel process technology defect density. Intel's defect
+density trends were very roughly estimated from <a href="#natarajan2002"></a><a
+href="#kuhn2010"></a><a href="#bohr2012"></a><a href="#holt2015"></a><a
+href="#meieran1998"></a> and <a href="#gwennap1993"></a>.</figcaption></figure>
+
+<figure id="b2022-04-10-intel-transistor" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/intel_max_transistor.png" style="width:100%"
+><figcaption>History of transistor count in Intel chips. Transistor density
+was averaged over all Intel processors developed in each
+technology.</figcaption></figure>
+
+<p>Today, energy has superceded area as the limiting factor and architects must
+balance throughput against energy per operation. Furthermore, improvements in
+parallel programs have slowed due to a combination of factors (<a
+href="#b2022-04-10-specint"></a>). First, all available parallelism has already been
+exploited for many applications. Second, limitations in power density and
+device counts have put an upper bound on the amount of computations that can be
+performed at any given time. And third, memory bandwidth has lagged behind
+compute throughput, introducing a bottleneck that limits the amount of data
+that can be communicated at any given time (<a href="#b2022-04-10-memory"></a>) <a href="#mccalpin1991"></a>.</p>
+
+<figure id="b2022-04-10-memory" style="width:100%"
+><img src="blog/2022-04-10-technology-trends/memory_wall.png" style="width:100%"
+><figcaption>History of memory and compute peak bandwidth.</figcaption></figure>
+
+<cite ref-num=1 id="neumann1945">John Von Neumann. <q><a href="https://doi.org/10.1109/85.238389">First Draft of a Report on the EDVAC</a>.</q> Annals of the History of Computing, Volume 15 Number 4 Pages 27-75. IEEE, 1993.</cite>
+<cite id="esmaeilzadeh2011">Hadi Esmaeilzadeh, et al. <q><a href="https://ieeexplore.ieee.org/abstract/document/6307773">Dark silicon and the end of multicore scaling</a>.</q> 38th Annual international symposium on computer architecture (ISCA). IEEE, 2011.</cite>
+<cite id="bohr2012">Mark Bohr. <q><a href="https://www.intel.com/content/dam/www/public/us/en/documents/presentation/silicon-technology-leadership-presentation.pdf">Silicon Technology Leadership for the Mobility Era</a>.</q> Intel Developer Forum, 2012. (<a href="mirror/bohr2012.pdf">mirror</a>)</cite>
+<cite id="specBench">SPEC CPU Subcommittee. <q><a href="https://www.spec.org/cpu">SPEC CPU Benchmarks</a>.</q> 1992.</cite>
+<cite id="natarajan2002">Sanjay Natarajan, et al. <q><a href="https://www.intel.com/content/dam/www/public/us/en/documents/research/2002-vol06-iss-2-intel-technology-journal.pdf">Process Development and Manufacturing of High-Performance Microprocessors on 300mm Wafers</a>.</q> Intel Technology Journal, Volume 6 Number 2. May 2002. (<a href="mirror/inteltech2002.pdf">mirror</a>)</cite>
+<cite id="kuhn2010">Kelin J Kuhn. <q><a href="http://download.intel.com/pressroom/pdf/kkuhn/Kuhn_Advanced_Semiconductor_Manufacturing_Conference_July_13_2010_slides.pdf">CMOS Transistor Scaling Past 32nm and Implications on Variation</a>.</q> Advanced Semiconductor Manufacturing Conference, 2010. (<a href="mirror/kuhn2010.pdf">mirror</a>)</cite>
+<cite id="holt2015">Bill Holt. <q><a href="http://intelstudios.edgesuite.net/im/2015/pdf/2015_InvestorMeeting_Bill_Holt_WEB2.pdf">Advancing Moore's Law</a>.</q> Investor Meeting Santa Clara, 2015. (<a href="mirror/holt2015.pdf">mirror</a>)</cite>
+<cite id="meieran1998">Eugene S. Meieran. <q><a href="https://www.intel.com/content/dam/www/public/us/en/documents/research/1998-vol02-iss-4-intel-technology-journal.pdf">21st Century Semiconductor Manufacturing Capabilities</a>.</q> Intel Technology Journal. 4th Quarter 1998. (<a href="mirror/inteltech1998.pdf">mirror</a>)</cite>
+<cite id="gwennap1993">Linley Gwennap, <q>Estimating IC Manufacturing Costs: Die size, process type are key factors in microprocessor cost.</q> Microprocessor report, Volume 7. August 1993. (<a href="http://bnrg.eecs.berkeley.edu/~randy/Courses/CS252.S96/Lecture05.pdf">data mirror</a>)</cite>
+<cite id="mccalpin1991">John D. McCalpin. <q><a href="https://www.cs.virginia.edu/stream/">STREAM: Sustainable Memory Bandwidth in High Performance Computers</a>.</q> Department of Computer Science School of Engineering and Applied Science University of Virginia, 1991. Accessed: August 8, 2019. Available: <a href="https://www.cs.virginia.edu/stream/">https://www.cs.virginia.edu/stream/</a>.</cite>
+<cite id="intelpress2006">Intel. <q><a href="https://www.intel.com/pressroom/archive/releases/2006/20060307corp.htm">Energy-Efficient, High Performing and Stylish Intel-Based Computers to Come with Intel&reg; Core&trade; Microarchitecture</a>.</q> Intel Developer Forum, San Francisco CA, March 2006. (<a href="mirror/intelpress2006.pdf">mirror</a>)</cite>
+<cite id="packirisamy2009">Venkatesan Packirisamy, et al. <q><a href="https://doi.org/10.1109/ISPASS.2009.4919640">Exploring speculative parallelism in SPEC2006</a>.</q> International Symposium on Performance Analysis of Systems and Software. IEEE, 2009.</cite>
+
+</article>
+
+
+			</div>
+		</div>
+		<script>
+			startWindow();
+includeHTML(document)
+.then(waitFor(loadCode))
+.then(waitFor(formatAnchors))
+.then(waitFor(formatLinks));
+		</script>
+	</body>
+</html>
