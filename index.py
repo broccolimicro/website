@@ -107,7 +107,7 @@ gtag('config', 'G-FT6E284Y58');""",
 									Div(Id="layout-example", Class="terminal") << [
 										Pre(Class="terminal-window", inline=True) << [
 """
-<b>$ lm cells.spi sky130.py</b> # generate the cell layouts
+<b>$ lm build wchb1b.spi</b> # generate the cell layouts
 $ klayout cells.gds
 """,
 										],

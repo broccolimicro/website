@@ -129,7 +129,8 @@ function synthesize() {
 	var button = document.querySelector("#synthesis-button");
 	if (button.hasAttribute("dataview")) {
 		button.removeAttribute("dataview");
-		term.innerHTML = `<b>$ lm wchb1b.hse</b> # generate the production rules
+		term.innerHTML = `<b>$ lm build -s wchb1b.cog</b> # generate the production rules
+$ cat wchb1b.prs
 require driven, stable, noninterfering
 @_12&R.t<1>|_Reset<3>&L.t<3>&R.e<3>->v3-
 @_13&~R.t<1>|~_Reset<1>|~L.t<2>&~R.e<2>->v3+
@@ -156,7 +157,8 @@ Vdd<0.1>->_12- [weak]
 
 
 
-<b>$ lm -n wchb1b.hse sky130.py</b> # generate the spice netlist
+<b>$ lm build -n wchb1b.prs</b> # generate the spice netlist
+$ cat wchb1b.spi
 .subckt top GND Vdd
 x0 L_0f_31 v0 GND GND sky130_fd_pr__nfet_01v8 w=0.45u l=0.15u
 x1 L_0f_31 v0 Vdd Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
@@ -208,21 +210,40 @@ x45 v3 R_0t __13 Vdd sky130_fd_pr__pfet_01v8 w=0.45u l=0.15u
 .end`
 	} else {
 		button.setAttribute("dataview","");
-		term.innerHTML = `<b>$ cat wchb1b.hse</b>
-(L.f-,L.t-; [L.e];
-*[[ 1->L.f+
-  : 1->L.t+
-  ]; [~L.e]; L.f-,L.t-; [L.e]
- ])'1 ||
-
-L.e+,R.f-,R.t-; [R.e & ~L.f & ~L.t];
-*[[  R.e & L.f -> R.f+
-  [] R.e & L.t -> R.t+
-  ]; L.e-; [~R.e & ~L.f & ~L.t]; R.f-,R.t-; L.e+
- ] ||
-
-(R.e+; [~R.f & ~R.t];
-*[[R.f | R.t]; R.e-; [~R.f & ~R.t]; R.e+])'1`
+		term.innerHTML = `<b>$ cat wchb1b.cog</b>
+region 1 {
+	L.f- and L.t-
+	await L.e
+	while {
+		L.f+ xor L.t+
+		await ~L.e
+		L.f- and L.t-
+		await L.e
+	}
+} and {
+	L.e+ and R.f- and R.t-
+	await R.e & ~L.f & ~L.t
+	while {
+		await R.e & L.f {
+			R.f+
+		} or await R.e & L.t {
+			R.t+
+		}
+		L.e-
+		await ~R.e & ~L.f & ~L.t
+		R.f- and R.t-
+		L.e+
+	}
+} and region 1 {
+	R.e+
+	await ~R.f & ~R.t
+	while {
+		await R.f | R.t
+		R.e-
+		await ~R.f & ~R.t
+		R.e+
+	}
+}`
 	}
 }
 
@@ -242,7 +263,7 @@ function layout() {
 }
 
 function simulate(view) {
-	var hsesim = `<b>$ lm sim wchb1b.hse</b> 
+	var hsesim = `<b>$ lm sim wchb1b.cog</b> 
 (hsesim)reset
 (0) {3 8 2 1} ~L.f'1&~L.t'1&L.e'1&L.e&~R.f&~R.t&R.e&~L.f&~L.t&R.e'1&~R.f'1&~R.t'1
 (hsesim)reset 0
