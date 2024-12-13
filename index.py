@@ -120,7 +120,7 @@ $ klayout cells.gds
 								P(Style="margin: 0 0 1rem 0;") << "Cell layouts are generated automatically. Design rules are specified through a simple python interface. Only 14 minutes to layout all 2752 cells in the Skywater PDK. What would have taken 40 people 5 months to do manually has been reduced to a coffee break.",
 								P(Style="margin: 0 0 1rem 0;") << [
 									"See the spec for ",
-									A(href="https://github.com/broccolimicro/floret/blob/main/tech/sky130.py") << "Skywater 130nm",
+									A(href="https://github.com/broccolimicro/loom/blob/main/tech/sky130/tech.py") << "Skywater 130nm",
 									".",
 								],
 								P(Style="width: 100%; text-align: left; font-weight: 600; margin-top: 6rem; cursor: pointer;", Onclick="layout()") << [
