@@ -212,14 +212,14 @@ $ klayout cells.gds
 								Div(Class="sponsor-tier") << [
 									H3() << "Organization",
 									H4() << "$2,000 / month",
-									P() << "Support the development of Loom. Your bug tickets are prioritized, you have direct access to the team, and you may display your logo prominantly on this site.",
+									P() << "Support the development of Loom. Your bug tickets are prioritized, you have direct access to the team, and you may display your logo prominently on this site.",
 									A(Class="small-green-button", Href="https://github.com/sponsors/broccolimicro/sponsorships?tier_id=428573&preview=false") << "Become a Sponsor",
 								],
 
 								Div(Class="sponsor-tier") << [
 									H3() << "Enterprise",
 									H4() << "$10,000 / month",
-									P() << "Support the development of Loom. Your feature requests are prioritized, and you are given an advisory position in which you may guide development with bi-weekly 1:1s. You are allocated half an engineer for every multiple of this sponsorship. Your bug tickets are prioritized, you have direct access to the team, and you may display your logo prominantly on this site.",
+									P() << "Support the development of Loom. Your feature requests are prioritized, and you are given an advisory position in which you may guide development with bi-weekly 1:1s. You are allocated half an engineer for every multiple of this sponsorship. Your bug tickets are prioritized, you have direct access to the team, and you may display your logo prominently on this site.",
 									A(Class="small-green-button", Href="https://github.com/sponsors/broccolimicro/sponsorships?tier_id=428574&preview=false") << "Become a Sponsor",
 								],
 							],
